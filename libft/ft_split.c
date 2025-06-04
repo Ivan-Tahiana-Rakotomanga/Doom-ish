@@ -31,7 +31,7 @@ size_t	ft_count_words(const char *s, char c)
 
 char	*ft_allocate_word(const char *s, char c)
 {
-	const char	*start;	
+	const char	*start;
 
 	start = s;
 	while (*s && *s != c)
