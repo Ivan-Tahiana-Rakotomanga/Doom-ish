@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_valid_arg_count.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 13:02:08 by irakotom          #+#    #+#             */
-/*   Updated: 2025/06/04 13:03:11 by irakotom         ###   ########.fr       */
+/*   Created: 2025/06/10 08:35:08 by fxu-lin           #+#    #+#             */
+/*   Updated: 2025/06/10 08:37:07 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../../includes/header.h"
 
-# include "../libft/libft.h"
-# include "handle_error.h"
-# include <stdio.h>
-# include <unistd.h>
-
-#endif
+int	ft_valid_arg_count(int argc)
+{
+	if (argc != 2)
+	{
+		ft_putstr_fd("Error\nIt must be one argument\n", 2);
+		return (0);
+	}
+	return (1);
+}

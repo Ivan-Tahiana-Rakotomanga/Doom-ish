@@ -11,7 +11,13 @@
 # **************************************************************************** #
 
 NAME = cub3D 
-SRC = src/main.c 
+SRC = src/handle_error/ft_valid_arg_count.c \
+			src/handle_error/file/ft_valid_extension.c \
+			src/handle_error/file/ft_valid_file.c \
+			src/handle_error/color/ft_valid_color.c \
+			src/handle_error/color/ft_is_duplicate_color.c \
+			src/handle_error/map/ft_format_map_is_valid.c \
+      src/main.c 
 
 OBJ = $(SRC:.c=.o)
 CC = gcc

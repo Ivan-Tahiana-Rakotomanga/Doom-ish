@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_is_duplicate_color.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 13:02:08 by irakotom          #+#    #+#             */
-/*   Updated: 2025/06/04 13:03:11 by irakotom         ###   ########.fr       */
+/*   Created: 2025/06/10 10:30:42 by fxu-lin           #+#    #+#             */
+/*   Updated: 2025/06/10 10:30:42 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../../../includes/header.h"
 
-# include "../libft/libft.h"
-# include "handle_error.h"
-# include <stdio.h>
-# include <unistd.h>
-
-#endif
+int	ft_is_duplicate_color(int floor, int ceiling)
+{
+	if (floor == ceiling)
+	{
+		ft_putstr_fd("Error\nFloor and ceiling colors must be different", 2);
+	}
+	return (1);
+}

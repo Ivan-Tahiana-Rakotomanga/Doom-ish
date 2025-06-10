@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_valid_color.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 13:02:08 by irakotom          #+#    #+#             */
-/*   Updated: 2025/06/04 13:03:11 by irakotom         ###   ########.fr       */
+/*   Created: 2025/06/10 10:17:50 by fxu-lin           #+#    #+#             */
+/*   Updated: 2025/06/10 10:17:50 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../../../includes/header.h"
 
-# include "../libft/libft.h"
-# include "handle_error.h"
-# include <stdio.h>
-# include <unistd.h>
-
-#endif
+int	ft_valid_color(int color)
+{
+	if (color < 0 || color > 255)
+	{
+		ft_putstr_fd("Error\nColor must be between 0 and 255\n", 2);
+		return (0);
+	}
+	return (1);
+}
