@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_space.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fxu-lin <fxu-lin@student.42antananari      +#+  +:+       +#+        */
+/*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 11:29:59 by fxu-lin           #+#    #+#             */
-/*   Updated: 2024/11/18 11:30:03 by fxu-lin          ###   ########.fr       */
+/*   Created: 2025/06/11 12:47:43 by irakotom          #+#    #+#             */
+/*   Updated: 2025/06/11 12:49:58 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isalnum(int c)
+int ft_is_space(char c)
 {
-	if (ft_isdigit(c) || ft_isalpha(c))
+	if ((9 <= c && c <= 13) || (c == ' '))
 		return (1);
-	else
-		return (0);
+	return (0);
 }

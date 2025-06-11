@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irakotom <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fxu-lin <fxu-lin@student.42antananari      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 08:01:17 by irakotom          #+#    #+#             */
-/*   Updated: 2024/03/06 17:27:21 by irakotom         ###   ########.fr       */
+/*   Created: 2024/11/18 11:36:48 by fxu-lin           #+#    #+#             */
+/*   Updated: 2024/11/20 14:19:32 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ size_t	ft_count_words(const char *s, char c)
 	return (count);
 }
 
-char	*ft_allocate_word(const char *s, char c)
+char	*ft_allocate_words(const char *s, char c)
 {
 	const char	*start;
 
@@ -39,7 +39,7 @@ char	*ft_allocate_word(const char *s, char c)
 	return (ft_substr(start, 0, s - start));
 }
 
-void	ft_free_results(char **result, size_t words)
+void	ft_free_resutlt(char **result, size_t words)
 {
 	while (words--)
 		free(result[words]);
@@ -59,10 +59,10 @@ void	ft_split_string(char **result, const char *s, char c)
 			s++;
 		if (*s)
 		{
-			result[i++] = ft_allocate_word(s, c);
+			result[i++] = ft_allocate_words(s, c);
 			if (!result[i - 1])
 			{
-				ft_free_results(result, i - 1);
+				ft_free_resutlt(result, i - 1);
 				return ;
 			}
 			words++;
@@ -83,7 +83,10 @@ char	**ft_split(const char *s, char c)
 	words = ft_count_words(s, c);
 	result = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!result)
+	{
+		free(result);
 		return (NULL);
+	}
 	ft_split_string(result, s, c);
 	return (result);
 }

@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irakotom <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fxu-lin <fxu-lin@student.42antananari      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 07:57:55 by irakotom          #+#    #+#             */
-/*   Updated: 2024/03/06 18:59:51 by irakotom         ###   ########.fr       */
+/*   Created: 2024/11/18 11:38:09 by fxu-lin           #+#    #+#             */
+/*   Updated: 2024/11/18 11:38:11 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_copy_str(char const *str, char *dest)
+void	ft_copy_str(char const *src, char *dest)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i])
+	while (src[i])
 	{
-		dest[i] = str[i];
+		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';

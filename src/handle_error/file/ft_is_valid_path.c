@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_valid_file.c                                    :+:      :+:    :+:   */
+/*   ft_is_valid_path.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
+/*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 08:40:45 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/11 13:51:28 by irakotom         ###   ########.fr       */
+/*   Created: 2025/06/11 13:39:48 by irakotom          #+#    #+#             */
+/*   Updated: 2025/06/11 13:45:06 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "../../../includes/header.h"
 
-int	ft_valid_file(char *file)
+int ft_is_valid_path(char *path, char *extension)
 {
-	if (access(file, F_OK) != 0)
-	{
-		ft_putstr_fd("Error\nNo such file or directory: ", 2);
-		ft_putstr_fd(file, 2);
-		ft_putstr_fd("\n", 2);
+	if(!ft_valid_file(path))
 		return (0);
-	}
-	if (access(file, R_OK) != 0)
-	{
-		ft_putstr_fd("Error\nPermission denied: ", 2);	
-		ft_putstr_fd(file, 2);
-		ft_putstr_fd("\n", 2);
+	else if (!ft_valid_extension(path, extension))
 		return (0);
-	}
 	return (1);
 }

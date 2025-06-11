@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fxu-lin <fxu-lin@student.42antananari      +#+  +:+       +#+        */
+/*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 11:29:59 by fxu-lin           #+#    #+#             */
-/*   Updated: 2024/11/18 11:30:03 by fxu-lin          ###   ########.fr       */
+/*   Created: 2025/06/11 12:35:07 by irakotom          #+#    #+#             */
+/*   Updated: 2025/06/11 13:17:49 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef UTILS_H 
+#define UTILS_H
 
-int	ft_isalnum(int c)
-{
-	if (ft_isdigit(c) || ft_isalpha(c))
-		return (1);
-	else
-		return (0);
-}
+int	ft_strcmp(char const *s1, char const *s2);
+int ft_is_space(char c);
+int ft_is_empty_str(char *str);
+int ft_strs_len(char **strs);
+int ft_is_valid_number(char *nbr);
+
+#endif  

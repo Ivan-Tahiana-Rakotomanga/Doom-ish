@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irakotom <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fxu-lin <fxu-lin@student.42antananari      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 19:20:49 by irakotom          #+#    #+#             */
-/*   Updated: 2024/03/02 19:22:36 by irakotom         ###   ########.fr       */
+/*   Created: 2024/11/18 11:37:31 by fxu-lin           #+#    #+#             */
+/*   Updated: 2024/11/18 11:37:34 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char const *s)
+char	*ft_strdup(const char *s)
 {
 	size_t	len;
 	char	*dup;

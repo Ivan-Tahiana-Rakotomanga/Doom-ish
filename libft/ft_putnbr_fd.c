@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irakotom <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fxu-lin <fxu-lin@student.42antananari      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 08:11:54 by irakotom          #+#    #+#             */
-/*   Updated: 2024/03/02 20:27:53 by irakotom         ###   ########.fr       */
+/*   Created: 2024/11/18 11:36:10 by fxu-lin           #+#    #+#             */
+/*   Updated: 2024/11/18 11:36:13 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
@@ -30,7 +31,5 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n % 10, fd);
 	}
 	else
-	{
 		ft_putchar_fd(n + '0', fd);
-	}
 }
