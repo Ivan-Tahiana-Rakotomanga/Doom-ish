@@ -6,41 +6,47 @@
 /*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 13:05:46 by irakotom          #+#    #+#             */
-/*   Updated: 2025/06/11 13:37:12 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/06/11 14:42:02 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/header.h"
 
-int ft_check_colors(char *color)
+int	ft_res_loop(char **colors)
 {
-	char ** colors;
-	int i;
-	int temp_color;
+	int	temp_color;
+	int	i;
 
-	colors = ft_split(color, ',');
 	i = 0;
 	temp_color = 0;
-	if (colors == NULL  || ft_strs_len(colors) != 3)
+	while (colors[i])
 	{
-		ft_putstr_fd("Error\nInvalid color format ", 2);
-		ft_putstr_fd("it must be three digits separated by a comma\n", 2);
-		return (0);
-	}
-	while(colors[i])
-	{
-		if(!ft_is_valid_number(colors[i]))
+		if (!ft_is_valid_number(colors[i]))
 		{
-		   ft_putstr_fd("Error\nColor values must be numbers\n", 2);
-		   return (0);
+			ft_putstr_fd("Error\nColor values must be numbers\n", 2);
+			return (0);
 		}
 		else
 		{
 			temp_color = ft_atoi(colors[i]);
-			if(!ft_valid_color(temp_color))
-				return(0);
+			if (!ft_valid_color(temp_color))
+				return (0);
 		}
 		i++;
+	}
+	return (1);
+}
+
+int	ft_check_colors(char *color)
+{
+	char	**colors;
+
+	colors = ft_split(color, ',');
+	if (colors == NULL || ft_strs_len(colors) != 3)
+	{
+		ft_putstr_fd("Error\nInvalid color format ", 2);
+		ft_putstr_fd("it must be three digits separated by a comma\n", 2);
+		return (0);
 	}
 	return (1);
 }

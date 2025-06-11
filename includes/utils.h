@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H 
-#define UTILS_H
+#ifndef UTILS_H
+# define UTILS_H
 
 int	ft_strcmp(char const *s1, char const *s2);
-int ft_is_space(char c);
-int ft_is_empty_str(char *str);
-int ft_strs_len(char **strs);
-int ft_is_valid_number(char *nbr);
+int	ft_is_space(char c);
+int	ft_is_empty_str(char *str);
+int	ft_strs_len(char **strs);
+int	ft_is_valid_number(char *nbr);
 
-#endif  
+#endif

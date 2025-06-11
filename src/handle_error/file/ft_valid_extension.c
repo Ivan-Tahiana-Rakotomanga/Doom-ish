@@ -12,8 +12,8 @@
 
 #include "../../../includes/header.h"
 
-void ft_display_error_extenstion(char *extension)
-{				
+void	ft_display_error_extenstion(char *extension)
+{
 	ft_putstr_fd("Error\nInvalid file extension", 2);
 	ft_putstr_fd(",it must end with '", 2);
 	ft_putstr_fd(extension, 2);

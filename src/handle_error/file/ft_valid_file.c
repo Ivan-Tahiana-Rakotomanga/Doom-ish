@@ -23,7 +23,7 @@ int	ft_valid_file(char *file)
 	}
 	if (access(file, R_OK) != 0)
 	{
-		ft_putstr_fd("Error\nPermission denied: ", 2);	
+		ft_putstr_fd("Error\nPermission denied: ", 2);
 		ft_putstr_fd(file, 2);
 		ft_putstr_fd("\n", 2);
 		return (0);

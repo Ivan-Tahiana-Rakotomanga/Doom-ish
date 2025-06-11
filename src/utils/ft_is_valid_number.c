@@ -12,18 +12,16 @@
 
 #include "../../includes/header.h"
 
-int ft_is_valid_number(char *nbr)
+int	ft_is_valid_number(char *nbr)
 {
-	int i;
+	int	i;
 
 	i = 0;
-
-	if(nbr[i] == '-' || nbr[i] == '+')
+	if (nbr[i] == '-' || nbr[i] == '+')
 		i++;
-
-	while(nbr[i])
+	while (nbr[i])
 	{
-		if(!ft_isdigit(nbr[i]))
+		if (!ft_isdigit(nbr[i]))
 			return (0);
 		i++;
 	}

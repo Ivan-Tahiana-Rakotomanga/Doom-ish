@@ -19,6 +19,6 @@ int	ft_valid_extension(char *file, char *extension);
 int	ft_is_duplicate_color(char *floor, char *ceiling);
 int	ft_valid_color(int color);
 int	ft_format_map_is_valid(char **map);
-int ft_check_colors(char *color);
-int ft_index_id(char *id);
+int	ft_check_colors(char *color);
+int	ft_index_id(char *id);
 #endif

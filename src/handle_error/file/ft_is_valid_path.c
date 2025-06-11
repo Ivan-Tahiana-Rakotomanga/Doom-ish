@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 #include "../../../includes/header.h"
 
-int ft_is_valid_path(char *path, char *extension)
+int	ft_is_valid_path(char *path, char *extension)
 {
-	if(!ft_valid_file(path))
+	if (!ft_valid_file(path))
 		return (0);
 	else if (!ft_valid_extension(path, extension))
 		return (0);

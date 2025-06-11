@@ -12,9 +12,9 @@
 
 #include "../../../includes/header.h"
 
-int ft_index_id(char *id)
+int	ft_index_id(char *id)
 {
-	if(ft_strcmp(id, "NO") == 0)
+	if (ft_strcmp(id, "NO") == 0)
 		return (1);
 	else if (ft_strcmp(id, "SO") == 0)
 		return (2);

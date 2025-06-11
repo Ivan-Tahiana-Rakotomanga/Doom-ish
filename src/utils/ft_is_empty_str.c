@@ -12,15 +12,15 @@
 
 #include "../../includes/header.h"
 
-int ft_is_empty_str(char *str)
+int	ft_is_empty_str(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
-		if(!ft_is_space(str[i]))
-			return(0);
+		if (!ft_is_space(str[i]))
+			return (0);
 		i++;
 	}
 	return (1);

@@ -10,13 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_strs_len(char **strs)
+int	ft_strs_len(char **strs)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(strs[i])
+	while (strs[i])
 		i++;
 	return (i);
 }
