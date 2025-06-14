@@ -13,8 +13,10 @@
 #ifndef HANDLE_ERROR_H
 # define HANDLE_ERROR_H
 
+int	ft_is_valid_path(char *path, char *extension);
 int	ft_valid_arg_count(int argc);
 int	ft_valid_file(char *file);
+int	ft_many_args_textures(char **lines);
 int	ft_valid_extension(char *file, char *extension);
 int	ft_is_duplicate_color(char *floor, char *ceiling);
 int	ft_valid_color(int color);

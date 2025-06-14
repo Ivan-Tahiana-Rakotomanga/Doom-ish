@@ -16,8 +16,8 @@
 # include "../libft/libft.h"
 # include "handle_error.h"
 # include "utils.h"
+# include <fcntl.h>
 # include <stdio.h>
 # include <unistd.h>
-# include <fcntl.h>
 
 #endif
