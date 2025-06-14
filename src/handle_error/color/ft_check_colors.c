@@ -40,13 +40,21 @@ int	ft_res_loop(char **colors)
 int	ft_check_colors(char *color)
 {
 	char	**colors;
+  char *temp;
+  int res;
 
-	colors = ft_split(color, ',');
+  res = 0;
+  temp = ft_strtrim(color," \n");
+	colors = ft_split(temp, ',');
+
 	if (colors == NULL || ft_strs_len(colors) != 3)
 	{
 		ft_putstr_fd("Error\nInvalid color format ", 2);
 		ft_putstr_fd("it must be three digits separated by a comma\n", 2);
 		return (0);
 	}
-	return (1);
+  res = ft_res_loop(colors);
+  free(temp);
+  ft_free_str(colors);
+	return (res);
 }

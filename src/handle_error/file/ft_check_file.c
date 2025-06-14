@@ -34,6 +34,7 @@ int	ft_handle_index_id(char *line)
 		if (!ft_check_colors(lines[1]))
 			return (0);
 	}
+  ft_free_str(lines);
 	return (value);
 }
 
@@ -57,14 +58,17 @@ int	ft_check_all_line(int fd)
 		return (0);
 	while (id < 6 && line) { if (!ft_is_empty_str(line))
 		{
+      
 			temp_value = ft_handle_index_id(line);
 			if (temp_value == 0)
 				return (0);
 			value = value + temp_value;
 			id++;
 		}
+    free(line);
 		line = ft_first_line(fd);
 	}
+  free(line);
 	if (value != 21)
 	{
 		ft_putstr_fd("Error\nDuplicate ID in file or it is missing ID\n", 2);
@@ -89,7 +93,6 @@ int	ft_check_file(char *file)
 	close(fd);
 	return (res);
 }
-
 int	main(int argc, char **argv)
 {
 	if (argc == 2)

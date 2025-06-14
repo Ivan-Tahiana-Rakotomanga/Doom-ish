@@ -20,5 +20,6 @@ int		ft_is_empty_str(char *str);
 int		ft_strs_len(char **strs);
 int		ft_is_valid_number(char *nbr);
 int		ft_error_fd(int fd);
+void	ft_free_str(char **str);
 
 #endif
