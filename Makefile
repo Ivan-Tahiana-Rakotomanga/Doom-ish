@@ -13,6 +13,8 @@
 NAME = cub3D 
 SRC =   src/handle_error/ft_valid_arg_count.c \
 		src/handle_error/file/ft_valid_extension.c \
+		src/handle_error/file/ft_many_args_textures.c \
+		src/handle_error/file/ft_check_file.c \
 		src/handle_error/file/ft_valid_file.c \
 		src/handle_error/file/ft_is_valid_path.c \
 		src/handle_error/color/ft_valid_color.c \
@@ -21,6 +23,7 @@ SRC =   src/handle_error/ft_valid_arg_count.c \
 		src/handle_error/id/ft_index_id.c \
 		src/handle_error/map/ft_format_map_is_valid.c \
 		src/utils/ft_strcmp.c \
+		src/utils/ft_free.c \
 		src/utils/ft_get_next_line.c \
 		src/utils/ft_space.c \
 		src/utils/ft_is_empty_str.c \

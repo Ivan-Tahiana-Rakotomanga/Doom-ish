@@ -22,7 +22,9 @@ int	ft_is_valid_number(char *nbr)
 	while (nbr[i])
 	{
 		if (!ft_isdigit(nbr[i]))
+    {
 			return (0);
+    }
 		i++;
 	}
 	return (1);
