@@ -1,8 +1,8 @@
-NO 1.xmp
-SO 1.xmp
-WE 1.xmp
-EA 1.xmp
+NO ./textures/1.xmp
+SO ./textures/2.xmp
+WE ./textures/3.xmp
+EA ./textures/4.xmp
 
-F 220,100,10
+F 220,100,1
 C 225,30,0
 

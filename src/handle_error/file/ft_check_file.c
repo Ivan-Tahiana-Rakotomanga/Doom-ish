@@ -17,23 +17,28 @@ int	ft_handle_index_id(char *line)
 {
 	int		value;
 	char	**lines;
+  char *temp_lines;
 
 	lines = ft_split(line, ' ');
 	value = ft_index_id(lines[0]);
+  temp_lines = NULL;
 	if (value == 0)
 		return (0);
+
+   temp_lines = ft_strtrim(lines[1]," \n");
 	if (value < 5)
 	{
-		if (ft_many_args_textures(lines)) /*|| !ft_is_valid_path(lines[1], ".xpm"))*/
+		if (ft_many_args_textures(lines) || !ft_valid_file(temp_lines))
 			return (0);
 	}
 	else if (value > 4)
 	{
 		if (ft_many_args_textures(lines))
 			return (0);
-		if (!ft_check_colors(lines[1]))
+		if (!ft_check_colors(temp_lines))
 			return (0);
 	}
+  free(temp_lines);
   ft_free_str(lines);
 	return (value);
 }
@@ -56,7 +61,7 @@ int	ft_check_all_line(int fd)
 	line = ft_first_line(fd);
 	if (!line)
 		return (0);
-	while (id < 6 && line) { if (!ft_is_empty_str(line))
+    while (id < 6 && line) { if (!ft_is_empty_str(line))
 		{
       
 			temp_value = ft_handle_index_id(line);
@@ -74,6 +79,10 @@ int	ft_check_all_line(int fd)
 		ft_putstr_fd("Error\nDuplicate ID in file or it is missing ID\n", 2);
 		return (0);
 	}
+
+
+
+
 	return (1);
 }
 
