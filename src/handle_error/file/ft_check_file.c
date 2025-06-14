@@ -13,7 +13,7 @@ char	*ft_first_line(int fd)
 	return (line);
 }
 
-int	ft_handle_index_id(char *line)
+int	ft_handle_index_id(char *line, char **one, char **two)
 {
 	int		value;
 	char	**lines;
@@ -37,6 +37,10 @@ int	ft_handle_index_id(char *line)
 			return (0);
 		if (!ft_check_colors(temp_lines))
 			return (0);
+      if(!*one)
+        *one = ft_strdup(temp_lines);
+      else if (!*two)
+        *two = ft_strdup(temp_lines);
 	}
   free(temp_lines);
   ft_free_str(lines);
@@ -56,20 +60,27 @@ int	ft_check_all_line(int fd)
 	int		value;
 	int		temp_value;
 	int		id;
+  char *one;
+  char *two;
 
+  one = NULL;
+  two = NULL;
 	ft_inits_int(&id, &temp_value, &value);
 	line = ft_first_line(fd);
 	if (!line)
 		return (0);
-    while (id < 6 && line) { if (!ft_is_empty_str(line))
-		{
+    while (id < 6 && line) 
+    { 
+
+      if (!ft_is_empty_str(line))
+		  {
       
-			temp_value = ft_handle_index_id(line);
-			if (temp_value == 0)
-				return (0);
-			value = value + temp_value;
-			id++;
-		}
+        temp_value = ft_handle_index_id(line, &one, &two);
+        if (temp_value == 0)
+          return (0);
+        value = value + temp_value;
+        id++;
+      }
     free(line);
 		line = ft_first_line(fd);
 	}
@@ -79,11 +90,11 @@ int	ft_check_all_line(int fd)
 		ft_putstr_fd("Error\nDuplicate ID in file or it is missing ID\n", 2);
 		return (0);
 	}
+  
+  if(ft_is_duplicate_color(one, two))
+     return (0);
 
-
-
-
-	return (1);
+  return (1);
 }
 
 int	ft_check_file(char *file)

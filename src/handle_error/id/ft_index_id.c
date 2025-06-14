@@ -26,6 +26,8 @@ int	ft_index_id(char *id)
 		return (5);
 	else if (ft_strcmp(id, "F") == 0)
 		return (6);
-	ft_putstr_fd("Error\nInvalid identifier\n", 2);
+	ft_putstr_fd("Error\nInvalid identifier: ", 2);
+  ft_putstr_fd(id, 2);
+  ft_putstr_fd("\n", 2);
 	return (0);
 }
