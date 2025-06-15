@@ -25,13 +25,13 @@ int	ft_is_duplicate_color(char *floor, char *ceiling)
 	index = 0;
 	while (colors_one[i])
 	{
-		if (ft_strcmp(colors_one[i], colors_two[i]) == 0)
+		if (ft_atoi(colors_one[i]) == ft_atoi(colors_two[i]))
 			index++;
 		i++;
 	}
 	if (index == 3)
 	{
-		ft_putstr_fd("Error\nFloor and ceiling colors must be different", 2);
+		ft_putstr_fd("Error\nFloor and ceiling colors must be different\n", 2);
 		return (1);
 	}
 	return (0);
