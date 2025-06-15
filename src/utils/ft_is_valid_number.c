@@ -21,7 +21,7 @@ int	ft_is_valid_number(char *nbr)
 		i++;
 	while (nbr[i])
 	{
-		if (!ft_isdigit(nbr[i]))
+		if (!ft_isdigit(nbr[i]) && !ft_is_space(nbr[i]))
 		{
 			return (0);
 		}
