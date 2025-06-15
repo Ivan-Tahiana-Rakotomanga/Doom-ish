@@ -23,7 +23,9 @@ int	ft_res_loop(char **colors)
 	{
 		if (!ft_is_valid_number(colors[i]))
 		{
-			ft_putstr_fd("Error\nColor values must be numbers\n", 2);
+			ft_putstr_fd("Error\nColor values must be numbers not:", 2);
+			ft_putstr_fd(colors[i], 2);
+			ft_putstr_fd("\n", 2);
 			return (0);
 		}
 		else
@@ -40,21 +42,20 @@ int	ft_res_loop(char **colors)
 int	ft_check_colors(char *color)
 {
 	char	**colors;
-  char *temp;
-  int res;
+	char	*temp;
+	int		res;
 
-  res = 0;
-  temp = ft_strtrim(color," \n");
+	res = 0;
+	temp = ft_strtrim(color, " \n");
 	colors = ft_split(temp, ',');
-
 	if (colors == NULL || ft_strs_len(colors) != 3)
 	{
 		ft_putstr_fd("Error\nInvalid color format ", 2);
 		ft_putstr_fd("it must be three digits separated by a comma\n", 2);
 		return (0);
 	}
-  res = ft_res_loop(colors);
-  free(temp);
-  ft_free_str(colors);
+	res = ft_res_loop(colors);
+	free(temp);
+	ft_free_str(colors);
 	return (res);
 }

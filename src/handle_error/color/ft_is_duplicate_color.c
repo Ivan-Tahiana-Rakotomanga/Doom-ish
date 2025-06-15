@@ -25,8 +25,8 @@ int	ft_is_duplicate_color(char *floor, char *ceiling)
 	index = 0;
 	while (colors_one[i])
 	{
-      if(ft_atoi(colors_one[i]) == ft_atoi(colors_two[i]))
-         index++;
+		if (ft_atoi(colors_one[i]) == ft_atoi(colors_two[i]))
+			index++;
 		i++;
 	}
 	if (index == 3)

@@ -1,3 +1,19 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 NO ./textures/1.xmp
 
 
@@ -22,6 +38,6 @@ WE ./textures/3.xmp
 
 EA ./textures/4.xmp
 
-F 220,100,01
+F 220,1fds00,01
 C 220,100,21
 
