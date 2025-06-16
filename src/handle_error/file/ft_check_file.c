@@ -1,55 +1,4 @@
 #include "../../../includes/header.h"
-#include <stdio.h>
-
-char	*ft_first_line(int fd)
-{
-	char	*line;
-
-	line = ft_get_next_line(fd);
-	if (!line)
-	{
-		ft_putstr_fd("Error\n This file is empty\n", 2);
-		return (NULL);
-	}
-	return (line);
-}
-
-int	ft_handle_index_id(char *line, char **one, char **two)
-{
-	int		value;
-	char	**lines;
-	char	*temp_lines;
-
-	lines = ft_split(line, ' ');
-	value = ft_index_id(lines[0]);
-	temp_lines = NULL;
-	if (value == 0)
-  {
-    ft_free_str(lines);
-		return (0);
-  }
-	temp_lines = ft_strtrim(lines[1], " \n");
-	if (value < 5)
-	{
-		if (!ft_valid_file(temp_lines))
-      return (free(temp_lines), ft_free_str(lines), 0);
-    free(temp_lines);
-	}
-	else if (value > 4)
-	{
-    free(temp_lines);
-    temp_lines = line;
-    temp_lines++;
-    
-		if (!ft_check_colors(temp_lines))
-      return (ft_free_str(lines), 0);
-		if (!*one)
-			*one = ft_strdup(temp_lines);
-		else if (!*two)
-			*two = ft_strdup(temp_lines);
-	}
-	return (ft_free_str(lines), value);
-}
 
 int	ft_loop_check_line(char **line, int fd, char **one, char **two)
 {
@@ -119,6 +68,7 @@ int	ft_check_file(char *file)
 	close(fd);
 	return (res);
 }
+
 int	main(int argc, char **argv)
 {
 	if (argc == 2)

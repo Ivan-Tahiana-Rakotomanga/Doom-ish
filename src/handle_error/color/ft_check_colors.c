@@ -48,8 +48,6 @@ int	ft_check_colors(char *color)
 	res = 0;
 	temp = ft_strtrim(color, " \n");
 	colors = ft_split(temp, ',');
-
-
 	if (colors == NULL || ft_strs_len(colors) != 3)
 	{
 		ft_putstr_fd("Error\nInvalid color format ", 2);

@@ -1,6 +1,4 @@
 # cub3D
 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
 
-#a ne pas oublier
-Enelver le main du get_next_line
 

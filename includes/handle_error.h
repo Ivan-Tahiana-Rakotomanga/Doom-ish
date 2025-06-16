@@ -13,14 +13,16 @@
 #ifndef HANDLE_ERROR_H
 # define HANDLE_ERROR_H
 
-int	ft_is_valid_path(char *path, char *extension);
-int	ft_valid_arg_count(int argc);
-int	ft_valid_file(char *file);
-int	ft_many_args_textures(char **lines);
-int	ft_valid_extension(char *file, char *extension);
-int	ft_is_duplicate_color(char *floor, char *ceiling);
-int	ft_valid_color(int color);
-int	ft_format_map_is_valid(char **map);
-int	ft_check_colors(char *color);
-int	ft_index_id(char *id);
+int		ft_is_valid_path(char *path, char *extension);
+int		ft_valid_arg_count(int argc);
+int		ft_valid_file(char *file);
+int		ft_many_args_textures(char **lines);
+int		ft_valid_extension(char *file, char *extension);
+int		ft_is_duplicate_color(char *floor, char *ceiling);
+int		ft_valid_color(int color);
+int		ft_format_map_is_valid(char **map);
+int		ft_check_colors(char *color);
+int		ft_index_id(char *id);
+char	*ft_first_line(int fd);
+int		ft_handle_index_id(char *line, char **one, char **two);
 #endif

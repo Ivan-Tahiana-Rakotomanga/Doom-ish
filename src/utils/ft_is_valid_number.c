@@ -17,6 +17,8 @@ int	ft_is_valid_number(char *nbr)
 	int	i;
 
 	i = 0;
+  while(nbr[i] && ft_is_space(nbr[i]))
+    i++;
 	if (nbr[i] == '-' || nbr[i] == '+')
 		i++;
 	while (nbr[i])
