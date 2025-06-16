@@ -14,9 +14,7 @@
 
 int	ft_is_orientation(char c)
 {
-	if (c == 'N' || c == 'S' || c == 'W' || c == 'E')
-		return (1);
-	return (0);
+	return (c == 'N' || c == 'S' || c == 'W' || c == 'E');
 }
 
 int	ft_is_format_map(char c)

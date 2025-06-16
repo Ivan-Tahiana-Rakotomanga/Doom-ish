@@ -23,6 +23,7 @@ SRC =   src/handle_error/ft_valid_arg_count.c \
 		src/handle_error/color/ft_check_colors.c \
 		src/handle_error/id/ft_index_id.c \
 		src/handle_error/map/ft_format_map_is_valid.c \
+		src/handle_error/map/ft_flood_fill.c \
 		src/utils/ft_strcmp.c \
 		src/utils/ft_free.c \
 		src/utils/ft_get_next_line.c \

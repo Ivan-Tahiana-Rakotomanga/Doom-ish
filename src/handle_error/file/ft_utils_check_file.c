@@ -15,11 +15,10 @@ char	*ft_first_line(int fd)
 
 int	ft_check_color_part(char **one, char **two, char *line)
 {
-  char *temp_line;
+	char	*temp_line;
 
-  temp_line = line;
+	temp_line = line;
 	temp_line++;
-
 	if (!ft_check_colors(temp_line))
 		return (0);
 	if (!*one)
@@ -49,7 +48,7 @@ int	ft_handle_index_id(char *line, char **one, char **two)
 	}
 	else if (value > 4)
 	{
-    free(temp_lines);
+		free(temp_lines);
 		if (!ft_check_color_part(one, two, line))
 			return (ft_free_str(lines), 0);
 	}

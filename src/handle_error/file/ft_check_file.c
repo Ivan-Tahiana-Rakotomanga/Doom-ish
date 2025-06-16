@@ -69,9 +69,9 @@ int	ft_check_file(char *file)
 	return (res);
 }
 
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	if (argc == 2)
 		printf("Ito %d\n", ft_check_file(argv[1]));
 	return (0);
-}
+}*/
