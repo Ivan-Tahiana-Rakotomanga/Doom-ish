@@ -59,12 +59,12 @@ int	ft_flood_fill(int x, int y, char **map, int width, int height)
 {
 	if (x < 0 || y < 0 || x >= height || y >= width)
 		return (0);
-	if (map[x][y] == '1' || map[x][y] == '\0')
+	if (map[x][y] == ' ' || map[x][y] == '\0')
 		return (0);
 	if (map[x][y] == '1' || map[x][y] == 'x')
 		return (1);
 	map[x][y] = 'x';
-	return (ft_flood_fill(x + 1, y, map, width, height) && ft_flood_fill(x, y,
+	return (ft_flood_fill(x + 1, y, map, width, height) && ft_flood_fill(x - 1, y,
 			map, width, height) && ft_flood_fill(x, y + 1, map, width, height)
 		&& ft_flood_fill(x, y - 1, map, width, height));
 }
@@ -72,7 +72,7 @@ int	ft_flood_fill(int x, int y, char **map, int width, int height)
 int	main(void)
 {
 	int		height;
-	char	*original_map[] = {"111111", "100001", "1111N1", "111111", NULL};
+	char	*original_map[] = {"111111", "100000", "1111N1", "111111", NULL};
 	int		width;
 	char	**map;
 	int		x_start;
