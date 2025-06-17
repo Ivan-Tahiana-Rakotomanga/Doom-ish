@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_flood_fill.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/17 08:28:38 by fxu-lin           #+#    #+#             */
+/*   Updated: 2025/06/17 08:28:38 by fxu-lin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../../includes/header.h"
 
 void	ft_print_map(char **map)
@@ -64,9 +76,9 @@ int	ft_flood_fill(int x, int y, char **map, int width, int height)
 	if (map[x][y] == '1' || map[x][y] == 'x')
 		return (1);
 	map[x][y] = 'x';
-	return (ft_flood_fill(x + 1, y, map, width, height) && ft_flood_fill(x - 1, y,
-			map, width, height) && ft_flood_fill(x, y + 1, map, width, height)
-		&& ft_flood_fill(x, y - 1, map, width, height));
+	return (ft_flood_fill(x + 1, y, map, width, height) && ft_flood_fill(x - 1,
+			y, map, width, height) && ft_flood_fill(x, y + 1, map, width,
+			height) && ft_flood_fill(x, y - 1, map, width, height));
 }
 
 int	main(void)
