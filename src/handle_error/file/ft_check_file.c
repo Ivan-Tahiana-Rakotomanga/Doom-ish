@@ -64,25 +64,26 @@ int	ft_check_all_line(int fd)
 int	ft_check_file(char *file, char ***map_str)
 {
 	int	fd;
-	int	res;
 	t_map *map;
 
 	fd = 0;
 	map = NULL;
-	res = 0;
 	if (!ft_is_valid_path(file, ".cub"))
 		return (0);
+
 	fd = open(file, O_RDONLY);
 	if (ft_error_fd(fd))
 		return (0);
 	if(!ft_check_all_line(fd))
 		return (0);
+
+		
 	if(!ft_fill_map(&map, fd))
 		return (0);
 	*map_str = ft_map_to_strs(map);
 	ft_free_map(&map);
 	close(fd);
-	return (res);
+	return (1);
 }
 void	ft_print_map(t_map *map)
 {
@@ -113,13 +114,8 @@ int main(int argc, char **argv)
 	{
 		char **map;
 		map = NULL;
-
-
 		if(!ft_check_file(argv[1], &map))
-		{
 			return (0);
-		}
-		
 		ft_print_strs(map);
 		ft_free_str(map);
 	}
