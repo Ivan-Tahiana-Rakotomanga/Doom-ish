@@ -6,15 +6,12 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 08:26:46 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/17 08:26:46 by fxu-lin          ###   ########.fr       */
+/*   Updated: 2025/06/17 16:31:26 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/header.h"
-
-int	ft_loop_check_line(char **line, int fd, char **one, char **two)
-{
-	int	value;
+int	ft_loop_check_line(char **line, int fd, char **one, char **two) { int	value;
 	int	id;
 	int	temp_value;
 
@@ -64,21 +61,69 @@ int	ft_check_all_line(int fd)
 	return (free(one), free(two), 1);
 }
 
-int	ft_check_file(char *file)
+int	ft_check_file(char *file, char ***map_str)
 {
 	int	fd;
 	int	res;
+	t_map *map;
 
 	fd = 0;
+	map = NULL;
 	res = 0;
 	if (!ft_is_valid_path(file, ".cub"))
 		return (0);
 	fd = open(file, O_RDONLY);
 	if (ft_error_fd(fd))
 		return (0);
-	res = ft_check_all_line(fd);
+	if(!ft_check_all_line(fd))
+		return (0);
+	if(!ft_fill_map(&map, fd))
+		return (0);
+	*map_str = ft_map_to_strs(map);
+	ft_free_map(&map);
 	close(fd);
 	return (res);
+}
+void	ft_print_map(t_map *map)
+{
+	printf("\nIto ny print an'ilay map\n");
+	while (map)
+	{
+		printf("%s\n", map->line);
+		map = map->next;
+	}
+	printf("\n");
+}
+void ft_print_strs(char **strs)
+{
+	int i;
+	i = 0;
+	printf("\nIto ny print an'ilay strs\n");
+	while(strs[i])
+	{
+		printf("%s\n", strs[i]);
+		i++;
+	}
+	printf("\n");
+}
+
+int main(int argc, char **argv)
+{
+	if(argc == 2)
+	{
+		char **map;
+		map = NULL;
+
+
+		if(!ft_check_file(argv[1], &map))
+		{
+			return (0);
+		}
+		
+		ft_print_strs(map);
+		ft_free_str(map);
+	}
+	return (0);
 }
 
 /*int	main(int argc, char **argv)

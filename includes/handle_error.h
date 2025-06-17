@@ -6,7 +6,7 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 09:43:54 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/11 14:15:34 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/06/17 15:15:10 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ int		ft_index_id(char *id);
 char	*ft_first_line(int fd);
 int		ft_handle_index_id(char *line, char **one, char **two);
 int		ft_is_orientation(char c);
+int	ft_check_under_map(t_map *map);
 #endif

@@ -6,12 +6,13 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 08:28:38 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/17 08:28:38 by fxu-lin          ###   ########.fr       */
+/*   Updated: 2025/06/17 12:57:41 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/header.h"
 
+/*
 void	ft_print_map(char **map)
 {
 	int	i;
@@ -81,8 +82,6 @@ int	ft_flood_fill(int x, int y, char **map, int width, int height)
 			height) && ft_flood_fill(x, y - 1, map, width, height));
 }
 
-int	main(void)
-{
 	int		height;
 	char	*original_map[] = {"111111", "100000", "1111N1", "111111", NULL};
 	int		width;
@@ -113,4 +112,30 @@ int	main(void)
 		printf("Erreur\n");
 	ft_free_str(map);
 	return (0);
-}
+}*/
+
+
+
+
+/*int main(int argc, char **argv)
+{
+	if(argc == 2)
+	{
+		int	fd;
+		t_map *map;
+
+		map = NULL;
+		fd = open(argv[1], O_RDONLY);
+
+
+		if(!ft_fill_map(&map,fd))
+			return (0);
+
+
+		ft_print_map(map);
+		ft_free_map(&map);
+		close(fd);
+
+	}
+	return (0);
+}*/

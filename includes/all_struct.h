@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   all_struct.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 13:02:08 by irakotom          #+#    #+#             */
-/*   Updated: 2025/06/17 13:20:38 by irakotom         ###   ########.fr       */
+/*   Created: 2025/06/17 13:17:17 by irakotom          #+#    #+#             */
+/*   Updated: 2025/06/17 13:19:21 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef ALL_STRUCT_H
+# define ALL_STRUCT_H
 
-# include "../libft/libft.h"
-# include "all_struct.h"
-# include "utils.h"
-# include "map.h"
-# include "handle_error.h"
-# include <fcntl.h>
-# include <stdio.h>
-# include <unistd.h>
+typedef struct s_map
+{
+	char			*line;
+	struct s_map	*next;
+}					t_map;
 
 #endif

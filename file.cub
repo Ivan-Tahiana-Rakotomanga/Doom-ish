@@ -1,8 +1,11 @@
-
 NO ./textures/1.xmp
-SO ./textures/2.xmp 
-WE ./textures/3.xmp 
-EA ./textures/4.xmp
+SO ./textures/1.xmp
+WE ./textures/1.xmp
+EA ./textures/2.xmp
 
-F  221,111,21
-C  221,110,11
+F 220,100,0
+C 220 ,30,0
+
+111111111
+ 10000N001
+111111111
