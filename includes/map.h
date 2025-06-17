@@ -21,7 +21,7 @@ int		ft_get_height_map(t_map *map);
 int		ft_get_width_map(t_map *map);
 int		ft_characters_valid_map(char *line);
 int		ft_character_valid(char c);
-int	ft_fill_map(t_map **map, int fd);
-char ** ft_map_to_strs(t_map *map);
+int		ft_fill_map(t_map **map, int fd);
+char	**ft_map_to_strs(t_map *map);
 
 #endif

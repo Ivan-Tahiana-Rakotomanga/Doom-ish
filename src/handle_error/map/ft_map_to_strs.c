@@ -12,7 +12,7 @@
 
 #include "../../../includes/header.h"
 
-int ft_fill_zero(int i, int width, char *res)
+int	ft_fill_zero(int i, int width, char *res)
 {
 	while (i < width)
 	{
@@ -34,7 +34,7 @@ char	*ft_fill_zero_line(char *line, int width)
 	while (line[i] && i < width)
 	{
 		if (ft_is_space(line[i]))
-				res[i] = '0';
+			res[i] = '0';
 		else
 			res[i] = line[i];
 		i++;
@@ -44,23 +44,23 @@ char	*ft_fill_zero_line(char *line, int width)
 	return (res);
 }
 
-char ** ft_map_to_strs(t_map *map)
+char	**ft_map_to_strs(t_map *map)
 {
-	int heigth;
-	int width;
-	char **strs;
-	int i;
+	int		heigth;
+	int		width;
+	char	**strs;
+	int		i;
 
 	i = 0;
 	heigth = ft_get_height_map(map);
 	width = ft_get_width_map(map);
-	strs = (char **) malloc(sizeof(char *) * (heigth + 1));
-	if(!strs)
+	strs = (char **)malloc(sizeof(char *) * (heigth + 1));
+	if (!strs)
 		return (NULL);
-	while(map)
+	while (map)
 	{
-		strs[i] = ft_fill_zero_line(map->line, width); 
-		if(strs[i]  == NULL)
+		strs[i] = ft_fill_zero_line(map->line, width);
+		if (strs[i] == NULL)
 		{
 			ft_free_str(strs);
 			return (NULL);
@@ -71,5 +71,3 @@ char ** ft_map_to_strs(t_map *map)
 	strs[i] = NULL;
 	return (strs);
 }
-
-

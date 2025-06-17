@@ -114,9 +114,6 @@ int	ft_flood_fill(int x, int y, char **map, int width, int height)
 	return (0);
 }*/
 
-
-
-
 /*int main(int argc, char **argv)
 {
 	if(argc == 2)

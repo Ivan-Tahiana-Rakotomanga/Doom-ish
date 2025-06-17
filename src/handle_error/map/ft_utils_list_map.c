@@ -27,14 +27,13 @@ int	ft_get_height_map(t_map *map)
 
 int	ft_get_width_map(t_map *map)
 {
-	int	max;
-	int	now;
-	char *temp;
+	int		max;
+	int		now;
+	char	*temp;
 
 	max = 0;
 	now = 0;
-	temp =  NULL;
-	
+	temp = NULL;
 	while (map)
 	{
 		temp = ft_strtrim(map->line, "\n");
@@ -47,32 +46,41 @@ int	ft_get_width_map(t_map *map)
 	return (max);
 }
 
+int	ft_add_in_map(char *line, t_map **map)
+{
+	if (!ft_characters_valid_map(line))
+		return (0);
+	if (ft_is_empty_str(line))
+	{
+		ft_putstr_fd("Error\nThere is a line in the middle of the map\n", 2);
+		return (0);
+	}
+	else
+	{
+		if (*map == NULL)
+			*map = ft_new_map(ft_strtrim(line, "\n"));
+		else
+			ft_map_add_back(map, ft_new_map(ft_strtrim(line, "\n")));
+	}
+	return (1);
+}
+
 int	ft_fill_map(t_map **map, int fd)
 {
 	char	*line;
 
 	line = ft_get_next_line(fd);
-
-	while(line && ft_is_empty_str(line))
+	while (line && ft_is_empty_str(line))
 	{
 		free(line);
-		 line = ft_get_next_line(fd);
+		line = ft_get_next_line(fd);
 	}
 	while (line)
 	{
-		if (!ft_characters_valid_map(line))
-			return (free(line), 0);
-		if (ft_is_empty_str(line))
+		if (!ft_add_in_map(line, map))
 		{
-			ft_putstr_fd("Error\nThere is a line in the middle of the map\n", 2);
-			return (free(line), 0);
-		}
-		else 
-		{
-			if (*map == NULL)
-				*map = ft_new_map(ft_strtrim(line, "\n"));
-			else
-				ft_map_add_back(map, ft_new_map(ft_strtrim(line, "\n")));
+			free(line);
+			return (0);
 		}
 		free(line);
 		line = ft_get_next_line(fd);

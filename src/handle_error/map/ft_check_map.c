@@ -21,7 +21,8 @@ int	ft_have_space_btw_map(char *line, int i, int len)
 	after = i + 1;
 	if (i > 0 && i < len)
 	{
-		if(!ft_is_space(line[before]) && !ft_is_space(line[after]))
+	printf("tonga ato line=%s ny c = %c %c\n",line, line[before], line[after]);
+		if (!ft_is_space(line[before]) && !ft_is_space(line[after]))
 		{
 			if (ft_character_valid(line[before]) && ft_character_valid(line[after]))
 			{
@@ -30,7 +31,6 @@ int	ft_have_space_btw_map(char *line, int i, int len)
 				return (1);
 			}
 		}
-		
 	}
 	return (0);
 }
@@ -44,7 +44,6 @@ int	ft_check_per_line_map(char *line, int *orientation)
 	i = 0;
 	while (line[i])
 	{
-
 		if (ft_is_space(line[i]) && ft_have_space_btw_map(line, i, len))
 			return (0);
 		if (ft_is_orientation(line[i]))
@@ -77,4 +76,3 @@ int	ft_check_under_map(t_map *map)
 	}
 	return (1);
 }
-
