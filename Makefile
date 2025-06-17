@@ -6,7 +6,7 @@
 #    By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/04 12:56:49 by irakotom          #+#    #+#              #
-#    Updated: 2025/06/11 14:08:20 by irakotom         ###   ########.fr        #
+#    Updated: 2025/06/17 12:27:08 by fxu-lin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,13 @@ SRC =   src/handle_error/ft_valid_arg_count.c \
 		src/handle_error/id/ft_index_id.c \
 		src/handle_error/map/ft_format_map_is_valid.c \
 		src/handle_error/map/ft_flood_fill.c \
+		src/mlx/action/ft_close_window.c \
+		src/mlx/action/ft_hook.c \
+		src/mlx/action/ft_key_press.c \
+		src/mlx/action/ft_mlx_destroy.c \
+		src/mlx/color/ft_display_color.c \
+		src/mlx/mlx_init/ft_free_mlx.c \
+		src/mlx/mlx_init/ft_init_mlx.c \
 		src/utils/ft_strcmp.c \
 		src/utils/ft_free.c \
 		src/utils/ft_get_next_line.c \
@@ -36,14 +43,16 @@ SRC =   src/handle_error/ft_valid_arg_count.c \
 OBJ = $(SRC:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I./includes -g
-LDFLAGS = -lreadline
+MLX = minilibx-linux/libmlx.a
+INC = -I minilibx-linux
+MLX_FLAG = -Lminilibx-linux -lmlx -lm -lX11 -lXext
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a 
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(CFLAGS) $^ $(LDFLAGS) -o $@
+	$(CC) $(CFLAGS) $(INC) $^ $(MLX) $(MLX_FLAG) -o $@
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)

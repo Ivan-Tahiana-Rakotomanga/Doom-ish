@@ -81,36 +81,36 @@ int	ft_flood_fill(int x, int y, char **map, int width, int height)
 			height) && ft_flood_fill(x, y - 1, map, width, height));
 }
 
-int	main(void)
-{
-	int		height;
-	char	*original_map[] = {"111111", "100000", "1111N1", "111111", NULL};
-	int		width;
-	char	**map;
-	int		x_start;
-	int		y_start;
-	int		result;
-
-	height = 4;
-	printf("Début de la map --\n");
-	ft_print_map(original_map);
-	width = ft_strlen(original_map[0]);
-	map = ft_copy_map(original_map, height);
-	x_start = -1;
-	y_start = -1;
-	ft_find_start(&x_start, &y_start, height, width, map);
-	printf("Ito ny x=%d ny y=%d\n", x_start, y_start);
-	if (x_start == -1)
-	{
-		printf("Tsisy orientation\n");
-		return (0);
-	}
-	map[x_start][y_start] = '0';
-	result = ft_flood_fill(x_start, y_start, map, width, height);
-	if (result)
-		printf("Midy tsara\n");
-	else
-		printf("Erreur\n");
-	ft_free_str(map);
-	return (0);
-}
+/*int	main(void)*/
+/*{*/
+/*	int		height;*/
+/*	char	*original_map[] = {"111111", "100000", "1111N1", "111111", NULL};*/
+/*	int		width;*/
+/*	char	**map;*/
+/*	int		x_start;*/
+/*	int		y_start;*/
+/*	int		result;*/
+/**/
+/*	height = 4;*/
+/*	printf("Début de la map --\n");*/
+/*	ft_print_map(original_map);*/
+/*	width = ft_strlen(original_map[0]);*/
+/*	map = ft_copy_map(original_map, height);*/
+/*	x_start = -1;*/
+/*	y_start = -1;*/
+/*	ft_find_start(&x_start, &y_start, height, width, map);*/
+/*	printf("Ito ny x=%d ny y=%d\n", x_start, y_start);*/
+/*	if (x_start == -1)*/
+/*	{*/
+/*		printf("Tsisy orientation\n");*/
+/*		return (0);*/
+/*	}*/
+/*	map[x_start][y_start] = '0';*/
+/*	result = ft_flood_fill(x_start, y_start, map, width, height);*/
+/*	if (result)*/
+/*		printf("Midy tsara\n");*/
+/*	else*/
+/*		printf("Erreur\n");*/
+/*	ft_free_str(map);*/
+/*	return (0);*/
+/*}*/
