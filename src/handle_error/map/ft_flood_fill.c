@@ -108,7 +108,7 @@ int	ft_map_is_closed(char **map)
 	copy_map[x_start][y_start] = '0';
 	if (!ft_flood_fill(x_start, y_start, copy_map, height))
 	{
-		ft_putstr_fd("Error\nThe map is not closed", 2);
+		ft_putstr_fd("Error\nThe map is not closed\n", 2);
 		res = 0;
 	}
 	ft_free_str(copy_map);
