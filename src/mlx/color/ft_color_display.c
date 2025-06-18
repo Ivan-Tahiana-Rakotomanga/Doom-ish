@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   all_struct.h                                       :+:      :+:    :+:   */
+/*   ft_color_display.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 13:16:38 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/18 16:40:19 by fxu-lin          ###   ########.fr       */
+/*   Created: 2025/06/17 16:06:00 by fxu-lin           #+#    #+#             */
+/*   Updated: 2025/06/18 16:44:36 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "../../../includes/header.h"
 
-#ifndef ALL_STRUCT_H
-# define ALL_STRUCT_H
-
-typedef struct s_map
+void	ft_color_display(t_mlx *mlx)
 {
-	char			*line;
-	struct s_map	*next;
-}					t_map;
+	int	i;
+	int	j;
 
-typedef struct s_mlx
-{
-	void	*mlx;
-	void	*win;
-	void	*img;
-	void	*adr;
-	int		width;
-	int		color;
-	int		height;
-	int		bpp;
-	int		s_line;
-	int		endian;
-	char	**map;
-	double	change_x;
-	double	change_y;
-}			t_mlx;
-
-#endif
+	i = 0;
+	while (mlx->map[i])
+	{
+		j = 0;
+		while (mlx->map[i][j])
+		{
+			ft_add_color_pixels(mlx, mlx->map[i][j]);
+			ft_put_pixels(mlx, i, j);
+			j++;
+		}
+		i++;
+	}
+	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
+}

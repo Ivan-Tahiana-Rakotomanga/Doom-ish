@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   all_struct.h                                       :+:      :+:    :+:   */
+/*   ft_key_press.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 13:16:38 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/18 16:40:19 by fxu-lin          ###   ########.fr       */
+/*   Created: 2025/06/17 14:57:31 by fxu-lin           #+#    #+#             */
+/*   Updated: 2025/06/17 15:01:20 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALL_STRUCT_H
-# define ALL_STRUCT_H
+#include "../../../includes/header.h"
 
-typedef struct s_map
+int	ft_key_press(int code, t_mlx *mlx)
 {
-	char			*line;
-	struct s_map	*next;
-}					t_map;
-
-typedef struct s_mlx
-{
-	void	*mlx;
-	void	*win;
-	void	*img;
-	void	*adr;
-	int		width;
-	int		color;
-	int		height;
-	int		bpp;
-	int		s_line;
-	int		endian;
-	char	**map;
-	double	change_x;
-	double	change_y;
-}			t_mlx;
-
-#endif
+	if (code == 65307)
+		ft_mlx_destroy(mlx);
+	else if (code == 100)
+		mlx->change_x = mlx->change_x - 0.5;
+	else if (code == 97)
+		mlx->change_x = mlx->change_x + 0.5;
+	else if (code == 119)
+		mlx->change_y = mlx->change_y + 0.5;
+	else if (code == 115)
+		mlx->change_y = mlx->change_y - 0.5;
+	return (0);
+}

@@ -1,39 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   all_struct.h                                       :+:      :+:    :+:   */
+/*   ft_init_key.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 13:16:38 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/18 16:40:19 by fxu-lin          ###   ########.fr       */
+/*   Created: 2025/06/18 16:03:21 by fxu-lin           #+#    #+#             */
+/*   Updated: 2025/06/18 16:03:44 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALL_STRUCT_H
-# define ALL_STRUCT_H
+#include "../../../includes/header.h"
 
-typedef struct s_map
+void	ft_init_key(t_mlx *mlx)
 {
-	char			*line;
-	struct s_map	*next;
-}					t_map;
-
-typedef struct s_mlx
-{
-	void	*mlx;
-	void	*win;
-	void	*img;
-	void	*adr;
-	int		width;
-	int		color;
-	int		height;
-	int		bpp;
-	int		s_line;
-	int		endian;
-	char	**map;
-	double	change_x;
-	double	change_y;
-}			t_mlx;
-
-#endif
+	mlx->change_x = 0.0;
+	mlx->change_y = 0.0;
+}
