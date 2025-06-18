@@ -53,6 +53,7 @@ int	ft_add_in_map(char *line, t_map **map)
 	if (ft_is_empty_str(line))
 	{
 		ft_putstr_fd("Error\nThere is a line in the middle of the map\n", 2);
+		ft_free_map(map);
 		return (0);
 	}
 	else

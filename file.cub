@@ -3,9 +3,9 @@ SO ./textures/1.xmp
 WE ./textures/1.xmp
 EA ./textures/2.xmp
 
-F 220,100,0
-C 220 ,30,0
+F     250,  100,        0
+C 250,1,                                          0
 
 111111111
-1000000N
+    100000N01
 111111111

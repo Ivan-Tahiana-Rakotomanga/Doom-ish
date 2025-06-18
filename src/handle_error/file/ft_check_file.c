@@ -91,7 +91,7 @@ int	ft_check_file(char *file, char ***map_str)
 	return (1);
 }
 
-/*void	ft_print_strs(char **strs)
+void	ft_print_strs(char **strs)
 {
 	int	i;
 
@@ -129,7 +129,7 @@ int	main(int argc, char **argv)
 		ft_free_str(map);
 	}
 	return (0);
-}*/
+}
 
 /*int	main(int argc, char **argv)
 {

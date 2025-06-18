@@ -21,7 +21,7 @@ int	ft_res_loop(char **colors)
 	temp_color = 0;
 	while (colors[i])
 	{
-		if (!ft_is_valid_number(colors[i]))
+		if (!ft_is_valid_number(colors[i]) || ft_is_empty_str(colors[i]))
 		{
 			ft_putstr_fd("Error\nColor values must be numbers not:", 2);
 			ft_putstr_fd(colors[i], 2);
@@ -51,7 +51,11 @@ int	ft_check_colors(char *color)
 	if (colors == NULL || ft_strs_len(colors) != 3)
 	{
 		ft_putstr_fd("Error\nInvalid color format ", 2);
-		ft_putstr_fd("it must be three digits separated by a comma\n", 2);
+		ft_putstr_fd("it must be three digits separated by a comma not ", 2);
+		ft_putstr_fd(temp, 2);
+		ft_putstr_fd(" \n", 2);
+		free(temp);
+	    ft_free_str(colors);
 		return (0);
 	}
 	res = ft_res_loop(colors);

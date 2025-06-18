@@ -18,7 +18,7 @@ int	ft_have_space_btw_map(char *line, int i)
 		i++;
 	if (line[i])
 	{
-		ft_putstr_fd("Error\nThere is one or more spaces", 2);
+		ft_putstr_fd("Error\nThere is one or more spaces ", 2);
 		ft_putstr_fd("in the middle of the map\n", 2);
 		return (0);
 	}
