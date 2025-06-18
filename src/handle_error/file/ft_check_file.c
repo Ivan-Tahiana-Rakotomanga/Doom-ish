@@ -80,11 +80,8 @@ int	ft_check_file(char *file, char ***map_str)
 		return (ft_free_map(&map), close(fd), 0);
 	*map_str = ft_map_to_strs(map);
 	ft_free_map(&map);
-
-	if(!ft_map_is_closed(*map_str))
+	if (!ft_map_is_closed(*map_str))
 		return (ft_free_str(*map_str), close(fd), 0);
 	close(fd);
 	return (1);
 }
-
-

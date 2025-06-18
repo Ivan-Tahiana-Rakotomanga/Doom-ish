@@ -114,4 +114,3 @@ int	ft_map_is_closed(char **map)
 	ft_free_str(copy_map);
 	return (res);
 }
-

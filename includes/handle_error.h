@@ -28,5 +28,5 @@ int		ft_handle_index_id(char *line, char **one, char **two);
 int		ft_is_orientation(char c);
 int		ft_check_under_map(t_map *map);
 int		ft_check_file(char *file, char ***map_str);
-int	ft_map_is_closed(char **map);
+int		ft_map_is_closed(char **map);
 #endif
