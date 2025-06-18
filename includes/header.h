@@ -13,15 +13,15 @@
 #ifndef HEADER_H
 # define HEADER_H
 
-#include "../minilibx-linux/mlx.h"
-#include "all_struct.h"
-#include "mlx_img.h"
-#include "../libft/libft.h"
-#include "math.h"
-#include "handle_error.h"
-#include "utils.h"
-#include <fcntl.h>
-#include <stdio.h>
-#include <unistd.h>
+# include "../libft/libft.h"
+# include "../minilibx-linux/mlx.h"
+# include "all_struct.h"
+# include "handle_error.h"
+# include "math.h"
+# include "mlx_img.h"
+# include "utils.h"
+# include <fcntl.h>
+# include <stdio.h>
+# include <unistd.h>
 
 #endif

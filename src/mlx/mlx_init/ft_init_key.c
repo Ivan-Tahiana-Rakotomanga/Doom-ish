@@ -12,8 +12,8 @@
 
 #include "../../../includes/header.h"
 
-void ft_init_key(t_mlx *mlx)
+void	ft_init_key(t_mlx *mlx)
 {
-  mlx->change_x = 0.0;
-  mlx->change_y = 0.0;
+	mlx->change_x = 0.0;
+	mlx->change_y = 0.0;
 }

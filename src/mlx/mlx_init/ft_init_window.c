@@ -12,9 +12,8 @@
 
 #include "../../../includes/header.h"
 
-
-void ft_init_size_window(t_mlx *mlx, int width, int height)
+void	ft_init_size_window(t_mlx *mlx, int width, int height)
 {
-  mlx->width = width;
-  mlx->height = height;
+	mlx->width = width;
+	mlx->height = height;
 }

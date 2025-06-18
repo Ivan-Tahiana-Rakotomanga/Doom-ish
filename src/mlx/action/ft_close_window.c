@@ -12,8 +12,8 @@
 
 #include "../../../includes/header.h"
 
-int ft_close_window(t_mlx *mlx)
+int	ft_close_window(t_mlx *mlx)
 {
-  ft_mlx_destroy(mlx);
-  return (0);
+	ft_mlx_destroy(mlx);
+	return (0);
 }

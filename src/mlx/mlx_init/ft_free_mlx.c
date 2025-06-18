@@ -12,8 +12,8 @@
 
 #include "../../../includes/header.h"
 
-t_mlx *ft_free_mlx(t_mlx *mlx)
+t_mlx	*ft_free_mlx(t_mlx *mlx)
 {
-  free(mlx);
-  return (NULL); 
+	free(mlx);
+	return (NULL);
 }

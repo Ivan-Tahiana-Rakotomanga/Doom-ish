@@ -12,14 +12,13 @@
 
 #include "../../../includes/header.h"
 
-void ft_mlx_destroy(t_mlx *mlx)
+void	ft_mlx_destroy(t_mlx *mlx)
 {
-  mlx_destroy_image(mlx->mlx, mlx->img);
-  mlx_destroy_window(mlx->mlx, mlx->win);
-  mlx_loop_end(mlx->mlx);
-  mlx_destroy_display(mlx->mlx);
-  free(mlx->mlx);
-  free(mlx);
-  exit(0);
+	mlx_destroy_image(mlx->mlx, mlx->img);
+	mlx_destroy_window(mlx->mlx, mlx->win);
+	mlx_loop_end(mlx->mlx);
+	mlx_destroy_display(mlx->mlx);
+	free(mlx->mlx);
+	free(mlx);
+	exit(0);
 }
-

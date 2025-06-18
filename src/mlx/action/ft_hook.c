@@ -12,8 +12,8 @@
 
 #include "../../../includes/header.h"
 
-void ft_hook(t_mlx *mlx)
+void	ft_hook(t_mlx *mlx)
 {
-  mlx_hook(mlx->win, 17, 0, ft_close_window, mlx);
+	mlx_hook(mlx->win, 17, 0, ft_close_window, mlx);
 	mlx_hook(mlx->win, 2, 1L << 0, ft_key_press, mlx);
 }

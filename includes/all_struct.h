@@ -15,18 +15,19 @@
 
 typedef struct s_mlx
 {
-  void	*mlx;
+	void	*mlx;
 	void	*win;
 	void	*img;
 	void	*adr;
 	int		width;
-  int  color;
+	int		color;
 	int		height;
 	int		bpp;
 	int		s_line;
 	int		endian;
-  double change_x;
-  double change_y;
-}  t_mlx;
+	char	**map;
+	double	change_x;
+	double	change_y;
+}			t_mlx;
 
-#endif 
+#endif
