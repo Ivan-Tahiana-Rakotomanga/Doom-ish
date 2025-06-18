@@ -28,7 +28,7 @@ char	*ft_fill_zero_line(char *line, int width)
 	int		i;
 
 	i = 0;
-	res = (char *)malloc((width) * sizeof(char));
+	res = (char *)malloc((width + 1) * sizeof(char));
 	if (!res)
 		return (NULL);
 	while (line[i] && i < width)
