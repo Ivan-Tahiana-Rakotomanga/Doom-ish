@@ -1,5 +1,5 @@
-NO ./textures/1.xmp
-SO ./textures/1.xmp
+NO ./textures/1.xmp  
+SO ./textures/1.xmp 
 WE ./textures/1.xmp
 EA ./textures/2.xmp
 
@@ -7,5 +7,5 @@ F 220,100,0
 C 220 ,30,0
 
 111111111
-1000000N1
+1000000N
 111111111

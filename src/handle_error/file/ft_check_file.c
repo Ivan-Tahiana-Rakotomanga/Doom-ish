@@ -80,19 +80,18 @@ int	ft_check_file(char *file, char ***map_str)
 		return (0);
 	if (!ft_fill_map(&map, fd))
 		return (0);
-
 	if (!ft_check_under_map(map))
 	{
 		ft_free_map(&map);
 		return (0);
 	}
-
 	*map_str = ft_map_to_strs(map);
 	ft_free_map(&map);
 	close(fd);
 	return (1);
 }
-void	ft_print_strs(char **strs)
+
+/*void	ft_print_strs(char **strs)
 {
 	int	i;
 
@@ -130,7 +129,7 @@ int	main(int argc, char **argv)
 		ft_free_str(map);
 	}
 	return (0);
-}
+}*/
 
 /*int	main(int argc, char **argv)
 {

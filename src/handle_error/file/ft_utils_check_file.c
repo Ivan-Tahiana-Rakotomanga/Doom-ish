@@ -40,21 +40,34 @@ int	ft_check_color_part(char **one, char **two, char *line)
 	return (1);
 }
 
+int	ft_is_valid_argument_textures(char **strs, char *line)
+{
+	if (ft_strs_len(strs) != 2)
+	{
+		ft_putstr_fd("Error\nThe has too much ", 2);
+		ft_putstr_fd("argument for the texture part in: '", 2);
+		ft_putstr_fd(line, 2);
+		ft_putstr_fd("' \n", 2);
+		return (0);
+	}
+	return (1);
+}
+
 int	ft_handle_index_id(char *line, char **one, char **two)
 {
 	int		value;
 	char	**lines;
 	char	*temp_lines;
 
-	lines = ft_split(line, ' ');
+	temp_lines = ft_strtrim(line, " \n");
+	lines = ft_split(temp_lines, ' ');
 	value = ft_index_id(lines[0]);
-	temp_lines = NULL;
 	if (value == 0)
-		return (ft_free_str(lines), 0);
-	temp_lines = ft_strtrim(lines[1], " \n");
+		return (ft_free_str(lines), free(temp_lines), 0);
 	if (value < 5)
 	{
-		if (!ft_valid_file(temp_lines))
+		if (!ft_valid_file(lines[1]) || !ft_is_valid_argument_textures(lines,
+				temp_lines))
 			return (free(temp_lines), ft_free_str(lines), 0);
 		free(temp_lines);
 	}
