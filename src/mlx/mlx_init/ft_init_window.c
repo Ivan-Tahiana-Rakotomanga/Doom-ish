@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   all_struct.h                                       :+:      :+:    :+:   */
+/*   ft_init_window.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 13:16:38 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/18 16:40:19 by fxu-lin          ###   ########.fr       */
+/*   Created: 2025/06/18 16:01:51 by fxu-lin           #+#    #+#             */
+/*   Updated: 2025/06/18 16:01:51 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALL_STRUCT_H
-# define ALL_STRUCT_H
+#include "../../../includes/header.h"
 
-typedef struct s_mlx
+
+void ft_init_size_window(t_mlx *mlx, int width, int height)
 {
-  void	*mlx;
-	void	*win;
-	void	*img;
-	void	*adr;
-	int		width;
-  int  color;
-	int		height;
-	int		bpp;
-	int		s_line;
-	int		endian;
-  double change_x;
-  double change_y;
-}  t_mlx;
-
-#endif 
+  mlx->width = width;
+  mlx->height = height;
+}

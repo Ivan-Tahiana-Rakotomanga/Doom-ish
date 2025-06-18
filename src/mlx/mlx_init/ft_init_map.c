@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   all_struct.h                                       :+:      :+:    :+:   */
+/*   ft_init_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 13:16:38 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/18 16:40:19 by fxu-lin          ###   ########.fr       */
+/*   Created: 2025/06/18 16:03:08 by fxu-lin           #+#    #+#             */
+/*   Updated: 2025/06/18 16:03:09 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALL_STRUCT_H
-# define ALL_STRUCT_H
+#include "../../../includes/header.h"
 
-typedef struct s_mlx
-{
-  void	*mlx;
-	void	*win;
-	void	*img;
-	void	*adr;
-	int		width;
-  int  color;
-	int		height;
-	int		bpp;
-	int		s_line;
-	int		endian;
-  double change_x;
-  double change_y;
-}  t_mlx;
-
-#endif 
+/*int ft_init_map(t_mlx *mlx, char **map)*/
+/*{*/
+/*  mlx->map = map;*/
+/*  mlx->map_height = ft_map_height(map);*/
+/*  mlx->map_width = ft_map_width(map);*/
+/*  if (mlx->map_width == 0 || mlx->map_height == 0)*/
+/*    return (0);*/
+/*  mlx->size_x = mlx->width / mlx->map_width;*/
+/*  mlx->size_y = mlx->height / mlx->map_height;*/
+/*  return (1);*/
+/*}*/
