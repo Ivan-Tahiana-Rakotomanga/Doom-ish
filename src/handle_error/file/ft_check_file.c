@@ -74,66 +74,17 @@ int	ft_check_file(char *file, char ***map_str)
 	if (!ft_is_valid_path(file, ".cub"))
 		return (0);
 	fd = open(file, O_RDONLY);
-	if (ft_error_fd(fd))
-		return (0);
-	if (!ft_check_all_line(fd))
-		return (0);
-	if (!ft_fill_map(&map, fd))
-		return (0);
+	if (ft_error_fd(fd) || !ft_check_all_line(fd) || !ft_fill_map(&map, fd))
+		return (close(fd), 0);
 	if (!ft_check_under_map(map))
-	{
-		ft_free_map(&map);
-		return (0);
-	}
+		return (ft_free_map(&map), close(fd), 0);
 	*map_str = ft_map_to_strs(map);
 	ft_free_map(&map);
+
+	if(!ft_map_is_closed(*map_str))
+		return (ft_free_str(*map_str), close(fd), 0);
 	close(fd);
 	return (1);
 }
 
-void	ft_print_strs(char **strs)
-{
-	int	i;
 
-	i = 0;
-	printf("\nIto ny print an'ilay strs\n");
-	while (strs[i])
-	{
-		printf("%s\n", strs[i]);
-		i++;
-	}
-	printf("\n");
-}
-
-void	ft_print_map(t_map *map)
-{
-	printf("\nIto ny print an'ilay map\n");
-	while (map)
-	{
-		printf("%s\n", map->line);
-		map = map->next;
-	}
-	printf("\n");
-}
-
-int	main(int argc, char **argv)
-{
-	char	**map;
-
-	if (argc == 2)
-	{
-		map = NULL;
-		if (!ft_check_file(argv[1], &map))
-			return (0);
-		ft_print_strs(map);
-		ft_free_str(map);
-	}
-	return (0);
-}
-
-/*int	main(int argc, char **argv)
-{
-	if (argc == 2)
-		printf("Ito %d\n", ft_check_file(argv[1]));
-	return (0);
-}*/

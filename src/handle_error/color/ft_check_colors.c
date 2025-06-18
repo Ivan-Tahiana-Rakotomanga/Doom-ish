@@ -55,7 +55,7 @@ int	ft_check_colors(char *color)
 		ft_putstr_fd(temp, 2);
 		ft_putstr_fd(" \n", 2);
 		free(temp);
-	    ft_free_str(colors);
+		ft_free_str(colors);
 		return (0);
 	}
 	res = ft_res_loop(colors);

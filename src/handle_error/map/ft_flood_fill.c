@@ -12,19 +12,6 @@
 
 #include "../../../includes/header.h"
 
-/*
-void	ft_print_map(char **map)
-{
-	int	i;
-
-	i = 0;
-	while (map[i])
-	{
-		printf("%s\n", map[i]);
-		i++;
-	}
-}
-
 char	**ft_copy_map(char **map, int height)
 {
 	char	**copy;
@@ -43,14 +30,15 @@ char	**ft_copy_map(char **map, int height)
 	return (copy);
 }
 
-void	ft_find_start(int *start_x, int *start_y, int height, int width,
-		char **map)
+void	ft_find_start(int *start_x, int *start_y, int height, char **map)
 {
 	int	j;
 	int	i;
+	int	width;
 
 	j = 0;
 	i = 0;
+	width = ft_strlen(map[0]);
 	while (i < height && *start_x == -1)
 	{
 		j = 0;
@@ -68,8 +56,25 @@ void	ft_find_start(int *start_x, int *start_y, int height, int width,
 	}
 }
 
-int	ft_flood_fill(int x, int y, char **map, int width, int height)
+int	ft_check_flood(int x, int y, char **map, int height)
 {
+	int	res;
+
+	res = 1;
+	res = res && ft_flood_fill(x + 1, y, map, height);
+	res = res && ft_flood_fill(x - 1, y, map, height);
+	res = res && ft_flood_fill(x, y + 1, map, height);
+	res = res && ft_flood_fill(x, y - 1, map, height);
+	return (res);
+}
+
+int	ft_flood_fill(int x, int y, char **map, int height)
+{
+	int	width;
+	int	res;
+
+	width = ft_strlen(map[0]);
+	res = 0;
 	if (x < 0 || y < 0 || x >= height || y >= width)
 		return (0);
 	if (map[x][y] == ' ' || map[x][y] == '\0')
@@ -77,62 +82,36 @@ int	ft_flood_fill(int x, int y, char **map, int width, int height)
 	if (map[x][y] == '1' || map[x][y] == 'x')
 		return (1);
 	map[x][y] = 'x';
-	return (ft_flood_fill(x + 1, y, map, width, height) && ft_flood_fill(x - 1,
-			y, map, width, height) && ft_flood_fill(x, y + 1, map, width,
-			height) && ft_flood_fill(x, y - 1, map, width, height));
+	res = ft_check_flood(x, y, map, height);
+	return (res);
 }
 
+int	ft_map_is_closed(char **map)
+{
 	int		height;
-	char	*original_map[] = {"111111", "100000", "1111N1", "111111", NULL};
-	int		width;
-	char	**map;
 	int		x_start;
 	int		y_start;
-	int		result;
+	char	**copy_map;
+	int		res;
 
-	height = 4;
-	printf("Début de la map --\n");
-	ft_print_map(original_map);
-	width = ft_strlen(original_map[0]);
-	map = ft_copy_map(original_map, height);
 	x_start = -1;
+	res = 1;
 	y_start = -1;
-	ft_find_start(&x_start, &y_start, height, width, map);
-	printf("Ito ny x=%d ny y=%d\n", x_start, y_start);
+	height = ft_strs_len(map);
+	copy_map = ft_copy_map(map, height);
+	ft_find_start(&x_start, &y_start, height, copy_map);
 	if (x_start == -1)
 	{
-		printf("Tsisy orientation\n");
-		return (0);
+		ft_putstr_fd("Error\nThere is no player in the map\n", 2);
+		return (free(copy_map), free(map), 0);
 	}
-	map[x_start][y_start] = '0';
-	result = ft_flood_fill(x_start, y_start, map, width, height);
-	if (result)
-		printf("Midy tsara\n");
-	else
-		printf("Erreur\n");
-	ft_free_str(map);
-	return (0);
-}*/
-
-/*int main(int argc, char **argv)
-{
-	if(argc == 2)
+	copy_map[x_start][y_start] = '0';
+	if (!ft_flood_fill(x_start, y_start, copy_map, height))
 	{
-		int	fd;
-		t_map *map;
-
-		map = NULL;
-		fd = open(argv[1], O_RDONLY);
-
-
-		if(!ft_fill_map(&map,fd))
-			return (0);
-
-
-		ft_print_map(map);
-		ft_free_map(&map);
-		close(fd);
-
+		ft_putstr_fd("Error\nThe map is not closed", 2);
+		res = 0;
 	}
-	return (0);
-}*/
+	ft_free_str(copy_map);
+	return (res);
+}
+

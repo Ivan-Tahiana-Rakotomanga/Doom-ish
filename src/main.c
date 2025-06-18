@@ -12,17 +12,32 @@
 
 #include "../includes/header.h"
 
-/*
+
+/*void	ft_print_strs(char **strs)
+{
+	int	i;
+
+	i = 0;
+	printf("\nIto ny print an'ilay strs\n");
+	while (strs[i])
+	{
+		printf("%s\n", strs[i]);
+		i++;
+	}
+	printf("\n");
+}*/
+
 int	main(int argc, char **argv)
 {
-  if (!ft_valid_arg_count(argc))
-	return (1);
-  if (!ft_valid_file(argv[1]))
-	return (1);
-  if (!ft_valid_extension(argv[1], ".cub"))
-	return (1);
-  argv++;
-  if (!ft_format_map_is_valid(argv))
-	return (1);
-return (0);
-}*/
+	char	**map;
+
+	if (argc == 2)
+	{
+		map = NULL;
+		if (!ft_check_file(argv[1], &map))
+			return (0);
+		/*ft_print_strs(map);*/
+		ft_free_str(map);
+	}
+	return (0);
+}
