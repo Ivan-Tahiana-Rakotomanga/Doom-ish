@@ -31,6 +31,8 @@ typedef struct s_mlx
 	int		bpp;
 	int		s_line;
 	int		endian;
+  int   x_player;
+  int   y_player;
 	char	**map;
 	double	change_x;
 	double	change_y;

@@ -12,17 +12,26 @@
 
 #include "../../../includes/header.h"
 
+void	ft_render(t_mlx *mlx)
+{
+	mlx_clear_window(mlx->mlx, mlx->win);
+	ft_color_display(mlx);
+}
+
+
 int	ft_key_press(int code, t_mlx *mlx)
 {
+    printf("Ito ilay code %d\n", code);
 	if (code == 65307)
 		ft_mlx_destroy(mlx);
 	else if (code == 100)
-		mlx->change_x = mlx->change_x - 0.5;
+		mlx->y_player = mlx->y_player + 1;
 	else if (code == 97)
-		mlx->change_x = mlx->change_x + 0.5;
+		mlx->y_player = mlx->y_player - 1;
 	else if (code == 119)
-		mlx->change_y = mlx->change_y + 0.5;
+		mlx->x_player = mlx->x_player - 1;
 	else if (code == 115)
-		mlx->change_y = mlx->change_y - 0.5;
+		mlx->x_player = mlx->x_player + 1;
+  ft_render(mlx);
 	return (0);
 }

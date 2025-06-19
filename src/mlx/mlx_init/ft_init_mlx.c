@@ -22,6 +22,9 @@ t_mlx	*ft_init_mlx(t_mlx *mlx, char **map)
 	if (!ft_check_mlx(mlx, "cub3D"))
 		return (ft_free_mlx(mlx));
 	mlx->map = map;
+  mlx->x_player = -1;
+  mlx->y_player = -1;
+  ft_find_start(&mlx->x_player, &mlx->y_player, map);
 	return (mlx);
 }
 

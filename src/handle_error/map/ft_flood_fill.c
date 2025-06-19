@@ -30,15 +30,17 @@ char	**ft_copy_map(char **map, int height)
 	return (copy);
 }
 
-void	ft_find_start(int *start_x, int *start_y, int height, char **map)
+void	ft_find_start(int *start_x, int *start_y, char **map)
 {
 	int	j;
 	int	i;
 	int	width;
+  int height;
 
 	j = 0;
 	i = 0;
 	width = ft_strlen(map[0]);
+	height = ft_strs_len(map);
 	while (i < height && *start_x == -1)
 	{
 		j = 0;
@@ -99,7 +101,7 @@ int	ft_map_is_closed(char **map)
 	y_start = -1;
 	height = ft_strs_len(map);
 	copy_map = ft_copy_map(map, height);
-	ft_find_start(&x_start, &y_start, height, copy_map);
+	ft_find_start(&x_start, &y_start, copy_map);
 	if (x_start == -1)
 	{
 		ft_putstr_fd("Error\nThere is no player in the map\n", 2);

@@ -41,10 +41,10 @@ int	main(int argc, char **argv)
   mlx = ft_init_mlx(mlx, map);
 	if (!mlx)
 		return (0);
-	ft_hook(mlx);
 	ft_color_display(mlx);
-	mlx_loop(mlx->mlx);
-		ft_free_str(map);
+	ft_hook(mlx);
+  mlx_loop(mlx->mlx);
+	ft_free_str(map);
 	}
 	return (0);
 }

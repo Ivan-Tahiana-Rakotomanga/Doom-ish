@@ -22,7 +22,7 @@ void	ft_color_display(t_mlx *mlx)
 		j = 0;
 		while (mlx->map[i][j])
 		{
-			ft_add_color_pixels(mlx, mlx->map[i][j]);
+			ft_add_color_pixels(mlx, i, j);
 			ft_put_pixels(mlx, i, j);
 			j++;
 		}

@@ -41,7 +41,6 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/mlx/mlx_init/ft_init_mlx.c \
 		src/mlx/mlx_init/ft_check_mlx.c \
 		src/mlx/mlx_init/ft_init_key.c \
-		src/mlx/mlx_init/ft_init_map.c \
 		src/mlx/mlx_init/ft_init_window.c \
 		src/utils/ft_strcmp.c \
 		src/utils/ft_free.c \
