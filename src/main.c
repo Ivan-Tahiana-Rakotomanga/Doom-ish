@@ -6,7 +6,7 @@
 /*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:05:56 by irakotom          #+#    #+#             */
-/*   Updated: 2025/06/11 13:26:00 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/06/20 16:15:43 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 
 int	main(int argc, char **argv)
 {
- 
+
 	if (argc == 2)
 	{ 
     char ** map;
@@ -48,6 +48,7 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
+
 /*int	main(int argc, char **argv)
 {
 	t_mlx	*mlx;

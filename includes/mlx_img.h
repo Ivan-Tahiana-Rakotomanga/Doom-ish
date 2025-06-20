@@ -6,7 +6,7 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 10:28:45 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/18 16:07:25 by fxu-lin          ###   ########.fr       */
+/*   Updated: 2025/06/20 16:11:12 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ void	ft_get_limits_size(int *limit_x, int *limit_y, t_mlx *mlx);
 void	ft_add_color_pixels(t_mlx *mlx, int i, int j);
 void	ft_put_pixels(t_mlx *mlx, int i, int j);
 t_mlx	*ft_init_mlx(t_mlx *mlx, char **map);
+int ft_convert_color(char *color);
 
 #endif

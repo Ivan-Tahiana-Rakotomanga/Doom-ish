@@ -33,6 +33,7 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/mlx/action/ft_key_press.c \
 		src/mlx/action/ft_mlx_destroy.c \
 		src/mlx/color/ft_color_display.c \
+		src/mlx/color/ft_convert_color.c \
 		src/mlx/color/ft_put_pixels.c \
 		src/mlx/color/ft_get_limits_size.c \
 		src/mlx/color/ft_utils.c \
