@@ -14,11 +14,10 @@
 # define HEADER_H
 
 # include "../libft/libft.h"
-
 # include "../minilibx-linux/mlx.h"
 # include "all_struct.h"
-# include "map.h"
 # include "handle_error.h"
+# include "map.h"
 # include "math.h"
 # include "mlx_img.h"
 # include "utils.h"

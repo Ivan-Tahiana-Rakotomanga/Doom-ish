@@ -35,7 +35,7 @@ void	ft_find_start(int *start_x, int *start_y, char **map)
 	int	j;
 	int	i;
 	int	width;
-  int height;
+	int	height;
 
 	j = 0;
 	i = 0;
