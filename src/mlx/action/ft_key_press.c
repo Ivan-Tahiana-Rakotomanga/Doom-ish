@@ -18,20 +18,19 @@ void	ft_render(t_mlx *mlx)
 	ft_color_display(mlx);
 }
 
-int ft_is_wall_y(t_mlx *mlx, int x)
+int	ft_is_wall_y(t_mlx *mlx, int x)
 {
-  if(mlx->map[x][mlx->y_player] == '1')
-    return (1);
-  return (0);
+	if (mlx->map[x][mlx->y_player] == '1')
+		return (1);
+	return (0);
 }
 
-int ft_is_wall_x(t_mlx *mlx, int y)
+int	ft_is_wall_x(t_mlx *mlx, int y)
 {
-  if(mlx->map[mlx->x_player][y] == '1')
-    return (1);
-  return (0);
+	if (mlx->map[mlx->x_player][y] == '1')
+		return (1);
+	return (0);
 }
-
 
 int	ft_key_press(int code, t_mlx *mlx)
 {
@@ -45,6 +44,6 @@ int	ft_key_press(int code, t_mlx *mlx)
 		mlx->x_player = mlx->x_player - 1;
 	else if (code == 115 && !ft_is_wall_y(mlx, mlx->x_player + 1))
 		mlx->x_player = mlx->x_player + 1;
-  ft_render(mlx);
+	ft_render(mlx);
 	return (0);
 }

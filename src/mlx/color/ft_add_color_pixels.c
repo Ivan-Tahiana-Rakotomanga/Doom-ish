@@ -1,8 +1,8 @@
 #include "../../../includes/header.h"
 
-void	ft_add_color_pixels(t_mlx *mlx,int i, int j)
+void	ft_add_color_pixels(t_mlx *mlx, int i, int j)
 {
-  char **map;
+	char	**map;
 
   map = mlx->map;
 

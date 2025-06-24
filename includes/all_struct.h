@@ -21,21 +21,28 @@ typedef struct s_map
 
 typedef struct s_mlx
 {
-	void	*mlx;
-	void	*win;
-	void	*img;
-	void	*adr;
-	int		width;
-	int		color;
-	int		height;
-	int		bpp;
-	int		s_line;
-	int		endian;
-  int   x_player;
-  int   y_player;
-	char	**map;
-	double	change_x;
-	double	change_y;
-}			t_mlx;
+	void			*mlx;
+	void			*win;
+	void			*img;
+	void			*adr;
+	int				width;
+	int				color;
+	int				height;
+	int				bpp;
+	int				s_line;
+	int				endian;
+	int				x_player;
+	int				y_player;
+	char			**map;
+	double			change_x;
+	double			change_y;
+}					t_mlx;
+
+typedef struct s_point
+{
+	double			x;
+	double			y;
+
+}					t_point;
 
 #endif

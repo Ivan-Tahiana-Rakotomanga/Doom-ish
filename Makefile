@@ -28,6 +28,7 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/handle_error/map/ft_list_map.c \
 		src/handle_error/map/ft_utils_list_map.c \
 		src/handle_error/map/ft_map_to_strs.c \
+		src/math/ft_dda.c \
 		src/mlx/action/ft_close_window.c \
 		src/mlx/action/ft_hook.c \
 		src/mlx/action/ft_key_press.c \
