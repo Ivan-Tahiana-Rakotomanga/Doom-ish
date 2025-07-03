@@ -33,6 +33,7 @@ typedef struct s_mlx
 	int				endian;
 	int				x_player;
 	int				y_player;
+	int             side;
 	char			**map;
 	double			change_x;
 	double			change_y;

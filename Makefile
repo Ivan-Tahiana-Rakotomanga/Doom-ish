@@ -6,7 +6,7 @@
 #    By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/04 12:56:49 by irakotom          #+#    #+#              #
-#    Updated: 2025/06/18 16:07:53 by fxu-lin          ###   ########.fr        #
+#    Updated: 2025/07/02 17:27:28 by irakotom         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,11 +34,13 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/mlx/action/ft_key_press.c \
 		src/mlx/action/ft_mlx_destroy.c \
 		src/mlx/color/ft_color_display.c \
+		src/mlx/color/ft_draw_square.c \
 		src/mlx/color/ft_convert_color.c \
 		src/mlx/color/ft_put_pixels.c \
 		src/mlx/color/ft_get_limits_size.c \
 		src/mlx/color/ft_utils.c \
 		src/mlx/color/ft_add_color_pixels.c \
+		src/mlx/color/ft_get_address.c \
 		src/mlx/mlx_init/ft_free_mlx.c \
 		src/mlx/mlx_init/ft_init_mlx.c \
 		src/mlx/mlx_init/ft_check_mlx.c \

@@ -26,7 +26,7 @@
 	printf("\n");
 }*/
 
-/*int	main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 
 	if (argc == 2)
@@ -47,5 +47,5 @@
 	ft_free_str(map);
 	}
 	return (0);
-}*/
+}
 

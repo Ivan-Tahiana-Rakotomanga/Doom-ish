@@ -6,27 +6,42 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 16:06:00 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/18 16:44:36 by fxu-lin          ###   ########.fr       */
+/*   Updated: 2025/07/02 18:58:00 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../../../includes/header.h"
 
 void	ft_color_display(t_mlx *mlx)
 {
-	int	i;
-	int	j;
+	int y;
+	int x;
+	t_point a;
+	char **map;
 
-	i = 0;
-	while (mlx->map[i])
+	y = 0;
+	x = 0;
+	map = mlx->map;
+
+	while(map[y])
 	{
-		j = 0;
-		while (mlx->map[i][j])
+		x = 0;
+		while (map[y][x])
 		{
-			ft_add_color_pixels(mlx, i, j);
-			ft_put_pixels(mlx, i, j);
-			j++;
+			a.x = x;
+			a.y = y;
+			if(map[y][x] == '1')
+				ft_draw_square(a,mlx->side - 1,ft_strdup("0,255,0"),mlx);
+			else
+				ft_draw_square(a,mlx->side - 1,ft_strdup("255,255,255"),mlx);
+			x++;
 		}
-		i++;
+		y++;
 	}
+	a.x = mlx->x_player;
+	a.y = mlx->y_player;
+	ft_draw_square(a,5,ft_strdup("255,0,0"),mlx);
+
+
+
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
 }

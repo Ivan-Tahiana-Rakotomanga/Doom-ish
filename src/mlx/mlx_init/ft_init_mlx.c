@@ -17,10 +17,11 @@ t_mlx	*ft_init_mlx(t_mlx *mlx, char **map)
 	mlx = malloc(sizeof(t_mlx));
 	if (!mlx)
 		return (ft_free_mlx(mlx));
-	ft_init_size_window(mlx, 800, 600);
+	ft_init_size_window(mlx, 800, 800);
 	ft_init_key(mlx);
 	if (!ft_check_mlx(mlx, "cub3D"))
 		return (ft_free_mlx(mlx));
+	mlx->side = 100;
 	mlx->map = map;
 	mlx->x_player = -1;
 	mlx->y_player = -1;

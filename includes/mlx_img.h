@@ -6,7 +6,7 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 10:28:45 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/20 16:11:12 by fxu-lin          ###   ########.fr       */
+/*   Updated: 2025/07/02 17:27:46 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ void	ft_add_color_pixels(t_mlx *mlx, int i, int j);
 void	ft_put_pixels(t_mlx *mlx, int i, int j);
 t_mlx	*ft_init_mlx(t_mlx *mlx, char **map);
 int ft_convert_color(char *color);
+char * ft_get_address(int x, int y,t_mlx *mlx);
+void ft_draw_square(t_point a, int size, char *color, t_mlx *mlx);
 
 #endif
