@@ -37,9 +37,9 @@ void	ft_color_display(t_mlx *mlx)
 		}
 		y++;
 	}
-	a.x = mlx->x_player + 1;
+	a.x = mlx->x_player;
 	a.y = mlx->y_player;
-	ft_draw_square(a,5,ft_strdup("255,0,0"),mlx);
+	ft_draw_player(a,5,ft_strdup("255,0,0"),mlx);
 
 
 
