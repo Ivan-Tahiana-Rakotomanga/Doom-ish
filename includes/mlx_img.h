@@ -22,7 +22,7 @@ void	ft_color_display(t_mlx *mlx);
 int		ft_map_width(char **map);
 int		ft_map_height(char **map);
 void	ft_init_key(t_mlx *mlx);
-void	ft_init_size_window(t_mlx *mlx, int width, int height);
+void	ft_init_size_window(t_mlx *mlx);
 int		ft_check_mlx(t_mlx *mlx, char *name);
 int		ft_get_limit_x(t_mlx *mlx);
 int		ft_get_limit_y(t_mlx *mlx);
