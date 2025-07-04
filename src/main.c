@@ -26,26 +26,26 @@
 	printf("\n");
 }*/
 
-int	main(int argc, char **argv)
-{
-
-	if (argc == 2)
-	{
-	char ** map;
-		t_mlx	*mlx;
-	mlx = NULL;
-	map = NULL;
-		if (!ft_check_file(argv[1], &map))
-			return (0);
-
-  mlx = ft_init_mlx(mlx, map);
-	if (!mlx)
-		return (0);
-	ft_color_display(mlx);
-	ft_hook(mlx);
-  mlx_loop(mlx->mlx);
-	ft_free_str(map);
-	}
-	return (0);
-}
+/*int	main(int argc, char **argv)*/
+/*{*/
+/**/
+/*	if (argc == 2)*/
+/*	{*/
+/*	char ** map;*/
+/*		t_mlx	*mlx;*/
+/*	mlx = NULL;*/
+/*	map = NULL;*/
+/*		if (!ft_check_file(argv[1], &map))*/
+/*			return (0);*/
+/**/
+/*  mlx = ft_init_mlx(mlx, map);*/
+/*	if (!mlx)*/
+/*		return (0);*/
+/*	ft_color_display(mlx);*/
+/*	ft_hook(mlx);*/
+/*  mlx_loop(mlx->mlx);*/
+/*	ft_free_str(map);*/
+/*	}*/
+/*	return (0);*/
+/*}*/
 
