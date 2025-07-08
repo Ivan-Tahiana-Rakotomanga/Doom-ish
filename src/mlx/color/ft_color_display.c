@@ -11,6 +11,28 @@
 /* ************************************************************************** */
 #include "../../../includes/header.h"
 
+void ft_display_player(t_mlx *mlx)
+{
+	t_point a;
+	t_point end;
+	t_player *player;
+	double x_cos;
+	double y_sin;
+
+
+	player = mlx->player;
+    a.x = player->x ;
+	a.y = player->y ;	
+	ft_draw_square(a,5,ft_strdup("255,0,0"),mlx);
+	x_cos = cos(ft_degree_to_radian(player->angle))  * 50;
+	y_sin = sin(ft_degree_to_radian(player->angle))  * 50;
+	end.x =  a.x + x_cos ;
+	end.y =  a.y + y_sin ; 
+
+	ft_draw_line(a,end,ft_strdup("0,0,255"),mlx);
+}
+
+
 void	ft_color_display(t_mlx *mlx)
 {
 	int y;
@@ -36,29 +58,9 @@ void	ft_color_display(t_mlx *mlx)
 		}
 		y++;
 	}		
-		a.x = ft_coordinate_to_pixel((double)mlx->x_player,mlx->side) + (mlx->side / 2);
-		a.y = ft_coordinate_to_pixel((double)mlx->y_player,mlx->side) + (mlx->side / 2);
-		ft_draw_square(a,5,ft_strdup("255,0,0"),mlx);
 
-	    t_point end;
-	    a.x = a.x + 1.0;
-	    a.y = a.y + 1.0;
-
-	    double degree = -90;
-
-	    double x_cos = cos(ft_degree_to_radian(degree))  * 50 ;
-	    double y_sin = sin(ft_degree_to_radian(degree))  * 50;
-	    end.x =  a.x + x_cos ;
-	    end.y =  a.y + y_sin ; 
-
-
-	    printf("Ito ilay x %f   y  %f\n", a.x, a.y);
-	    printf("Ito ilay x %f   y  %f\n", end.x, end.y);
-
-
-
-	    ft_draw_line(a,end,ft_strdup("0,0,255"),mlx);
-
+	ft_display_player(mlx);
+	
 
 		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
 }

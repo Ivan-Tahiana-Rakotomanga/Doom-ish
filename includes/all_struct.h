@@ -13,11 +13,31 @@
 #ifndef ALL_STRUCT_H
 # define ALL_STRUCT_H
 
+typedef struct s_point
+{
+	double			x;
+	double			y;
+
+}					t_point;
+
 typedef struct s_map
 {
 	char			*line;
 	struct s_map	*next;
 }					t_map;
+
+typedef struct s_player
+{
+	double x;
+	double y;
+	double angle;
+	int angle_direction;
+	int move_direction;
+	double speed;
+	double angle_speed;
+
+} t_player;
+
 
 typedef struct s_mlx
 {
@@ -37,13 +57,8 @@ typedef struct s_mlx
 	char			**map;
 	double			change_x;
 	double			change_y;
+	struct s_player *player;
 }					t_mlx;
 
-typedef struct s_point
-{
-	double			x;
-	double			y;
-
-}					t_point;
 
 #endif

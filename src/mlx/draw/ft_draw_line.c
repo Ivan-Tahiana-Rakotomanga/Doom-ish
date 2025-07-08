@@ -1,9 +1,6 @@
 #include "../../../includes/header.h"
 #include <math.h>
 
-
-
-
 void ft_draw_line(t_point start, t_point end,char *color, t_mlx *mlx)
 {
 	t_point increment;
@@ -15,8 +12,6 @@ void ft_draw_line(t_point start, t_point end,char *color, t_mlx *mlx)
     increment = ft_increment_dda(start, end);
 	tmp_color = NULL;
 	steps = fmax(fabs(end.x - start.x),fabs(end.y - start.y));
-
-	printf("Ito ilay increment x %f \n", increment.y);
 
 	while(i < steps)
 	{
