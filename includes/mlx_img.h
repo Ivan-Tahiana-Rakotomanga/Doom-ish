@@ -32,7 +32,7 @@ void	ft_put_pixels(t_mlx *mlx, int i, int j);
 t_mlx	*ft_init_mlx(t_mlx *mlx, char **map);
 int ft_convert_color(char *color);
 char * ft_get_address(int x, int y,t_mlx *mlx);
-void ft_draw_square(t_point a, int size, char *color, t_mlx *mlx);
-void ft_draw_player(t_point a, int size, char *color, t_mlx *mlx);
+void ft_draw_square(t_point pixel, int size, char *color, t_mlx *mlx);
+void ft_draw_line(t_point start, t_point end,char *color, t_mlx *mlx);
 
 #endif

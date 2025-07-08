@@ -12,29 +12,25 @@
 
 #include "../../../includes/header.h"
 
-
-
-
-void ft_draw_square(t_point a, int size, char *color, t_mlx *mlx)
+void ft_draw_square(t_point pixel, int size, char *color, t_mlx *mlx)
 {
-	int x;
-	int y;
-	int tmp_x;
+	double x;
+	double  y;
 	char *tmp_color;
-	int size_xy[2];
+	double tmp_x;
+	double xy_limits[2];
 
-	x = a.x * mlx->side;
-	y = a.y * mlx->side;
-	tmp_color = NULL;
-
-	size_xy[0] = x + size;
-	size_xy[1] = y + size;
+	x = pixel.x;
+	y = pixel.y;
 	tmp_x = x;
-
-	while(y < size_xy[1])
+	tmp_color = NULL;
+	xy_limits[0] = x + size;
+	xy_limits[1] = y + size;
+	
+	while(y < xy_limits[1])
 	{
 		x = tmp_x;
-		while(x < size_xy[0])
+		while(x < xy_limits[0]) 
 		{
 			tmp_color = ft_get_address(x, y, mlx);
 			*(unsigned int *) tmp_color = ft_convert_color(color);
@@ -42,6 +38,5 @@ void ft_draw_square(t_point a, int size, char *color, t_mlx *mlx)
 		}
 		y++;
 	}
-	
 
 }

@@ -21,14 +21,13 @@ void	ft_color_display(t_mlx *mlx)
 	y = 0;
 	x = 0;
 	map = mlx->map;
-
 	while(map[y])
 	{
 		x = 0;
 		while (map[y][x])
 		{
-			a.x = x;
-			a.y = y;
+			a.x = ft_coordinate_to_pixel((double)x,mlx->side);
+			a.y = ft_coordinate_to_pixel((double)y,mlx->side);
 			if(map[y][x] == '1')
 				ft_draw_square(a,mlx->side - 1,ft_strdup("0,255,0"),mlx);
 			else
@@ -36,12 +35,19 @@ void	ft_color_display(t_mlx *mlx)
 			x++;
 		}
 		y++;
-	}
-	a.x = mlx->x_player;
-	a.y = mlx->y_player;
-	ft_draw_player(a,5,ft_strdup("255,0,0"),mlx);
+	}		
+		a.x = ft_coordinate_to_pixel((double)mlx->x_player,mlx->side) + (mlx->side / 2);
+		a.y = ft_coordinate_to_pixel((double)mlx->y_player,mlx->side) + (mlx->side / 2);
+		ft_draw_square(a,5,ft_strdup("255,0,0"),mlx);
+
+	    t_point end;
+	    a.x = a.x + 1;
+	    a.y = a.y + 1;
+	    end.x =  a.x + 50;
+	    end.y =  a.y + 40; 
+
+	    ft_draw_line(a,end,ft_strdup("0,0,255"),mlx);
 
 
-
-	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
 }

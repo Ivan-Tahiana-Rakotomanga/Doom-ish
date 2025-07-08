@@ -29,6 +29,7 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/handle_error/map/ft_utils_list_map.c \
 		src/handle_error/map/ft_map_to_strs.c \
 		src/math/ft_dda.c \
+		src/math/scale/ft_scale.c \
 		src/math/ft_utils.c \
 		src/mlx/action/ft_close_window.c \
 		src/mlx/action/ft_hook.c \
@@ -41,7 +42,6 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/mlx/color/ft_get_address.c \
 		src/mlx/draw/ft_draw_square.c \
 		src/mlx/draw/ft_draw_line.c \
-		src/mlx/draw/ft_draw_player.c \
 		src/mlx/mlx_init/ft_free_mlx.c \
 		src/mlx/mlx_init/ft_init_mlx.c \
 		src/mlx/mlx_init/ft_check_mlx.c \
