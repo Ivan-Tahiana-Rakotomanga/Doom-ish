@@ -20,6 +20,7 @@ int ft_check_wall(t_mlx *mlx, double horizontal_pos_x, double horizontal_pos_y);
 double ft_coordinate_to_pixel(double value,double side);
 double ft_pixel_to_coordinate(double value, double side);
 t_point	ft_increment_dda(t_point a, t_point b);
+double ft_degree_to_radian(double degree);
 
 
 #endif

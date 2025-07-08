@@ -41,10 +41,21 @@ void	ft_color_display(t_mlx *mlx)
 		ft_draw_square(a,5,ft_strdup("255,0,0"),mlx);
 
 	    t_point end;
-	    a.x = a.x + 1;
-	    a.y = a.y + 1;
-	    end.x =  a.x + 50;
-	    end.y =  a.y + 40; 
+	    a.x = a.x + 1.0;
+	    a.y = a.y + 1.0;
+
+	    double degree = -90;
+
+	    double x_cos = cos(ft_degree_to_radian(degree))  * 50 ;
+	    double y_sin = sin(ft_degree_to_radian(degree))  * 50;
+	    end.x =  a.x + x_cos ;
+	    end.y =  a.y + y_sin ; 
+
+
+	    printf("Ito ilay x %f   y  %f\n", a.x, a.y);
+	    printf("Ito ilay x %f   y  %f\n", end.x, end.y);
+
+
 
 	    ft_draw_line(a,end,ft_strdup("0,0,255"),mlx);
 

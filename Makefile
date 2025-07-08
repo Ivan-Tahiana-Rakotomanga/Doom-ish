@@ -29,6 +29,7 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/handle_error/map/ft_utils_list_map.c \
 		src/handle_error/map/ft_map_to_strs.c \
 		src/math/ft_dda.c \
+		src/math/ft_degree_to_radian.c \
 		src/math/scale/ft_scale.c \
 		src/math/ft_utils.c \
 		src/mlx/action/ft_close_window.c \
