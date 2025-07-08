@@ -18,11 +18,12 @@
 # include "all_struct.h"
 # include "handle_error.h"
 # include "map.h"
-# include "math.h"
+# include "math_function.h"
 # include "mlx_img.h"
 # include "utils.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <unistd.h>
+#include <math.h>
 
 #endif
