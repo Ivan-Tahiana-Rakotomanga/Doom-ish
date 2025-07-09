@@ -18,32 +18,48 @@ void	ft_render(t_mlx *mlx)
 	ft_color_display(mlx);
 }
 
-int	ft_is_wall_y(t_mlx *mlx, int x)
-{
-	if (mlx->map[x][mlx->y_player] == '1')
-		return (1);
-	return (0);
+
+void ft_moov_of_player(int code, t_player *player)
+{	
+	double speed;
+
+	speed = player->speed;
+    if (code == 119)
+	player->y = player->y - speed;
+	else if (code == 115)
+		player->y = player->y + speed;
+	else if (code == 100)
+		player->x = player->x + speed;
+	else if (code == 97)
+		player->x = player->x - speed;
 }
 
-int	ft_is_wall_x(t_mlx *mlx, int y)
+void ft_moov_angle(int code, t_player *player)
 {
-	if (mlx->map[mlx->x_player][y] == '1')
-		return (1);
-	return (0);
+	double angle_speed;  
+
+	angle_speed = player->angle_speed;
+
+	if (code == 65361)
+		player->angle = player->angle + angle_speed;
+	else if (code == 65363)
+		player->angle = player->angle - angle_speed;
 }
+
+
+
 
 int	ft_key_press(int code, t_mlx *mlx)
 {
+	t_player * player;
+
+	player = mlx->player;
 	if (code == 65307)
 		ft_mlx_destroy(mlx);
-	else if (code == 100 && !ft_is_wall_x(mlx, mlx->y_player + 1))
-		mlx->y_player = mlx->y_player + 1;
-	else if (code == 97 && !ft_is_wall_x(mlx, mlx->y_player - 1))
-		mlx->y_player = mlx->y_player - 1;
-	else if (code == 119 && !ft_is_wall_y(mlx, mlx->x_player - 1))
-		mlx->x_player = mlx->x_player - 1;
-	else if (code == 115 && !ft_is_wall_y(mlx, mlx->x_player + 1))
-		mlx->x_player = mlx->x_player + 1;
+	ft_moov_of_player(code, player);
+	ft_moov_angle(code, player);
+
+	
 	ft_render(mlx);
 	return (0);
 }

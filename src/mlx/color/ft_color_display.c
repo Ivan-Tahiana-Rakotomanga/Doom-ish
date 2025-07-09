@@ -21,8 +21,8 @@ void ft_display_player(t_mlx *mlx)
 
 
 	player = mlx->player;
-    a.x = player->x ;
-	a.y = player->y ;	
+    a.x = player->x;
+	a.y = player->y;	
 	ft_draw_square(a,5,ft_strdup("255,0,0"),mlx);
 	x_cos = cos(ft_degree_to_radian(player->angle))  * 50;
 	y_sin = sin(ft_degree_to_radian(player->angle))  * 50;
@@ -61,6 +61,5 @@ void	ft_color_display(t_mlx *mlx)
 
 	ft_display_player(mlx);
 	
-
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
+	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
 }
