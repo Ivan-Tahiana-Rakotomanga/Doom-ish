@@ -35,6 +35,8 @@ void ft_init_player(t_mlx **mlx)
 	player->angle = 90;
 	player->angle_direction = 0;
 	player->move_direction = 0;
+	player->fov = 60;
+	player->nb_rays = (*mlx)->width / 4; 
 	player->speed = 10;
 	player->angle_speed = 2;
 	(*mlx)->player = player;

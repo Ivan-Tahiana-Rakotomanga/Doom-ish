@@ -14,22 +14,14 @@
 void ft_display_player(t_mlx *mlx)
 {
 	t_point a;
-	t_point end;
 	t_player *player;
-	double x_cos;
-	double y_sin;
 
 
 	player = mlx->player;
     a.x = player->x;
 	a.y = player->y;	
 	ft_draw_square(a,5,ft_strdup("255,0,0"),mlx);
-	x_cos = cos(ft_degree_to_radian(player->angle))  * 50;
-	y_sin = sin(ft_degree_to_radian(player->angle))  * 50;
-	end.x =  a.x + x_cos ;
-	end.y =  a.y + y_sin ; 
-
-	ft_draw_line(a,end,ft_strdup("0,0,255"),mlx);
+	ft_draw_all_rays(player, mlx);
 }
 
 
