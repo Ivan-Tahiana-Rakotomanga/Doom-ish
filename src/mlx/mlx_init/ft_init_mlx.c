@@ -31,7 +31,7 @@ void ft_init_player(t_mlx **mlx)
 		return;		
 	player->x = ft_pixel_player((*mlx)->x_player, *mlx);
 	player->y = ft_pixel_player((*mlx)->y_player, *mlx); 	
-	player->angle = 181;
+	player->angle = 0;
 	player->angle_direction = 0;
 	player->move_direction = 0;
 	player->fov = 60;

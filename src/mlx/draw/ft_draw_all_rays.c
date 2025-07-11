@@ -9,15 +9,35 @@ void ft_draw_ray(double angle,t_player *player, t_mlx *mlx)
 	a.y = player->y;
 
 
+     // end.y =  ft_first_hit_hy(a.y,mlx->side, angle); 
+	 // end.x =  ft_first_hit_hx(*player,angle,end.y);
+	(void)angle;
+
+	// end = ft_end_hit_h(*player,*mlx,a.y);
+	end = ft_end_hit_v(*player,*mlx,a.x);
+
+	
 
 
-	/*end.y =  ft_first_hit_vy(a.y,mlx->side, angle); */
-	/*end.x =  ft_first_hit_vx(*player,angle,end.y);*/
-
-	end.x = ft_first_hit_hx(a.x,mlx->side,angle);
-	end.y = ft_first_hit_hy(*player,angle,end.x);
-	/*printf("Ito ilay %f  ito ilay xdepart %f ydepart %f  xarriver %f yarriver %f \n", angle,a.x,a.y,end.x,end.y);*/
+	// printf("Ito ilay %f  ito ilay xdepart %f ydepart %f  xarriver %f yarriver %f \n", angle,a.x,a.y,end.x,end.y);
 	ft_draw_line(a,end,ft_strdup("0,0,255"),mlx);
+
+	/*
+   	// ft_draw_line(a,end,ft_strdup("0,255,0"),mlx);
+
+	end.x = ft_first_hit_vx(a.x,mlx->side,angle);
+	end.y = ft_first_hit_vy(*player,angle,end.x);
+	if (mlx->height <= end.y  )
+		end.y = mlx->height; 
+	if (end.y < 0)
+		end.y = 0;
+
+	end.x = a.x + cos(ft_degree_to_radian(angle)) * 10;
+	end.y = a.y + sin(ft_degree_to_radian(angle)) * 10;
+
+
+	ft_draw_line(a,end,ft_strdup("255,0,0"),mlx);
+	*/
 }
 
 void ft_draw_all_rays(t_player *player, t_mlx *mlx)
