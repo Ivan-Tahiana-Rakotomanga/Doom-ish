@@ -18,7 +18,6 @@ double ft_pixel_player(int value, t_mlx *mlx)
 {
 	double half;
 	half = (mlx->side / 2);
-
 	return (ft_coordinate_to_pixel((double)value ,mlx->side) + half);
 }
 
@@ -32,7 +31,7 @@ void ft_init_player(t_mlx **mlx)
 		return;		
 	player->x = ft_pixel_player((*mlx)->x_player, *mlx);
 	player->y = ft_pixel_player((*mlx)->y_player, *mlx); 	
-	player->angle = 90;
+	player->angle = 181;
 	player->angle_direction = 0;
 	player->move_direction = 0;
 	player->fov = 60;

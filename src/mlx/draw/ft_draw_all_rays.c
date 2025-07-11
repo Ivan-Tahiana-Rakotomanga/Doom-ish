@@ -2,23 +2,27 @@
 
 void ft_draw_ray(double angle,t_player *player, t_mlx *mlx)
 {
-	int x_cos;
-	int y_sin;
 	t_point a;
 	t_point end;
 
 	a.x = player->x;
 	a.y = player->y;
-    x_cos = cos(ft_degree_to_radian(angle))  * 50;
-	y_sin = sin(ft_degree_to_radian(angle))  * 50;
-	end.x =  a.x + x_cos ;
-	end.y =  a.y + y_sin ; 
+
+
+
+
+	/*end.y =  ft_first_hit_vy(a.y,mlx->side, angle); */
+	/*end.x =  ft_first_hit_vx(*player,angle,end.y);*/
+
+	end.x = ft_first_hit_hx(a.x,mlx->side,angle);
+	end.y = ft_first_hit_hy(*player,angle,end.x);
+	/*printf("Ito ilay %f  ito ilay xdepart %f ydepart %f  xarriver %f yarriver %f \n", angle,a.x,a.y,end.x,end.y);*/
 	ft_draw_line(a,end,ft_strdup("0,0,255"),mlx);
 }
 
 void ft_draw_all_rays(t_player *player, t_mlx *mlx)
 {
-	double angle_step;
+	/*double angle_step;
 	double start_angle;
 	int nbr_rays;
 	int i;
@@ -30,9 +34,9 @@ void ft_draw_all_rays(t_player *player, t_mlx *mlx)
 	while(i < nbr_rays)
 	{
 		ft_draw_ray(start_angle,player, mlx);
-
 		start_angle = start_angle + angle_step;
 		i++;
-	}
+	}*/
 
+	ft_draw_ray(player->angle, player, mlx);
 }
