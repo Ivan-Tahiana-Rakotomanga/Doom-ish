@@ -23,11 +23,11 @@ void ft_draw_all_rays(t_player *player, t_mlx *mlx)
 	i = 0;
 	nbr_rays = player->nb_rays;
 	angle_step = player->fov / nbr_rays;
-	start_angle = player->angle - (player->fov / 2);
-	while(i < nbr_rays )
+	start_angle = ft_limit_angle(fmod(player->angle - (player->fov / 2),360));
+	while(i < nbr_rays)
 	{
 		ft_draw_ray(start_angle,player, mlx);
-		start_angle = start_angle + angle_step;
+		start_angle = ft_limit_angle(fmod((start_angle + angle_step),360));
 		i++;
 	}
 }

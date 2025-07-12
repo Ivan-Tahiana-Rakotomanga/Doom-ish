@@ -34,7 +34,7 @@ void ft_moov_of_player(int code, t_player *player)
 }
 
 
-double ft_limit_360(double angle)
+double ft_limit_angle(double angle)
 {
 	if (angle < 0.0)
 	{
@@ -50,9 +50,9 @@ void ft_moov_angle(int code, t_player *player)
 	angle_speed = player->angle_speed;
 
 	if (code == 65361)
-		player->angle = ft_limit_360(fmod(player->angle - angle_speed, 360));
+		player->angle = ft_limit_angle(fmod(player->angle - angle_speed, 360));
 	else if (code == 65363)
-		player->angle = ft_limit_360(fmod(player->angle + angle_speed , 360));
+		player->angle = ft_limit_angle(fmod(player->angle + angle_speed , 360));
 
 }
 

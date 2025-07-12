@@ -29,6 +29,7 @@ int ft_is_wall(double x_pixel, double y_pixel, t_mlx mlx);
 t_point ft_end_hit_h(double angle, t_mlx mlx, double y_pixel);
 t_point ft_end_hit_v(double angle, t_mlx mlx, double x_pixel);
 t_point ft_get_end(double angle, t_mlx mlx, double y_pixel, double x_pixel);
+double ft_limit_angle(double angle);
 
 
 
