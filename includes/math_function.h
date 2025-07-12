@@ -26,9 +26,9 @@ double ft_first_hit_hx(t_player player, double angle, double y_pixel);
 double ft_first_hit_vx(double x_pixel, double side, double angle);
 double ft_first_hit_vy(t_player player, double angle, double x_pixel);
 int ft_is_wall(double x_pixel, double y_pixel, t_mlx mlx);
-t_point ft_end_hit_h(t_player player, t_mlx mlx, double y_pixel);
-t_point ft_end_hit_v(t_player player, t_mlx mlx, double x_pixel);
-t_point ft_get_end(t_player player, t_mlx mlx, double y_pixel, double x_pixel);
+t_point ft_end_hit_h(double angle, t_mlx mlx, double y_pixel);
+t_point ft_end_hit_v(double angle, t_mlx mlx, double x_pixel);
+t_point ft_get_end(double angle, t_mlx mlx, double y_pixel, double x_pixel);
 
 
 

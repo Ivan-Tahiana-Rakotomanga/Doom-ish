@@ -28,17 +28,20 @@ int ft_on_screen(double x,double y,t_mlx mlx)
 }
 
 
-t_point ft_end_hit_h(t_player player, t_mlx mlx, double y_pixel)
+t_point ft_end_hit_h(double angle, t_mlx mlx, double y_pixel)
 {
 	t_point end;
 	double ya;
 	double xa;
-	
-	end.y =  ft_first_hit_hy(y_pixel,mlx.side, player.angle); 
-	end.x =  ft_first_hit_hx(player,player.angle,end.y);
+	t_player *player;
 
-	ya = ft_get_ya(player.angle, mlx.side, 1); 
-	xa = ya / tan(ft_degree_to_radian(player.angle));
+	player = mlx.player;
+	
+	end.y =  ft_first_hit_hy(y_pixel,mlx.side, angle); 
+	end.x =  ft_first_hit_hx(*player,angle,end.y);
+
+	ya = ft_get_ya(angle, mlx.side, 1); 
+	xa = ya / tan(ft_degree_to_radian(angle));
 
 	while(!ft_is_wall(end.x,end.y,mlx))
 	{
@@ -48,14 +51,17 @@ t_point ft_end_hit_h(t_player player, t_mlx mlx, double y_pixel)
 	return (end);
 }
 
-t_point ft_end_hit_v(t_player player, t_mlx mlx, double x_pixel)
+t_point ft_end_hit_v(double angle, t_mlx mlx, double x_pixel)
 {
 	t_point end;
 	double ya;
 	double xa;
+	t_player *player;
+
+	player = mlx.player;
 	
-	end.x = ft_first_hit_vx(x_pixel, mlx.side, player.angle); 
-	end.y = ft_first_hit_vy(player,player.angle,end.x);
+	end.x = ft_first_hit_vx(x_pixel, mlx.side, angle); 
+	end.y = ft_first_hit_vy(*player,angle,end.x);
 
 	if(mlx.height < end.y)
 	{
@@ -68,8 +74,8 @@ t_point ft_end_hit_v(t_player player, t_mlx mlx, double x_pixel)
 		return (end);
 	}
 
-	xa = ft_get_ya(player.angle, mlx.side, 2); 
-	ya = xa * tan(ft_degree_to_radian(player.angle));
+	xa = ft_get_ya(angle, mlx.side, 2); 
+	ya = xa * tan(ft_degree_to_radian(angle));
 
 
     while(ft_on_screen(end.x + xa, end.y + ya, mlx) && !ft_is_wall(end.x, end.y, mlx)) 
@@ -103,19 +109,20 @@ double ft_get_distance(t_point end, t_player player)
 }
 
 
-t_point ft_get_end(t_player player, t_mlx mlx, double y_pixel, double x_pixel)
+t_point ft_get_end(double angle, t_mlx mlx, double y_pixel, double x_pixel)
 {
 	t_point v;
 	t_point h;
 	double d_h;
 	double d_v;
+	t_player *player;
 
 
-
-	h = ft_end_hit_h(player,mlx,y_pixel); 
-	v = ft_end_hit_v(player,mlx,x_pixel); 
-	d_h = ft_get_distance(h, player);
-	d_v = ft_get_distance(v, player);
+	player = mlx.player;
+	h = ft_end_hit_h(angle,mlx,y_pixel); 
+	v = ft_end_hit_v(angle,mlx,x_pixel); 
+	d_h = ft_get_distance(h, *player);
+	d_v = ft_get_distance(v, *player);
 
 	if(d_h < d_v)
 		return (h);
