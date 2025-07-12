@@ -13,14 +13,20 @@ void ft_draw_ray(double angle,t_player *player, t_mlx *mlx)
 	 // end.x =  ft_first_hit_hx(*player,angle,end.y);
 	(void)angle;
 
-	// end = ft_end_hit_h(*player,*mlx,a.y);
-	end = ft_end_hit_v(*player,*mlx,a.x);
+	 /*end = ft_end_hit_h(*player,*mlx,a.y);*/
 
 	
 
 
 	// printf("Ito ilay %f  ito ilay xdepart %f ydepart %f  xarriver %f yarriver %f \n", angle,a.x,a.y,end.x,end.y);
-	ft_draw_line(a,end,ft_strdup("0,0,255"),mlx);
+	/*ft_draw_line(a,end,ft_strdup("0,0,255"),mlx);*/
+
+	/*end = ft_end_hit_v(*player,*mlx,a.x);*/
+	end = ft_get_end(*player,*mlx,a.y,a.x);
+	ft_draw_line(a,end,ft_strdup("255,0,255"),mlx);
+
+
+
 
 	/*
    	// ft_draw_line(a,end,ft_strdup("0,255,0"),mlx);
