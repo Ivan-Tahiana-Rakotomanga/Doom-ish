@@ -33,5 +33,8 @@ t_point	ft_end_hit_h(double angle, t_mlx mlx, double y_pixel);
 t_point	ft_end_hit_v(double angle, t_mlx mlx, double x_pixel);
 t_point	ft_get_end(double angle, t_mlx mlx, double y_pixel, double x_pixel);
 double	ft_limit_angle(double angle);
+double	ft_get_distance(t_point end, t_player player);
+int	ft_on_screen(double x, double y, t_mlx mlx);
+int	ft_on_screen(double x, double y, t_mlx mlx);
 
 #endif

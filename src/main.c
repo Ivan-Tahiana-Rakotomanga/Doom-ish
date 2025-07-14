@@ -14,9 +14,13 @@
 
 /*void	ft_print_strs(char **strs)
 {
-	int	i;
+	int		i;
 		char **map;
 		t_mlx *mlx;
+	t_mlx	*mlx;
+	char	**map;
+	t_mlx	*mlx;
+	char	**map;
 
 	i = 0;
 	printf("\nIto ny print an'ilay strs\n");
@@ -29,13 +33,12 @@
 }*/
 int	main(int argc, char **argv)
 {
-  t_mlx *mlx;
-  char **map;
- 
+	t_mlx *mlx;
+	char **map;
+	mlx = NULL;
+	map = NULL;
 	if (argc == 2)
 	{
-		mlx = NULL;
-		map = NULL;
 		if (!ft_check_file(argv[1], &map))
 			return (0);
 		mlx = ft_init_mlx(mlx, map);

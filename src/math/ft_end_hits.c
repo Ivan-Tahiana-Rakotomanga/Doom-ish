@@ -12,7 +12,7 @@
 
 #include "../../includes/header.h"
 
-double	ft_get_ya(double angle, double side, int index)
+double	ft_get_yxa(double angle, double side, int index)
 {
 	if (index == 1)
 	{
@@ -29,15 +29,6 @@ double	ft_get_ya(double angle, double side, int index)
 	}
 }
 
-int	ft_on_screen(double x, double y, t_mlx mlx)
-{
-	if (x < 0 || mlx.width <= x)
-		return (0);
-	if (y < 0 || mlx.height <= y)
-		return (0);
-	return (1);
-}
-
 t_point	ft_end_hit_h(double angle, t_mlx mlx, double y_pixel)
 {
 	t_point		end;
@@ -48,7 +39,7 @@ t_point	ft_end_hit_h(double angle, t_mlx mlx, double y_pixel)
 	player = mlx.player;
 	end.y = ft_first_hit_hy(y_pixel, mlx.side, angle);
 	end.x = ft_first_hit_hx(*player, angle, end.y);
-	ya = ft_get_ya(angle, mlx.side, 1);
+	ya = ft_get_yxa(angle, mlx.side, 1);
 	xa = ya / tan(ft_degree_to_radian(angle));
 	while (!ft_is_wall(end.x, end.y, mlx))
 	{
@@ -68,17 +59,7 @@ t_point	ft_end_hit_v(double angle, t_mlx mlx, double x_pixel)
 	player = mlx.player;
 	end.x = ft_first_hit_vx(x_pixel, mlx.side, angle);
 	end.y = ft_first_hit_vy(*player, angle, end.x);
-	if (mlx.height < end.y)
-	{
-		end.y = mlx.height;
-		return (end);
-	}
-	else if (end.y < 0)
-	{
-		end.y = 0;
-		return (end);
-	}
-	xa = ft_get_ya(angle, mlx.side, 2);
+	xa = ft_get_yxa(angle, mlx.side, 2);
 	ya = xa * tan(ft_degree_to_radian(angle));
 	while (ft_on_screen(end.x + xa, end.y + ya, mlx) && !ft_is_wall(end.x,
 			end.y, mlx))
@@ -94,18 +75,6 @@ t_point	ft_end_hit_v(double angle, t_mlx mlx, double x_pixel)
 			end.y = mlx.height;
 	}
 	return (end);
-}
-
-double	ft_get_distance(t_point end, t_player player)
-{
-	double	x;
-	double	y;
-
-	x = end.x - player.x;
-	x = x * x;
-	y = end.y - player.y;
-	y = y * y;
-	return (sqrt(x) + sqrt(y));
 }
 
 t_point	ft_get_end(double angle, t_mlx mlx, double y_pixel, double x_pixel)

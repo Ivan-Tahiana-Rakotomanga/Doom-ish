@@ -29,6 +29,8 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/handle_error/map/ft_utils_list_map.c \
 		src/handle_error/map/ft_map_to_strs.c \
 		src/math/ft_dda.c \
+		src/math/ft_on_screen.c \
+		src/math/ft_get_distance.c \
 		src/math/ft_is_wall.c \
 		src/math/ft_first_hit.c \
 		src/math/ft_end_hits.c \
