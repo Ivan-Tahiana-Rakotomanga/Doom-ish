@@ -28,18 +28,17 @@ typedef struct s_map
 
 typedef struct s_player
 {
-	double x;
-	double y;
-	double angle;
-	int angle_direction;
-	int move_direction;
-	double fov;
-	int nb_rays;
-	double speed;
-	double angle_speed;
+	double			x;
+	double			y;
+	double			angle;
+	int				angle_direction;
+	int				move_direction;
+	double			fov;
+	int				nb_rays;
+	double			speed;
+	double			angle_speed;
 
-} t_player;
-
+}					t_player;
 
 typedef struct s_mlx
 {
@@ -55,12 +54,11 @@ typedef struct s_mlx
 	int				endian;
 	int				x_player;
 	int				y_player;
-	int             side;
+	int				side;
 	char			**map;
 	double			change_x;
 	double			change_y;
-	struct s_player *player;
+	struct s_player	*player;
 }					t_mlx;
-
 
 #endif

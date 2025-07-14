@@ -1,22 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_draw_line.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/14 09:50:37 by fxu-lin           #+#    #+#             */
+/*   Updated: 2025/07/14 09:50:37 by fxu-lin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../../includes/header.h"
 #include <math.h>
 
-void ft_draw_line(t_point start, t_point end,char *color, t_mlx *mlx)
+void	ft_draw_line(t_point start, t_point end, char *color, t_mlx *mlx)
 {
-	t_point increment;
-	char *tmp_color;
-	int steps;
-	int i;
+	t_point	increment;
+	char	*tmp_color;
+	int		steps;
+	int		i;
 
 	i = 0;
-    increment = ft_increment_dda(start, end);
+	increment = ft_increment_dda(start, end);
 	tmp_color = NULL;
-	steps = fmax(fabs(end.x - start.x),fabs(end.y - start.y));
-
-	while(i < steps)
+	steps = fmax(fabs(end.x - start.x), fabs(end.y - start.y));
+	while (i < steps)
 	{
-		tmp_color = ft_get_address((int) round(start.x), (int) round(start.y), mlx);
-			*(unsigned int *) tmp_color = ft_convert_color(color);
+		tmp_color = ft_get_address((int)round(start.x), (int)round(start.y),
+				mlx);
+		*(unsigned int *)tmp_color = ft_convert_color(color);
 		start.x = start.x + increment.x;
 		start.y = start.y + increment.y;
 		i++;

@@ -12,24 +12,22 @@
 
 #include "../../../includes/header.h"
 
-int ft_convert_color(char *color)
+int	ft_convert_color(char *color)
 {
-  int res;
-  char **colors;
-  int first_c;
-  int second_c;
-  int third_c;
+	int		res;
+	char	**colors;
+	int		first_c;
+	int		second_c;
+	int		third_c;
 
-  res = 0;
-  colors = ft_split(color, ',');
-  if (!colors)
-    ft_free_str(colors);
-  first_c = ft_atoi(colors[0]);
-  second_c = ft_atoi(colors[1]);
-  third_c = ft_atoi(colors[2]);
-  res = (first_c << 16) | (second_c << 8) | (third_c);
-  ft_free_str(colors);
-  return (res);
+	res = 0;
+	colors = ft_split(color, ',');
+	if (!colors)
+		ft_free_str(colors);
+	first_c = ft_atoi(colors[0]);
+	second_c = ft_atoi(colors[1]);
+	third_c = ft_atoi(colors[2]);
+	res = (first_c << 16) | (second_c << 8) | (third_c);
+	ft_free_str(colors);
+	return (res);
 }
-
-

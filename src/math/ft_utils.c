@@ -12,39 +12,39 @@
 
 #include "../../includes/header.h"
 
-double ft_convert_angle(int angle)
+double	ft_convert_angle(int angle)
 {
-  double res;
+	double	res;
 
-  res = angle * (M_PI / 180);
-  return (res);
+	res = angle * (M_PI / 180);
+	return (res);
 }
 
-double ft_normalize_angle(double angle)
+double	ft_normalize_angle(double angle)
 {
-  angle = fmod(angle, 2 * M_PI);
-  if (angle < 0)
-    angle = (2 * M_PI) + angle;
-  return (angle);
+	angle = fmod(angle, 2 * M_PI);
+	if (angle < 0)
+		angle = (2 * M_PI) + angle;
+	return (angle);
 }
 
-int ft_ray_direction(double ray_angle)
+int	ft_ray_direction(double ray_angle)
 {
-  if (ray_angle > 0 && ray_angle < M_PI)
-    return (-1);
-  else if (ray_angle < 0 || ray_angle > M_PI)
-    return (1);
-  else if (ray_angle < 0.5 * M_PI || ray_angle > 1.5 * M_PI)
-      return (2);
-  else if (ray_angle > 0.5 * M_PI && ray_angle < 1.5 * M_PI)
-      return (-2);
-  return (0);
+	if (ray_angle > 0 && ray_angle < M_PI)
+		return (-1);
+	else if (ray_angle < 0 || ray_angle > M_PI)
+		return (1);
+	else if (ray_angle < 0.5 * M_PI || ray_angle > 1.5 * M_PI)
+		return (2);
+	else if (ray_angle > 0.5 * M_PI && ray_angle < 1.5 * M_PI)
+		return (-2);
+	return (0);
 }
 
-int ft_convert_pixel(t_mlx *mlx, int player_pos)
+int	ft_convert_pixel(t_mlx *mlx, int player_pos)
 {
-  int res;
+	int	res;
 
-  res = player_pos / mlx->side;
-  return (res);
+	res = player_pos / mlx->side;
+	return (res);
 }

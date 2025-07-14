@@ -12,11 +12,10 @@
 
 #include "../../../includes/header.h"
 
-char * ft_get_address(int x, int y,t_mlx *mlx)
+char	*ft_get_address(int x, int y, t_mlx *mlx)
 {
-	char * address;
+	char	*address;
 
-	address = mlx->adr + (y *mlx->s_line + x * (mlx->bpp / 8));
-
+	address = mlx->adr + (y * mlx->s_line + x * (mlx->bpp / 8));
 	return (address);
 }

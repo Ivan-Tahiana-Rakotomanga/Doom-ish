@@ -28,8 +28,7 @@ t_point	ft_increment_dda(t_point a, t_point b)
 	increment.y = 0.0;
 	delta_x = ft_delta(a.x, b.x);
 	delta_y = ft_delta(a.y, b.y);
-	step = fmax(fabs(delta_x),fabs(delta_y));;
-
+	step = fmax(fabs(delta_x), fabs(delta_y));
 	increment.x = delta_x / step;
 	increment.y = delta_y / step;
 	return (increment);

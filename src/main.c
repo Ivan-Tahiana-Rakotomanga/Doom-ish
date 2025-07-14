@@ -6,7 +6,7 @@
 /*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:05:56 by irakotom          #+#    #+#             */
-/*   Updated: 2025/06/20 16:15:43 by fxu-lin          ###   ########.fr       */
+/*   Updated: 2025/07/14 09:53:46 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 /*void	ft_print_strs(char **strs)
 {
-	int		i;
+	int	i;
+		char **map;
+		t_mlx *mlx;
 
 	i = 0;
 	printf("\nIto ny print an'ilay strs\n");
@@ -25,21 +27,19 @@
 	}
 	printf("\n");
 }*/
-
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
+  t_mlx *mlx;
+  char **map;
+ 
 	if (argc == 2)
 	{
-		char ** map;
-		t_mlx *mlx;
-
 		mlx = NULL;
 		map = NULL;
-
 		if (!ft_check_file(argv[1], &map))
 			return (0);
 		mlx = ft_init_mlx(mlx, map);
-		if(!mlx)
+		if (!mlx)
 			return (0);
 		ft_color_display(mlx);
 		ft_hook(mlx);
@@ -48,7 +48,6 @@ int main(int argc, char **argv)
 		ft_free_mlx(mlx);
 	}
 	return (0);
-
 }
 /*int	main(int argc, char **argv)*/
 /*{*/
@@ -72,4 +71,3 @@ int main(int argc, char **argv)
 /*	}*/
 /*	return (0);*/
 /*}*/
-
