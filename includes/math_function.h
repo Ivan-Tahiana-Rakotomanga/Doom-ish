@@ -36,5 +36,7 @@ double	ft_limit_angle(double angle);
 double	ft_get_distance(t_point end, t_player player);
 int	ft_on_screen(double x, double y, t_mlx mlx);
 int	ft_on_screen(double x, double y, t_mlx mlx);
+double ft_throw_distance(double width_screen, double angle_fov);
+double ft_get_height_wall(double throw_distance, double distance, double wall_height);
 
 #endif

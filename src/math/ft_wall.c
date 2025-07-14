@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_wall.c                                       :+:      :+:    :+:   */
+/*   ft_wall.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -29,4 +29,11 @@ int	ft_is_wall(double x_pixel, double y_pixel, t_mlx mlx)
 	if (map[y][x] == '1')
 		return (1);
 	return (0);
+}
+
+double ft_get_height_wall(double throw_distance, double distance, double wall_height)
+{
+	if(throw_distance == 0)
+		return (0);
+	return ((distance / throw_distance) * wall_height);
 }

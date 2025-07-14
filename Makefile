@@ -29,9 +29,10 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/handle_error/map/ft_utils_list_map.c \
 		src/handle_error/map/ft_map_to_strs.c \
 		src/math/ft_dda.c \
+		src/math/ft_throw_distance.c \
 		src/math/ft_on_screen.c \
 		src/math/ft_get_distance.c \
-		src/math/ft_is_wall.c \
+		src/math/ft_wall.c \
 		src/math/ft_first_hit.c \
 		src/math/ft_end_hits.c \
 		src/math/ft_degree_to_radian.c \
@@ -46,6 +47,7 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/mlx/color/ft_utils.c \
 		src/mlx/color/ft_add_color_pixels.c \
 		src/mlx/color/ft_get_address.c \
+		src/mlx/draw/ft_draw_rect.c \
 		src/mlx/draw/ft_draw_square.c \
 		src/mlx/draw/ft_draw_all_rays.c \
 		src/mlx/draw/ft_draw_line.c \
