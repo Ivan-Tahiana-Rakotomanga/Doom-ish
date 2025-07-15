@@ -31,9 +31,13 @@ int	ft_is_wall(double x_pixel, double y_pixel, t_mlx mlx)
 	return (0);
 }
 
-double ft_get_height_wall(double throw_distance, double distance, double wall_height)
+double ft_get_height_wall(t_player player,t_mlx mlx, double distance, double wall_height)
 {
-	if(throw_distance == 0)
+	double throw_distance; 
+
+	throw_distance = ft_throw_distance(mlx.width , player.fov); 
+	
+	if(distance == 0.0)
 		return (0);
-	return ((distance / throw_distance) * wall_height);
+	return ((throw_distance/ distance) * wall_height);
 }

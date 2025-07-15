@@ -34,7 +34,7 @@ void	ft_init_player(t_mlx **mlx)
 	player->angle_direction = 0;
 	player->move_direction = 0;
 	player->fov = 60;
-	player->nb_rays = (*mlx)->width / 4;
+	player->nb_rays = (*mlx)->width / (*mlx)->width_one_wall;
 	player->speed = 10;
 	player->angle_speed = 2;
 	(*mlx)->player = player;
@@ -47,6 +47,7 @@ t_mlx	*ft_init_mlx(t_mlx *mlx, char **map)
 		return (ft_free_mlx(mlx));
 	mlx->side = 100;
 	mlx->map = map;
+	mlx->width_one_wall = 4;
 	ft_init_size_window(mlx);
 	ft_init_key(mlx);
 	if (!ft_check_mlx(mlx, "cub3D"))

@@ -1,9 +1,20 @@
 #include "../../../includes/header.h"
 
-void ft_draw_wall(double height_wall, double height_window, char **color)
+void ft_draw_wall(int i, double distance,  t_mlx mlx, char *color)
 {
-	double begin;
+    double width_one_wall; 
+	double height_wall;
+	t_point start;
+	t_point end;
 
-	begin = 
+	width_one_wall = mlx.width_one_wall;
+	height_wall = ft_get_height_wall(*(mlx).player, mlx, distance, mlx.height);
+	start.x = i * width_one_wall; 
+	start.y = ((double)mlx.height / 2) - (height_wall / 2);
+
+	end.x = start.x + width_one_wall; 
+	end.y = start.y + height_wall; 
+	ft_draw_rect(start, end, color, &mlx);
+
 
 }
