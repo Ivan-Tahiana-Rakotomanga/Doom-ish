@@ -18,10 +18,10 @@ double ft_draw_ray(double angle, t_player player, t_mlx mlx)
 
 	end = ft_get_end(angle, mlx, player.y, player.x);
 
-	/*t_point a;*/
-	/*a.x = player.x; */
-	/*a.y = player.y; */
-	/*ft_draw_line(a, end, ft_strdup("255,0,255"), &mlx);*/
+	t_point a;
+	a.x = player.x; 
+	a.y = player.y; 
+	ft_draw_line(a, end, ft_strdup("255,0,255"), &mlx);
 	return (ft_get_distance(end, player));
 }
 

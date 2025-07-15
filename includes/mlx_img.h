@@ -37,5 +37,6 @@ void	ft_draw_line(t_point start, t_point end, char *color, t_mlx *mlx);
 void	ft_draw_all_rays(t_player *player, t_mlx *mlx);
 void	ft_draw_rect(t_point a, t_point b, char *color, t_mlx *mlx);
 void ft_draw_wall(int i, double distance,  t_mlx mlx, char * color);
+void	ft_move_of_player(int code, t_player *player, t_mlx mlx);
 
 #endif

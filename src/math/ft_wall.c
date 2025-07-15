@@ -21,9 +21,11 @@ int	ft_is_wall(double x_pixel, double y_pixel, t_mlx mlx)
 
 	map = mlx.map;
 	side = mlx.side;
-	if (x_pixel <= 0 || mlx.width <= x_pixel || y_pixel <= 0
-		|| mlx.height <= y_pixel)
+	if(!ft_on_screen(x_pixel, y_pixel,mlx))
+	{
+		printf("Tonga ato %f et %f\n", x_pixel, y_pixel);
 		return (1);
+	}
 	x = ft_pixel_to_coordinate(x_pixel, side);
 	y = ft_pixel_to_coordinate(y_pixel, side);
 	if (map[y][x] == '1')

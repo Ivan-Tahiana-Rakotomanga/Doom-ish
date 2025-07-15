@@ -16,5 +16,4 @@ void ft_draw_wall(int i, double distance,  t_mlx mlx, char *color)
 	end.y = start.y + height_wall; 
 	ft_draw_rect(start, end, color, &mlx);
 
-
 }
