@@ -13,9 +13,9 @@
 #ifndef HEADER_H
 # define HEADER_H
 
-# include "all_struct.h"
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
+# include "all_struct.h"
 # include "handle_error.h"
 # include "map.h"
 # include "math_function.h"

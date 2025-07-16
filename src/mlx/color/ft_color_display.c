@@ -13,23 +13,18 @@
 
 void	ft_display_player(t_mlx *mlx)
 {
-	/*t_point		a;*/
 	t_player	*player;
 
 	player = mlx->player;
-	/*a.x = player->x;*/
-	/*a.y = player->y;*/
-	/*ft_draw_square(a, 5, ft_strdup("255,0,0"), mlx);*/
 	ft_draw_all_rays(player, mlx);
 }
 
 void	ft_color_display(t_mlx *mlx)
 {
-
 	t_point	a;
 	char	**map;
-	int x;
-	int y;
+	int		x;
+	int		y;
 
 	y = 0;
 	x = 0;
@@ -48,8 +43,7 @@ void	ft_color_display(t_mlx *mlx)
 			x++;
 		}
 		y++;
-	}		
-
+	}
 	ft_display_player(mlx);
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
 }

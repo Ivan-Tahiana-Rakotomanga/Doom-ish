@@ -21,7 +21,7 @@ int	ft_is_wall(double x_pixel, double y_pixel, t_mlx mlx)
 
 	map = mlx.map;
 	side = mlx.side;
-	if(!ft_on_screen(x_pixel, y_pixel,mlx))
+	if (!ft_on_screen(x_pixel, y_pixel, mlx))
 	{
 		printf("Tonga ato %f et %f\n", x_pixel, y_pixel);
 		return (1);
@@ -33,13 +33,13 @@ int	ft_is_wall(double x_pixel, double y_pixel, t_mlx mlx)
 	return (0);
 }
 
-double ft_get_height_wall(t_player player,t_mlx mlx, double distance, double wall_height)
+double	ft_get_height_wall(t_player player, t_mlx mlx, double distance,
+		double wall_height)
 {
-	double throw_distance; 
+	double	throw_distance;
 
-	throw_distance = ft_throw_distance(mlx.width , player.fov); 
-	
-	if(distance == 0.0)
+	throw_distance = ft_throw_distance(mlx.width, player.fov);
+	if (distance == 0.0)
 		return (0);
-	return ((throw_distance/ distance) * wall_height);
+	return ((throw_distance / distance) * wall_height);
 }

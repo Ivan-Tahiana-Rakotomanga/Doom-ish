@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_draw_rect.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/16 10:10:09 by irakotom          #+#    #+#             */
+/*   Updated: 2025/07/16 10:10:11 by irakotom         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../../includes/header.h"
 
 void	ft_draw_rect(t_point a, t_point b, char *color, t_mlx *mlx)
@@ -11,7 +23,6 @@ void	ft_draw_rect(t_point a, t_point b, char *color, t_mlx *mlx)
 	y = a.y;
 	tmp_x = x;
 	tmp_color = NULL;
-	
 	while (y < b.y)
 	{
 		x = tmp_x;

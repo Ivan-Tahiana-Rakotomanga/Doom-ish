@@ -37,7 +37,7 @@ double	ft_first_hit_vx(double x_pixel, double side, double angle)
 	double	res;
 
 	res = 0.0;
-	if (90 < angle && angle <= 270)
+	if (90 < angle && angle < 270)
 		res = (ft_pixel_to_coordinate(x_pixel, side) * side) - 0.01;
 	else
 		res = (ft_pixel_to_coordinate(x_pixel, side) * side) + side;

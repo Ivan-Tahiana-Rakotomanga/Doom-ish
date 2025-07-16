@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_get_distance.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/16 10:08:36 by irakotom          #+#    #+#             */
+/*   Updated: 2025/07/16 10:08:36 by irakotom         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/header.h"
+
 double	ft_get_distance(t_point end, t_player player)
 {
 	double	x;
@@ -10,4 +23,3 @@ double	ft_get_distance(t_point end, t_player player)
 	y = y * y;
 	return (sqrt(x) + sqrt(y));
 }
-

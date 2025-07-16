@@ -38,25 +38,17 @@ t_point	ft_end_hit_h(double angle, t_mlx mlx, double y_pixel)
 	t_player	*player;
 
 	player = mlx.player;
-
 	end.y = ft_first_hit_hy(y_pixel, mlx.side, angle);
 	end.x = ft_first_hit_hx(*player, angle, end.y);
-
-	if(ft_is_wall(end.x, end.y,mlx))
+	if (ft_is_wall(end.x, end.y, mlx))
 		return (end);
-
 	ya = ft_get_yxa(angle, mlx.side, 1);
 	xa = ya / tan(ft_degree_to_radian(angle));
-
-
-
 	while (!ft_is_wall(end.x, end.y, mlx))
 	{
 		end.x = end.x + xa;
 		end.y = end.y + ya;
 	}
-
-
 	return (end);
 }
 
@@ -70,11 +62,8 @@ t_point	ft_end_hit_v(double angle, t_mlx mlx, double x_pixel)
 	player = mlx.player;
 	end.x = ft_first_hit_vx(x_pixel, mlx.side, angle);
 	end.y = ft_first_hit_vy(*player, angle, end.x);
-
-	if(ft_is_wall(end.x, end.y,mlx))
+	if (ft_is_wall(end.x, end.y, mlx))
 		return (end);
-
-
 	xa = ft_get_yxa(angle, mlx.side, 2);
 	ya = xa * tan(ft_degree_to_radian(angle));
 	while (ft_on_screen(end.x + xa, end.y + ya, mlx) && !ft_is_wall(end.x,
@@ -93,7 +82,7 @@ t_point	ft_end_hit_v(double angle, t_mlx mlx, double x_pixel)
 	return (end);
 }
 
-t_point	ft_get_end(double angle, t_mlx mlx,t_point pixel , int * h_v)
+t_point	ft_get_end(double angle, t_mlx mlx, t_point pixel, int *h_v)
 {
 	t_point		v;
 	t_point		h;
@@ -112,7 +101,7 @@ t_point	ft_get_end(double angle, t_mlx mlx,t_point pixel , int * h_v)
 		return (h);
 	}
 	else
-    {
+	{
 		*h_v = 2;
 		return (v);
 	}

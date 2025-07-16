@@ -58,7 +58,7 @@ typedef struct s_mlx
 	char			**map;
 	double			change_x;
 	double			change_y;
-	double          width_one_wall;
+	double			width_one_wall;
 	struct s_player	*player;
 }					t_mlx;
 
