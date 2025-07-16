@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../includes/header.h"
+#include <signal.h>
 
 double	ft_get_yxa(double angle, double side, int index)
 {
@@ -92,7 +93,7 @@ t_point	ft_end_hit_v(double angle, t_mlx mlx, double x_pixel)
 	return (end);
 }
 
-t_point	ft_get_end(double angle, t_mlx mlx, double y_pixel, double x_pixel)
+t_point	ft_get_end(double angle, t_mlx mlx,t_point pixel , int * h_v)
 {
 	t_point		v;
 	t_point		h;
@@ -101,12 +102,18 @@ t_point	ft_get_end(double angle, t_mlx mlx, double y_pixel, double x_pixel)
 	t_player	*player;
 
 	player = mlx.player;
-	h = ft_end_hit_h(angle, mlx, y_pixel);
-	v = ft_end_hit_v(angle, mlx, x_pixel);
+	h = ft_end_hit_h(angle, mlx, pixel.y);
+	v = ft_end_hit_v(angle, mlx, pixel.x);
 	d_h = ft_get_distance(h, *player);
 	d_v = ft_get_distance(v, *player);
 	if (d_h < d_v)
+	{
+		*h_v = 1;
 		return (h);
+	}
 	else
+    {
+		*h_v = 2;
 		return (v);
+	}
 }
