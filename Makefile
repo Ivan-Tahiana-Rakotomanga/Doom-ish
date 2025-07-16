@@ -6,7 +6,7 @@
 #    By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/04 12:56:49 by irakotom          #+#    #+#              #
-#    Updated: 2025/07/02 17:27:28 by irakotom         ###   ########.fr        #
+#    Updated: 2025/07/16 10:31:53 by irakotom         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,7 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 
 OBJ = $(SRC:.c=.o)
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I./includes -g
+CFLAGS = -Wall -Wextra -Werror -I./includes -g 
 MLX = minilibx-linux/libmlx.a
 INC = -I minilibx-linux
 MLX_FLAG = -Lminilibx-linux -lmlx -lm -lX11 -lXext

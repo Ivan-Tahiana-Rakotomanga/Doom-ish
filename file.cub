@@ -1,14 +1,14 @@
 NO ./textures/1.xmp  
 SO ./textures/1.xmp 
 WE ./textures/1.xmp
-EA ./textures/2.xmp
+EA ./textures/2.xmp 
 
 F     250,  100,        0
-C 250,1,                                          0
+C 250,1,                                          0 
 
 11111111
-1100001
-10N0001
+110000111
+10N1001
 1000001
 1001001
 1000011

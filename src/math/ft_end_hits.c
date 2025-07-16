@@ -6,12 +6,11 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 09:49:04 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/07/14 09:49:04 by fxu-lin          ###   ########.fr       */
+/*   Updated: 2025/07/16 10:54:10 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/header.h"
-#include <signal.h>
 
 double	ft_get_yxa(double angle, double side, int index)
 {
@@ -40,10 +39,16 @@ t_point	ft_end_hit_h(double angle, t_mlx mlx, double y_pixel)
 	player = mlx.player;
 	end.y = ft_first_hit_hy(y_pixel, mlx.side, angle);
 	end.x = ft_first_hit_hx(*player, angle, end.y);
+
 	if (ft_is_wall(end.x, end.y, mlx))
 		return (end);
+
+
 	ya = ft_get_yxa(angle, mlx.side, 1);
 	xa = ya / tan(ft_degree_to_radian(angle));
+
+
+
 	while (!ft_is_wall(end.x, end.y, mlx))
 	{
 		end.x = end.x + xa;
@@ -66,19 +71,14 @@ t_point	ft_end_hit_v(double angle, t_mlx mlx, double x_pixel)
 		return (end);
 	xa = ft_get_yxa(angle, mlx.side, 2);
 	ya = xa * tan(ft_degree_to_radian(angle));
-	while (ft_on_screen(end.x + xa, end.y + ya, mlx) && !ft_is_wall(end.x,
-			end.y, mlx))
+
+
+	while (!ft_is_wall(end.x, end.y, mlx))
 	{
 		end.x = end.x + xa;
 		end.y = end.y + ya;
 	}
-	if (!ft_is_wall(end.x, end.y, mlx))
-	{
-		if (end.y + ya <= 0)
-			end.y = 0;
-		else if (mlx.height <= end.y + ya)
-			end.y = mlx.height;
-	}
+	
 	return (end);
 }
 

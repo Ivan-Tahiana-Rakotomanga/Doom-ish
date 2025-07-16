@@ -6,7 +6,7 @@
 /*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 10:10:00 by irakotom          #+#    #+#             */
-/*   Updated: 2025/07/16 10:10:00 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/07/16 11:05:43 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,10 @@ void	ft_draw_wall(int i, double distance, t_mlx mlx, char *color)
 	start.y = ((double)mlx.height / 2) - (height_wall / 2);
 	end.x = start.x + width_one_wall;
 	end.y = start.y + height_wall;
+
+	if(start.y <= 0)
+		start.y = 0;
+	if (mlx.height <= end.y)
+		end.y = mlx.height;
 	ft_draw_rect(start, end, color, &mlx);
 }

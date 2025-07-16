@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wall.c                                       :+:      :+:    :+:   */
+/*   ft_wall.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 09:49:19 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/07/14 09:49:19 by fxu-lin          ###   ########.fr       */
+/*   Updated: 2025/07/16 10:22:05 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ int	ft_is_wall(double x_pixel, double y_pixel, t_mlx mlx)
 	map = mlx.map;
 	side = mlx.side;
 	if (!ft_on_screen(x_pixel, y_pixel, mlx))
-	{
-		printf("Tonga ato %f et %f\n", x_pixel, y_pixel);
 		return (1);
-	}
 	x = ft_pixel_to_coordinate(x_pixel, side);
 	y = ft_pixel_to_coordinate(y_pixel, side);
 	if (map[y][x] == '1')
