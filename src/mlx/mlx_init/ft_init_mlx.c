@@ -45,7 +45,7 @@ t_mlx	*ft_init_mlx(t_mlx *mlx, char **map)
 	mlx = malloc(sizeof(t_mlx));
 	if (!mlx)
 		return (ft_free_mlx(mlx));
-	mlx->side = 100;
+	mlx->side = 32;
 	mlx->map = map;
 	mlx->width_one_wall = 1;
 	ft_init_size_window(mlx);

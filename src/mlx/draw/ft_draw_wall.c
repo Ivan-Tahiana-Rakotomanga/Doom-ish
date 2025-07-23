@@ -20,7 +20,7 @@ void	ft_draw_wall(int i, double distance, t_mlx mlx, char *color)
 	t_point	end;
 
 	width_one_wall = mlx.width_one_wall;
-	height_wall = ft_get_height_wall(*(mlx).player,mlx, distance, mlx.height + 600);
+	height_wall = ft_get_height_wall(*(mlx).player,mlx, distance, mlx.height);
 	start.x = i * width_one_wall;
 	start.y = ((double)mlx.height / 2) - (height_wall / 2);
 	end.x = start.x + width_one_wall;

@@ -21,5 +21,5 @@ double	ft_throw_distance(double width_screen, double angle_fov)
 	half_fov = angle_fov / 2;
 	if (half_fov == 0.0)
 		return (0);
-	return (half_screen / half_fov);
+	return (half_screen / tan(ft_degree_to_radian(half_fov)));
 }

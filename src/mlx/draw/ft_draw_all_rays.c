@@ -29,8 +29,8 @@ double	ft_draw_ray(double angle, t_player player, t_mlx mlx, int *h_v)
 	/*ft_draw_line(a, end, ft_strdup("255,0,255"), &mlx);*/
 	/**/
 
-		res = ft_get_distance(end,player); 
-	    res = res * cos(ft_degree_to_radian(fmod(angle - player.angle, 360)));
+	res = ft_get_distance(end,player); 
+	res = res * cos(ft_degree_to_radian(fmod(angle - player.angle, 360)));
 
 	
 	return (res);

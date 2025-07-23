@@ -38,5 +38,6 @@ double	ft_get_height_wall(t_player player, t_mlx mlx, double distance,
 	throw_distance = ft_throw_distance(mlx.width, player.fov);
 	if (distance == 0.0)
 		return (0);
-	return ((throw_distance / distance) * wall_height);
+	wall_height = mlx.side;
+	return ((wall_height / distance) * throw_distance);
 }
