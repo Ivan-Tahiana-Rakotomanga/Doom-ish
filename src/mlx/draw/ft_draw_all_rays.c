@@ -6,7 +6,7 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 09:50:33 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/07/16 11:23:25 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/07/16 11:35:45 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,22 @@ double	ft_draw_ray(double angle, t_player player, t_mlx mlx, int *h_v)
 	t_point	end;
 	t_point	pixel;
 	double	res;
-	/*t_point	a;*/
 
 	pixel.x = player.x;
 	pixel.y = player.y;
 	res = 0.0;
 	end = ft_get_end(angle, mlx, pixel, h_v);
+
+	/*t_point	a;*/
 	/*a.x = player.x;*/
 	/*a.y = player.y;*/
 	/*ft_draw_line(a, end, ft_strdup("255,0,255"), &mlx);*/
-	res = ft_get_distance(end, player)
-		* cos(ft_degree_to_radian(fmod(player.angle - angle, 360)));
+	/**/
+
+		res = ft_get_distance(end,player); 
+	    res = res * cos(ft_degree_to_radian(fmod(angle - player.angle, 360)));
+
+	
 	return (res);
 }
 
@@ -49,7 +54,6 @@ void	ft_loop_wall(double start_angle, double nbr_rays, t_mlx mlx,
 		else if (h_v == 2)
 			ft_draw_wall(i, distance, mlx, ft_strdup("63, 75, 69"));
 		start_angle = ft_limit_angle(fmod((start_angle + angle_step), 360));
-		distance = distance;
 		i++;
 	}
 }

@@ -39,16 +39,10 @@ t_point	ft_end_hit_h(double angle, t_mlx mlx, double y_pixel)
 	player = mlx.player;
 	end.y = ft_first_hit_hy(y_pixel, mlx.side, angle);
 	end.x = ft_first_hit_hx(*player, angle, end.y);
-
 	if (ft_is_wall(end.x, end.y, mlx))
 		return (end);
-
-
 	ya = ft_get_yxa(angle, mlx.side, 1);
 	xa = ya / tan(ft_degree_to_radian(angle));
-
-
-
 	while (!ft_is_wall(end.x, end.y, mlx))
 	{
 		end.x = end.x + xa;
@@ -71,14 +65,11 @@ t_point	ft_end_hit_v(double angle, t_mlx mlx, double x_pixel)
 		return (end);
 	xa = ft_get_yxa(angle, mlx.side, 2);
 	ya = xa * tan(ft_degree_to_radian(angle));
-
-
 	while (!ft_is_wall(end.x, end.y, mlx))
 	{
 		end.x = end.x + xa;
 		end.y = end.y + ya;
 	}
-	
 	return (end);
 }
 

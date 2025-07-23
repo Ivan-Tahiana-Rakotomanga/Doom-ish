@@ -19,28 +19,28 @@ void	ft_display_player(t_mlx *mlx)
 	ft_draw_all_rays(player, mlx);
 }
 
-void ft_draw_ceiling(t_mlx *mlx, char *color)
+void	ft_draw_ceiling(t_mlx *mlx, char *color)
 {
-	t_point start;
-	t_point end;
-	
+	t_point	start;
+	t_point	end;
+
 	start.x = 0;
 	start.y = 0;
 	end.y = (double)mlx->height / 2;
 	end.x = mlx->width;
-	ft_draw_rect(start,end,color,mlx);
+	ft_draw_rect(start, end, color, mlx);
 }
 
-void ft_draw_floor(t_mlx *mlx, char *color)
+void	ft_draw_floor(t_mlx *mlx, char *color)
 {
-	t_point start;
-	t_point end;
-	
+	t_point	start;
+	t_point	end;
+
 	start.x = 0;
 	start.y = (double)mlx->height / 2;
-	end.y = mlx->height; 
+	end.y = mlx->height;
 	end.x = mlx->width;
-	ft_draw_rect(start,end,color,mlx);
+	ft_draw_rect(start, end, color, mlx);
 }
 
 void	ft_color_display(t_mlx *mlx)
@@ -63,15 +63,14 @@ void	ft_color_display(t_mlx *mlx)
 	/*		if (map[y][x] == '1')*/
 	/*			ft_draw_square(a, mlx->side - 1, ft_strdup("0,255,0"), mlx);*/
 	/*		else*/
-	/*			ft_draw_square(a, mlx->side , ft_strdup("255,255,255"), mlx);*/
+	/*			ft_draw_square(a, mlx->side, ft_strdup("255,255,255"), mlx);*/
 	/*		x++;*/
 	/*	}*/
 	/*	y++;*/
 	/*}*/
 	ft_draw_ceiling(mlx, ft_strdup("47, 255, 255"));
 	ft_draw_floor(mlx, ft_strdup("238, 201, 125"));
-
-
+	/**/
 	ft_display_player(mlx);
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
 }

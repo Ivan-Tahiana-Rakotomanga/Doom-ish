@@ -6,7 +6,7 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 10:02:55 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/18 16:08:55 by fxu-lin          ###   ########.fr       */
+/*   Updated: 2025/07/16 11:28:28 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_mlx	*ft_init_mlx(t_mlx *mlx, char **map)
 		return (ft_free_mlx(mlx));
 	mlx->side = 100;
 	mlx->map = map;
-	mlx->width_one_wall = 4;
+	mlx->width_one_wall = 1;
 	ft_init_size_window(mlx);
 	ft_init_key(mlx);
 	if (!ft_check_mlx(mlx, "cub3D"))

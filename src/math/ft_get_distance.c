@@ -21,5 +21,5 @@ double	ft_get_distance(t_point end, t_player player)
 	x = x * x;
 	y = end.y - player.y;
 	y = y * y;
-	return (sqrt(x) + sqrt(y));
+	return (sqrt(x + y));
 }

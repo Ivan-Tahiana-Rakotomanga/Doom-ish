@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	t_mlx *mlx;
-	char **map;
+	t_mlx	*mlx;
+	char	**map;
 
 	mlx = NULL;
 	map = NULL;
@@ -34,4 +34,3 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
-
