@@ -40,6 +40,7 @@ void	ft_init_player(t_mlx **mlx)
 	(*mlx)->player = player;
 }
 
+
 t_mlx	*ft_init_mlx(t_mlx *mlx, char **map)
 {
 	mlx = malloc(sizeof(t_mlx));
@@ -52,6 +53,7 @@ t_mlx	*ft_init_mlx(t_mlx *mlx, char **map)
 	ft_init_key(mlx);
 	if (!ft_check_mlx(mlx, "cub3D"))
 		return (ft_free_mlx(mlx));
+	mlx->no = ft_get_img("image.xpm", mlx->mlx); 
 	mlx->x_player = -1;
 	mlx->y_player = -1;
 	ft_find_start(&mlx->x_player, &mlx->y_player, map);

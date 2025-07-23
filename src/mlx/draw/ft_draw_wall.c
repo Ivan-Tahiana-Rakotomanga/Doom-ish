@@ -30,5 +30,9 @@ void	ft_draw_wall(int i, double distance, t_mlx mlx, char *color)
 	if (mlx.height <= end.y)
 		end.y = mlx.height;
 
-	ft_draw_rect(start, end, color, &mlx);
+	/*   t_img img;*/
+	/*ft_set_img(&img,"image.xpm",mlx.mlx);*/
+	/**/
+	/*ft_draw_rect(start, end, color, &mlx);*/
+	ft_draw_rect_textures(start, end, &mlx.no,&mlx);
 }
