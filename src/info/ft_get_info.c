@@ -6,11 +6,12 @@
 /*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:59:52 by irakotom          #+#    #+#             */
-/*   Updated: 2025/07/23 18:19:21 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/07/23 18:24:22 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/header.h"
+#include <stdio.h>
 
 int ft_len_re(char *str)
 {
@@ -37,6 +38,8 @@ char *ft_remove_space_cf(char *str)
 
 	len = ft_len_re(str);
 	res = malloc(sizeof(char) * (len + 1));
+	if(!res)
+		return (NULL);
 	i = 1;
 	j = 0;
 
@@ -49,6 +52,7 @@ char *ft_remove_space_cf(char *str)
 		}
 		i++;
 	}
+	res[j] = '\0';
 	return (res);
 }
 
@@ -74,33 +78,18 @@ void ft_set_utils(char *line, t_utils *utils)
 	else if (value == 4)
 		utils->ea= ft_strdup(lines[1]);
 	else if (value == 5)
+	{
+	utils->c = NULL;
+
 		utils->c = ft_remove_space_cf(temp_lines);
+}
 	else if (value == 6)
 		utils->f = ft_remove_space_cf(temp_lines);
 	ft_free_str(lines);
 	free(temp_lines);
 	
 }
-/**/
-/*int	ft_index_id(char *id)*/
-/*{*/
-/*	if (ft_strcmp(id, "NO") == 0)*/
-/*		return (1);*/
-/*	else if (ft_strcmp(id, "SO") == 0)*/
-/*		return (2);*/
-/*	else if (ft_strcmp(id, "WE") == 0)*/
-/*		return (3);*/
-/*	else if (ft_strcmp(id, "EA") == 0)*/
-/*		return (4);*/
-/*	else if (ft_strcmp(id, "C") == 0)*/
-/*		return (5);*/
-/*	else if (ft_strcmp(id, "F") == 0)*/
-/*		return (6);*/
-/*	ft_putstr_fd("Error\nInvalid identifier: ", 2);*/
-/*	ft_putstr_fd(id, 2);*/
-/*	ft_putstr_fd("\n", 2);*/
-/*	return (0);*/
-/*}*/
+
 void ft_get_info(char *file, t_utils *utils)
 {
 	char *line;
