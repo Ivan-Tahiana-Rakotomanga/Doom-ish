@@ -1,7 +1,7 @@
-NO ./textures/1.xmp  
-SO ./textures/1.xmp 
-WE ./textures/1.xmp
-EA ./textures/2.xmp 
+NO ./textures/1.xpm  
+SO ./textures/2.xpm 
+WE ./textures/3.xpm
+EA ./textures/4.xpm 
 
 F     250,  100,        0
 C 250,1,                                          0 

@@ -72,6 +72,9 @@ typedef struct s_mlx
 	double			change_y;
 	double			width_one_wall;
 	struct  s_img no;
+	struct  s_img so;
+	struct  s_img wo;
+	struct  s_img ea;
 	struct s_player	*player;
 }					t_mlx;
 

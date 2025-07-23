@@ -12,6 +12,9 @@
 
 #include "../../../includes/header.h"
 
+
+
+
 void	ft_draw_wall(int i, double distance, t_mlx mlx, char *color)
 {
 	double	width_one_wall;
@@ -33,6 +36,7 @@ void	ft_draw_wall(int i, double distance, t_mlx mlx, char *color)
 	/*   t_img img;*/
 	/*ft_set_img(&img,"image.xpm",mlx.mlx);*/
 	/**/
+	(void)color;
 	/*ft_draw_rect(start, end, color, &mlx);*/
-	ft_draw_rect_textures(start, end, &mlx.no,&mlx);
+	ft_draw_rect_textures(start, end, 3,&mlx);
 }
