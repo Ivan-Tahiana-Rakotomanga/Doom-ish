@@ -6,7 +6,7 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 13:16:38 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/07/23 12:45:08 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/07/23 17:54:25 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,16 @@ typedef struct s_map
 	char			*line;
 	struct s_map	*next;
 }					t_map;
+
+typedef struct s_utils
+{
+	char *c;
+	char *f;
+	char *no;
+	char *so;
+	char *we;
+	char *ea;
+} t_utils;
 
 typedef struct s_player
 {

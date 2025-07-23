@@ -17,6 +17,7 @@ char	*ft_get_address_textures(int x, int y,int y_max,int h, t_img img)
 	char	*address;
 
 	y = ft_rules_of_three(y, y_max, h);
+	
 
 	address = img.adr + (y * img.s_line + x * (img.bpp / 8));
 	return (address);
@@ -33,7 +34,6 @@ t_img  ft_get_texture(t_mlx mlx, int index)
 	else
 		return (mlx.wo);
 }
-
 
 
 void ft_draw_rect_textures(t_point a, t_point b, int index, t_mlx *mlx)
