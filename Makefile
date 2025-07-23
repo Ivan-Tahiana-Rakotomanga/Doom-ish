@@ -6,7 +6,7 @@
 #    By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/04 12:56:49 by irakotom          #+#    #+#              #
-#    Updated: 2025/07/16 10:31:53 by irakotom         ###   ########.fr        #
+#    Updated: 2025/07/23 12:52:25 by irakotom         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/mlx/mlx_init/ft_check_mlx.c \
 		src/mlx/mlx_init/ft_init_key.c \
 		src/mlx/mlx_init/ft_init_window.c \
+		src/mlx/texture/ft_set_img.c \
 		src/utils/ft_strcmp.c \
 		src/utils/ft_free.c \
 		src/utils/ft_get_next_line.c \

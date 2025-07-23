@@ -6,7 +6,7 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 16:06:00 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/07/16 11:22:15 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/07/23 12:54:52 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../../../includes/header.h"
@@ -72,5 +72,8 @@ void	ft_color_display(t_mlx *mlx)
 	ft_draw_floor(mlx, ft_strdup("238, 201, 125"));
 	/**/
 	ft_display_player(mlx);
+
+
+
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
 }
