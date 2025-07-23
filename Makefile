@@ -37,6 +37,7 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/math/ft_end_hits.c \
 		src/math/ft_degree_to_radian.c \
 		src/math/scale/ft_scale.c \
+		src/math/scale/ft_rules_of_three.c \
 		src/math/ft_utils.c \
 		src/mlx/action/ft_close_window.c \
 		src/mlx/action/ft_move_player.c \

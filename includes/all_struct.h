@@ -6,7 +6,7 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 13:16:38 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/18 16:40:19 by fxu-lin          ###   ########.fr       */
+/*   Updated: 2025/07/23 12:45:08 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,17 @@ typedef struct s_player
 	double			angle_speed;
 
 }					t_player;
+
+typedef struct s_img
+{	
+	void			*img;
+	void			*adr;
+    int				height;
+	int				bpp;
+	int				s_line;
+	int				endian;
+
+} t_img;
 
 typedef struct s_mlx
 {

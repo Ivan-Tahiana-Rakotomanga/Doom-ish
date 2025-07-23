@@ -1,36 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_rules_of_three.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 13:05:56 by irakotom          #+#    #+#             */
-/*   Updated: 2025/07/23 12:37:37 by irakotom         ###   ########.fr       */
+/*   Created: 2025/07/23 12:34:19 by irakotom          #+#    #+#             */
+/*   Updated: 2025/07/23 12:34:19 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
-
-int	main(int argc, char **argv)
+double ft_rules_of_three(double value, double ref_in, double ref_out)
 {
-	t_mlx	*mlx;
-	char	**map;
-
-	mlx = NULL;
-	map = NULL;
-	if (argc == 2)
-	{
-		if (!ft_check_file(argv[1], &map))
-			return (0);
-		mlx = ft_init_mlx(mlx, map);
-		if (!mlx)
-			return (0);
-		ft_color_display(mlx);
-		ft_hook(mlx);
-		mlx_loop(mlx->mlx);
-		ft_free_str(map);
-		ft_free_mlx(mlx);
-	}
-	return (0);
+	return ((value * ref_out) / ref_in);
 }
+

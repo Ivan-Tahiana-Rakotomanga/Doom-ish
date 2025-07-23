@@ -6,7 +6,7 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 10:24:33 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/07/04 10:25:48 by fxu-lin          ###   ########.fr       */
+/*   Updated: 2025/07/23 12:36:49 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ int		ft_on_screen(double x, double y, t_mlx mlx);
 double	ft_throw_distance(double width_screen, double angle_fov);
 double	ft_get_height_wall(t_player player, t_mlx mlx, double distance,
 			double wall_height);
+double ft_rules_of_three(double value, double ref_in, double ref_out);
 
 #endif
