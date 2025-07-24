@@ -6,7 +6,7 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 08:26:57 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/17 08:26:57 by fxu-lin          ###   ########.fr       */
+/*   Updated: 2025/07/24 17:59:03 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,17 @@ int	ft_is_valid_argument_textures(char **strs, char *line)
 	return (1);
 }
 
+int	ft_valid_textures(char **lines, char *temp_lines)
+{
+	if (!ft_valid_file(lines[1]))
+		return (0);
+	else if (!ft_is_valid_argument_textures(lines, temp_lines))
+		return (0);
+	else if (!ft_check_xpm(lines[1]))
+		return (0);
+	return (1);
+}
+
 int	ft_handle_index_id(char *line, char **one, char **two)
 {
 	int		value;
@@ -66,8 +77,7 @@ int	ft_handle_index_id(char *line, char **one, char **two)
 		return (ft_free_str(lines), free(temp_lines), 0);
 	if (value < 5)
 	{
-		if (!ft_valid_file(lines[1]) || !ft_is_valid_argument_textures(lines,
-				temp_lines))
+		if (!ft_valid_textures(lines, temp_lines))
 			return (free(temp_lines), ft_free_str(lines), 0);
 		free(temp_lines);
 	}

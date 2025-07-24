@@ -6,7 +6,7 @@
 #    By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/04 12:56:49 by irakotom          #+#    #+#              #
-#    Updated: 2025/07/23 12:52:25 by irakotom         ###   ########.fr        #
+#    Updated: 2025/07/24 17:29:39 by irakotom         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/handle_error/file/ft_check_file.c \
 		src/handle_error/file/ft_valid_file.c \
 		src/handle_error/file/ft_is_valid_path.c \
+		src/handle_error/file/ft_check_xpm.c \
 		src/handle_error/color/ft_valid_color.c \
 		src/handle_error/color/ft_is_duplicate_color.c \
 		src/handle_error/color/ft_check_colors.c \

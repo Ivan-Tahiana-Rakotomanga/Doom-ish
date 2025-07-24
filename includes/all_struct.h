@@ -81,7 +81,7 @@ typedef struct s_mlx
 	double			change_x;
 	double			change_y;
 	double			width_one_wall;
-	struct s_utils  utils;
+	struct s_utils	utils;
 	struct s_img	no;
 	struct s_img	so;
 	struct s_img	wo;

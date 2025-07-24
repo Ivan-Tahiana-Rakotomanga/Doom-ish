@@ -12,16 +12,14 @@
 
 #include "../includes/header.h"
 
-
 int	main(int argc, char **argv)
 {
 	t_mlx	*mlx;
 	char	**map;
-	t_utils utils;
+	t_utils	utils;
 
 	mlx = NULL;
 	map = NULL;
-
 	if (argc == 2)
 	{
 		if (!ft_check_file(argv[1], &map, &utils))

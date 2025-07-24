@@ -6,14 +6,14 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 09:43:54 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/17 15:15:10 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/07/24 17:54:17 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HANDLE_ERROR_H
 # define HANDLE_ERROR_H
 
-#include "all_struct.h"
+# include "all_struct.h"
 int		ft_is_valid_path(char *path, char *extension);
 int		ft_valid_arg_count(int argc);
 int		ft_valid_file(char *file);
@@ -30,5 +30,6 @@ int		ft_is_orientation(char c);
 int		ft_check_under_map(t_map *map);
 int		ft_check_file(char *file, char ***map_str, t_utils *utils);
 int		ft_map_is_closed(char **map);
-void ft_get_info(char *file, t_utils *utils);
+void	ft_get_info(char *file, t_utils *utils);
+int		ft_check_xpm(char *filename);
 #endif

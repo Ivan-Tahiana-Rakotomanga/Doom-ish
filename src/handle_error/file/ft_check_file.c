@@ -83,6 +83,6 @@ int	ft_check_file(char *file, char ***map_str, t_utils *utils)
 	if (!ft_map_is_closed(*map_str))
 		return (ft_free_str(*map_str), close(fd), 0);
 	close(fd);
-	ft_get_info(file,utils);
+	ft_get_info(file, utils);
 	return (1);
 }

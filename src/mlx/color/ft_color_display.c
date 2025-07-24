@@ -68,7 +68,7 @@ void	ft_color_display(t_mlx *mlx)
 	/*	}*/
 	/*	y++;*/
 	/*}*/
-	ft_draw_ceiling(mlx,mlx->utils.c);
+	ft_draw_ceiling(mlx, mlx->utils.c);
 	ft_draw_floor(mlx, mlx->utils.f);
 	/**/
 	ft_display_player(mlx);
