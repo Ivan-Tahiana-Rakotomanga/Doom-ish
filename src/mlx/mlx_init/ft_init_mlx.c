@@ -40,17 +40,16 @@ void	ft_init_player(t_mlx **mlx)
 	(*mlx)->player = player;
 }
 
-void ft_init_textures(t_mlx *mlx)
+void	ft_init_textures(t_mlx *mlx, t_utils utils)
 {
-
-	mlx->no = ft_get_img("textures/1.xpm", mlx->mlx); 
-	mlx->so = ft_get_img("textures/2.xpm", mlx->mlx); 
-	mlx->ea = ft_get_img("textures/3.xpm", mlx->mlx); 
-	mlx->wo = ft_get_img("textures/4.xpm", mlx->mlx); 
+	mlx->utils = utils;
+	mlx->no = ft_get_img(utils.no, mlx->mlx);
+	mlx->so = ft_get_img(utils.so, mlx->mlx);
+	mlx->ea = ft_get_img(utils.ea, mlx->mlx);
+	mlx->wo = ft_get_img(utils.we, mlx->mlx);
 }
 
-
-t_mlx	*ft_init_mlx(t_mlx *mlx, char **map)
+t_mlx	*ft_init_mlx(t_mlx *mlx, char **map, t_utils utils)
 {
 	mlx = malloc(sizeof(t_mlx));
 	if (!mlx)
@@ -62,7 +61,7 @@ t_mlx	*ft_init_mlx(t_mlx *mlx, char **map)
 	ft_init_key(mlx);
 	if (!ft_check_mlx(mlx, "cub3D"))
 		return (ft_free_mlx(mlx));
-	ft_init_textures(mlx);
+	ft_init_textures(mlx, utils);
 	mlx->x_player = -1;
 	mlx->y_player = -1;
 	ft_find_start(&mlx->x_player, &mlx->y_player, map);

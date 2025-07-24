@@ -68,11 +68,9 @@ void	ft_color_display(t_mlx *mlx)
 	/*	}*/
 	/*	y++;*/
 	/*}*/
-	ft_draw_ceiling(mlx, ft_strdup("47, 255, 255"));
-	ft_draw_floor(mlx, ft_strdup("238, 201, 125"));
+	ft_draw_ceiling(mlx,mlx->utils.c);
+	ft_draw_floor(mlx, mlx->utils.f);
 	/**/
 	ft_display_player(mlx);
-
-
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
 }

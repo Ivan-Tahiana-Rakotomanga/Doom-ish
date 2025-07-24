@@ -13,6 +13,7 @@
 #ifndef MLX_IMG_H
 # define MLX_IMG_H
 
+#include "all_struct.h"
 t_mlx	*ft_free_mlx(t_mlx *mlx);
 void	ft_mlx_destroy(t_mlx *mlx);
 int		ft_close_window(t_mlx *mlx);
@@ -29,7 +30,7 @@ int		ft_get_limit_y(t_mlx *mlx);
 void	ft_get_limits_size(int *limit_x, int *limit_y, t_mlx *mlx);
 void	ft_add_color_pixels(t_mlx *mlx, int i, int j);
 void	ft_put_pixels(t_mlx *mlx, int i, int j);
-t_mlx	*ft_init_mlx(t_mlx *mlx, char **map);
+t_mlx	*ft_init_mlx(t_mlx *mlx, char **map, t_utils utils);
 int		ft_convert_color(char *color);
 char	*ft_get_address(int x, int y, t_mlx *mlx);
 void	ft_draw_square(t_point pixel, int size, char *color, t_mlx *mlx);
@@ -38,6 +39,6 @@ void	ft_draw_all_rays(t_player *player, t_mlx *mlx);
 void	ft_draw_rect(t_point a, t_point b, char *color, t_mlx *mlx);
 void	ft_draw_wall(int i, double distance, t_mlx mlx, char *color);
 void	ft_move_of_player(int code, t_player *player, t_mlx mlx);
-void ft_draw_rect_textures(t_point a, t_point b, int index, t_mlx *mlx);
+void	ft_draw_rect_textures(t_point a, t_point b, int index, t_mlx *mlx);
 
 #endif

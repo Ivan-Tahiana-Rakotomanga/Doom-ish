@@ -28,13 +28,13 @@ typedef struct s_map
 
 typedef struct s_utils
 {
-	char *c;
-	char *f;
-	char *no;
-	char *so;
-	char *we;
-	char *ea;
-} t_utils;
+	char			*c;
+	char			*f;
+	char			*no;
+	char			*so;
+	char			*we;
+	char			*ea;
+}					t_utils;
 
 typedef struct s_player
 {
@@ -51,16 +51,16 @@ typedef struct s_player
 }					t_player;
 
 typedef struct s_img
-{	
+{
 	void			*img;
 	void			*adr;
-    int				height;
+	int				height;
 	int				width;
 	int				bpp;
 	int				s_line;
 	int				endian;
 
-} t_img;
+}					t_img;
 
 typedef struct s_mlx
 {
@@ -81,10 +81,11 @@ typedef struct s_mlx
 	double			change_x;
 	double			change_y;
 	double			width_one_wall;
-	struct  s_img no;
-	struct  s_img so;
-	struct  s_img wo;
-	struct  s_img ea;
+	struct s_utils  utils;
+	struct s_img	no;
+	struct s_img	so;
+	struct s_img	wo;
+	struct s_img	ea;
 	struct s_player	*player;
 }					t_mlx;
 

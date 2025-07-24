@@ -12,37 +12,34 @@
 
 #include "../../../includes/header.h"
 
-char	*ft_get_address_textures(int x, int y,int y_max,int h, t_img img)
+char	*ft_get_address_textures(int x, int y, int y_max, int h, t_img img)
 {
 	char	*address;
 
 	y = ft_rules_of_three(y, y_max, h);
-	
-
 	address = img.adr + (y * img.s_line + x * (img.bpp / 8));
 	return (address);
 }
 
-t_img  ft_get_texture(t_mlx mlx, int index)
+t_img	ft_get_texture(t_mlx mlx, int index)
 {
-	if(index == 1)
+	if (index == 1)
 		return (mlx.no);
-	else if(index == 2)
+	else if (index == 2)
 		return (mlx.so);
-	else if(index == 3)
+	else if (index == 3)
 		return (mlx.ea);
 	else
 		return (mlx.wo);
 }
 
-
-void ft_draw_rect_textures(t_point a, t_point b, int index, t_mlx *mlx)
+void	ft_draw_rect_textures(t_point a, t_point b, int index, t_mlx *mlx)
 {
 	double	x;
 	double	y;
 	char	*tmp_color;
 	double	tmp_x;
-	double h;
+	double	h;
 
 	h = b.y - a.y;
 	x = a.x;
@@ -55,7 +52,8 @@ void ft_draw_rect_textures(t_point a, t_point b, int index, t_mlx *mlx)
 		while (x < b.x)
 		{
 			tmp_color = ft_get_address(x, y, mlx);
-			*(unsigned int *)tmp_color = *(unsigned int *) ft_get_address_textures(x, y,b.y,h, ft_get_texture(*mlx, index));
+			*(unsigned int *)tmp_color = *(unsigned int *)ft_get_address_textures(x,
+					y, b.y, h, ft_get_texture(*mlx, index));
 			x++;
 		}
 		y++;

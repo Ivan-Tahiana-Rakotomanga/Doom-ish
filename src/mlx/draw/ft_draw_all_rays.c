@@ -22,17 +22,13 @@ double	ft_draw_ray(double angle, t_player player, t_mlx mlx, int *h_v)
 	pixel.y = player.y;
 	res = 0.0;
 	end = ft_get_end(angle, mlx, pixel, h_v);
-
 	/*t_point	a;*/
 	/*a.x = player.x;*/
 	/*a.y = player.y;*/
 	/*ft_draw_line(a, end, ft_strdup("255,0,255"), &mlx);*/
 	/**/
-
-	res = ft_get_distance(end,player); 
+	res = ft_get_distance(end, player);
 	res = res * cos(ft_degree_to_radian(fmod(angle - player.angle, 360)));
-
-	
 	return (res);
 }
 

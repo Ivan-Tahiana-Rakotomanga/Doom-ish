@@ -12,9 +12,6 @@
 
 #include "../../../includes/header.h"
 
-
-
-
 void	ft_draw_wall(int i, double distance, t_mlx mlx, char *color)
 {
 	double	width_one_wall;
@@ -23,7 +20,7 @@ void	ft_draw_wall(int i, double distance, t_mlx mlx, char *color)
 	t_point	end;
 
 	width_one_wall = mlx.width_one_wall;
-	height_wall = ft_get_height_wall(*(mlx).player,mlx, distance, mlx.side);
+	height_wall = ft_get_height_wall(*(mlx).player, mlx, distance, mlx.side);
 	start.x = i * width_one_wall;
 	start.y = ((double)mlx.height / 2) - (height_wall / 2);
 	end.x = start.x + width_one_wall;
@@ -32,11 +29,10 @@ void	ft_draw_wall(int i, double distance, t_mlx mlx, char *color)
 		start.y = 0;
 	if (mlx.height <= end.y)
 		end.y = mlx.height;
-
 	/*   t_img img;*/
 	/*ft_set_img(&img,"image.xpm",mlx.mlx);*/
 	/**/
 	(void)color;
 	/*ft_draw_rect(start, end, color, &mlx);*/
-	ft_draw_rect_textures(start, end, 3,&mlx);
+	ft_draw_rect_textures(start, end, 3, &mlx);
 }

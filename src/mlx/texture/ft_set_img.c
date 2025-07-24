@@ -12,9 +12,10 @@
 
 #include "../../../includes/header.h"
 
-t_img ft_get_img( char *filename, void *mlx_ptr)
+t_img	ft_get_img(char *filename, void *mlx_ptr)
 {
-	t_img img;
+	t_img	img;
+
 	img.img = mlx_xpm_file_to_image(mlx_ptr, filename, &img.width, &img.height);
 	img.adr = mlx_get_data_addr(img.img, &img.bpp, &img.s_line, &img.endian);
 	return (img);

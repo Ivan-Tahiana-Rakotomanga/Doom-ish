@@ -32,6 +32,6 @@ int		ft_on_screen(double x, double y, t_mlx mlx);
 double	ft_throw_distance(double width_screen, double angle_fov);
 double	ft_get_height_wall(t_player player, t_mlx mlx, double distance,
 			double wall_height);
-double ft_rules_of_three(double value, double ref_in, double ref_out);
-t_img ft_get_img( char *filename, void *mlx_ptr);
+double	ft_rules_of_three(double value, double ref_in, double ref_out);
+t_img	ft_get_img(char *filename, void *mlx_ptr);
 #endif

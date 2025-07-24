@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-double ft_rules_of_three(double value, double ref_in, double ref_out)
+double	ft_rules_of_three(double value, double ref_in, double ref_out)
 {
 	return ((value * ref_out) / ref_in);
 }
-

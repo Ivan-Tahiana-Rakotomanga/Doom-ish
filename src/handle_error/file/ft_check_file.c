@@ -64,7 +64,7 @@ int	ft_check_all_line(int fd)
 	return (free(one), free(two), 1);
 }
 
-int	ft_check_file(char *file, char ***map_str)
+int	ft_check_file(char *file, char ***map_str, t_utils *utils)
 {
 	int		fd;
 	t_map	*map;
@@ -83,5 +83,6 @@ int	ft_check_file(char *file, char ***map_str)
 	if (!ft_map_is_closed(*map_str))
 		return (ft_free_str(*map_str), close(fd), 0);
 	close(fd);
+	ft_get_info(file,utils);
 	return (1);
 }

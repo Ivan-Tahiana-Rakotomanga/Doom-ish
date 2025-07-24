@@ -57,8 +57,6 @@ char *ft_remove_space_cf(char *str)
 }
 
 
-
-
 void ft_set_utils(char *line, t_utils *utils)
 {
 	int		value;
@@ -110,26 +108,4 @@ void ft_get_info(char *file, t_utils *utils)
 	}
 	free(line);
 	close(fd);
-}
-
-int main(int argc, char **argv)
-{
-	t_utils utils;
-	if(argc == 2)
-	{
-		ft_get_info(argv[1], &utils);
-		printf("Ito ny no %s\n", utils.no);
-		printf("Ito ny so %s\n", utils.so);
-		printf("Ito ny we %s\n", utils.we);
-		printf("Ito ny ea %s\n", utils.ea);
-		printf("Ito ny c %s\n", utils.c);
-		printf("Ito ny f %s\n", utils.f);
-		free(utils.no);
-		free(utils.so);
-		free(utils.we);
-		free(utils.ea);
-		free(utils.c);
-		free(utils.f);
-	}
-	return (0);
 }
