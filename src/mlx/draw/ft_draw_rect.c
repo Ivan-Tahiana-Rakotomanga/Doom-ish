@@ -12,10 +12,11 @@
 
 #include "../../../includes/header.h"
 
-char	*ft_get_address_textures(int x, int y, int y_max, int h, t_img img)
+char	*ft_get_address_textures(int x, int y, int y_max, int h, t_img img, double dst_text, t_mlx *mlx)
 {
 	char	*address;
 
+	x = ft_rules_of_three(dst_text, mlx->side, img.height);
 	y = ft_rules_of_three(y, y_max, h);
 	address = img.adr + (y * img.s_line + x * (img.bpp / 8));
 	return (address);
@@ -33,7 +34,7 @@ t_img	ft_get_texture(t_mlx mlx, int index)
 		return (mlx.wo);
 }
 
-void	ft_draw_rect_textures(t_point a, t_point b, int index, t_mlx *mlx)
+void	ft_draw_rect_textures(t_point a, t_point b, t_mlx *mlx, double dst_text, int orient)
 {
 	double	x;
 	double	y;
@@ -53,7 +54,7 @@ void	ft_draw_rect_textures(t_point a, t_point b, int index, t_mlx *mlx)
 		{
 			tmp_color = ft_get_address(x, y, mlx);
 			*(unsigned int *)tmp_color = *(unsigned int *)ft_get_address_textures(x,
-					y, b.y, h, ft_get_texture(*mlx, index));
+					y, b.y, h, ft_get_texture(*mlx, orient), dst_text, mlx);
 			x++;
 		}
 		y++;

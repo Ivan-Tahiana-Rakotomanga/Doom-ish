@@ -30,13 +30,3 @@ double ft_get_x_text(t_point end, double side, int orient)
 	}
 	return (distance);
 }
-
-int main()
-{
-	t_point end;
-
-	end.x = 64;
-	end.y = 100;
-	printf("%f\n", ft_get_x_text(end, 32, 3));
-	return (0);
-}
