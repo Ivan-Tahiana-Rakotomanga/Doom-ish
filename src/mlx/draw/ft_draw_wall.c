@@ -33,5 +33,5 @@ void	ft_draw_wall(int i, double distance, t_mlx mlx, double dst_text, int orient
 	/*ft_set_img(&img,"image.xpm",mlx.mlx);*/
 	/**/
 	/*ft_draw_rect(start, end, color, &mlx);*/
-	ft_draw_rect_textures(start, end, &mlx, dst_text, orient);
+	ft_draw_rect_textures(start, end, &mlx, dst_text, orient, height_wall);
 }
