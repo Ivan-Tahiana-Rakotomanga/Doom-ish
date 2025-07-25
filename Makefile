@@ -31,6 +31,7 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/handle_error/map/ft_map_to_strs.c \
 		src/info/ft_get_info.c \
 		src/math/ft_dda.c \
+		src/math/ft_get_x_text.c \
 		src/math/ft_throw_distance.c \
 		src/math/ft_on_screen.c \
 		src/math/ft_get_distance.c \
