@@ -16,6 +16,7 @@ void	ft_render(t_mlx *mlx)
 {
 	ft_memset(mlx->adr, 0, (mlx->height * mlx->s_line + mlx->width * (mlx->bpp
 				/ 8)));
+	mlx_clear_window(mlx->mlx, mlx->win);
 	ft_color_display(mlx);
 }
 
