@@ -12,7 +12,7 @@
 
 #include "../../../includes/header.h"
 
-void	ft_draw_wall(int i, double distance, t_mlx mlx, double dst_text, int orient)
+void	ft_draw_wall(int i, double distance, t_mlx mlx, double *dst_text_orient)
 {
 	double	width_one_wall;
 	double	height_wall;
@@ -29,9 +29,5 @@ void	ft_draw_wall(int i, double distance, t_mlx mlx, double dst_text, int orient
 		start.y = 0;
 	if (mlx.height <= end.y)
 		end.y = mlx.height;
-	/*   t_img img;*/
-	/*ft_set_img(&img,"image.xpm",mlx.mlx);*/
-	/**/
-	/*ft_draw_rect(start, end, color, &mlx);*/
-	ft_draw_rect_textures(start, end, &mlx, dst_text, orient, height_wall);
+	ft_draw_rect_textures(start, end, &mlx, dst_text_orient);
 }

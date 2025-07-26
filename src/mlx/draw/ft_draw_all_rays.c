@@ -12,27 +12,21 @@
 
 #include "../../../includes/header.h"
 
-double	ft_draw_ray(double angle, t_player player, t_mlx mlx, double *dst_text, int *orient)
+double	ft_draw_ray(double angle, t_player player, t_mlx mlx,
+		double *dst_text_orient)
 {
 	t_point	end;
 	t_point	pixel;
 	double	res;
-	int h_v; 
+	int		h_v;
 
+	res = 0.0;
 	h_v = 0;
 	pixel.x = player.x;
 	pixel.y = player.y;
-	res = 0.0;
 	end = ft_get_end(angle, mlx, pixel, &h_v);
-    *orient = ft_orientation(h_v, angle);
-	*dst_text = ft_get_x_text(end, mlx.side, *orient);
-
-
-	/*t_point	a;*/
-	/*a.x = player.x;*/
-	/*a.y = player.y;*/
-	/*ft_draw_line(a, end, ft_strdup("255,0,255"), &mlx);*/
-	/**/
+	dst_text_orient[0] = ft_orientation(h_v, angle);
+	dst_text_orient[1] = ft_get_x_text(end, mlx.side, dst_text_orient[0]);
 	res = ft_get_distance(end, player);
 	res = res * cos(ft_degree_to_radian(fmod(angle - player.angle, 360)));
 	return (res);
@@ -42,18 +36,18 @@ void	ft_loop_wall(double start_angle, double nbr_rays, t_mlx mlx,
 		double angle_step)
 {
 	int		i;
-	double dst_text;
 	double	distance;
-	int orient;
+	double	dst_text_orient[2];
 
 	i = 0;
-	orient = 0;
-	dst_text = 0.0;
+	dst_text_orient[0] = 0.0;
+	dst_text_orient[1] = 0.0;
 	distance = 0;
 	while (i < nbr_rays)
 	{
-		distance = ft_draw_ray(start_angle, *(mlx).player, mlx, &dst_text, &orient);
-		ft_draw_wall(i, distance, mlx, dst_text, orient);
+		distance = ft_draw_ray(start_angle, *(mlx).player, mlx,
+				dst_text_orient);
+		ft_draw_wall(i, distance, mlx, dst_text_orient);
 		start_angle = ft_limit_angle(fmod((start_angle + angle_step), 360));
 		i++;
 	}

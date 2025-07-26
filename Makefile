@@ -64,6 +64,8 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/mlx/mlx_init/ft_init_key.c \
 		src/mlx/mlx_init/ft_init_window.c \
 		src/mlx/texture/ft_set_img.c \
+		src/mlx/texture/ft_get_new_y.c \
+		src/mlx/texture/ft_draw_rect_textures.c \
 		src/utils/ft_strcmp.c \
 		src/utils/ft_free.c \
 		src/utils/ft_get_next_line.c \
