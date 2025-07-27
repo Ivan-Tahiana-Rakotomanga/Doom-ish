@@ -12,13 +12,39 @@
 
 #include "../../../includes/header.h"
 
-void	ft_mlx_destroy(t_mlx *mlx)
+
+void ft_free_utils(t_utils *utils)
 {
-	mlx_destroy_image(mlx->mlx, mlx->img);
-	mlx_destroy_window(mlx->mlx, mlx->win);
-	mlx_loop_end(mlx->mlx);
-	mlx_destroy_display(mlx->mlx);
+	free(utils->ea);
+	free(utils->no);
+	free(utils->so);
+	free(utils->we);
+}
+
+
+void ft_free_all_mlx(t_mlx *mlx)
+{
+	free(mlx->player);
+	ft_free_str(mlx->map);
 	free(mlx->mlx);
 	free(mlx);
+}
+
+void ft_destroy_img(t_mlx *mlx)
+{
+	mlx_destroy_image(mlx->mlx, mlx->img);
+	mlx_destroy_image(mlx->mlx, mlx->no.img);
+	mlx_destroy_image(mlx->mlx, mlx->so.img);
+	mlx_destroy_image(mlx->mlx, mlx->wo.img);
+	mlx_destroy_image(mlx->mlx, mlx->ea.img);
+}
+
+void	ft_mlx_destroy(t_mlx *mlx)
+{
+	mlx_destroy_window(mlx->mlx, mlx->win);
+	ft_destroy_img(mlx);
+	mlx_loop_end(mlx->mlx);
+	mlx_destroy_display(mlx->mlx);
+	ft_free_all_mlx(mlx);
 	exit(0);
 }

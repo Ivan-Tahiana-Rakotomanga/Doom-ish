@@ -54,13 +54,20 @@ t_mlx	*ft_init_mlx(t_mlx *mlx, char **map, t_utils utils)
 	mlx = malloc(sizeof(t_mlx));
 	if (!mlx)
 		return (ft_free_mlx(mlx));
+	ft_memset(mlx, 0, sizeof(t_mlx));
+
 	mlx->side = 32;
 	mlx->map = map;
 	mlx->width_one_wall = 1;
+
+	if(!mlx->map || !mlx->map[0])
+		return (ft_free_mlx(mlx));
 	ft_init_size_window(mlx);
-	ft_init_key(mlx);
+	if (mlx->width <= 0 || mlx->height <= 0)
+		return (ft_free_mlx(mlx));
 	if (!ft_check_mlx(mlx, "cub3D"))
 		return (ft_free_mlx(mlx));
+	ft_init_key(mlx);
 	ft_init_textures(mlx, utils);
 	mlx->x_player = -1;
 	mlx->y_player = -1;
