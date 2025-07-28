@@ -44,6 +44,7 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/math/scale/ft_scale_side.c \
 		src/math/scale/ft_rules_of_three.c \
 		src/math/ft_utils.c \
+		src/math/ft_angle_orientation.c \
 		src/mlx/action/ft_close_window.c \
 		src/mlx/action/ft_move_player.c \
 		src/mlx/action/ft_hook.c \

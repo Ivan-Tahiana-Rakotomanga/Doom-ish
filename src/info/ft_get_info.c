@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../../includes/header.h"
-#include <stdio.h>
 
 int	ft_len_re(char *str)
 {
@@ -69,9 +68,9 @@ void	ft_set_utils(char *line, t_utils *utils)
 	else if (value == 2)
 		utils->so = ft_strdup(lines[1]);
 	else if (value == 3)
-		utils->we = ft_strdup(lines[1]);
+		utils->ea= ft_strdup(lines[1]);
 	else if (value == 4)
-		utils->ea = ft_strdup(lines[1]);
+		utils->we = ft_strdup(lines[1]);
 	else if (value == 5)
 	{
 		utils->c = NULL;

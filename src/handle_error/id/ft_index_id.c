@@ -19,9 +19,9 @@ int	ft_index_id(char *id)
 	else if (ft_strcmp(id, "SO") == 0)
 		return (2);
 	else if (ft_strcmp(id, "WE") == 0)
-		return (3);
-	else if (ft_strcmp(id, "EA") == 0)
 		return (4);
+	else if (ft_strcmp(id, "EA") == 0)
+		return (3);
 	else if (ft_strcmp(id, "C") == 0)
 		return (5);
 	else if (ft_strcmp(id, "F") == 0)

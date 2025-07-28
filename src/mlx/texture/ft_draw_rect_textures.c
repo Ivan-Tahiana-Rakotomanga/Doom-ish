@@ -5,11 +5,11 @@ t_img	ft_get_texture(t_mlx mlx, int index)
 	if (index == 1)
 		return (mlx.no);
 	else if (index == 2)
-		return (mlx.so);
-	else if (index == 3)
 		return (mlx.ea);
-	else
+	else if (index == 3)
 		return (mlx.wo);
+	else
+		return (mlx.so);
 }
 
 unsigned int *ft_get_address_textures(int y, int h, t_mlx *mlx, double *dst_orient)

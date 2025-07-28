@@ -30,7 +30,7 @@ char	**ft_copy_map(char **map, int height)
 	return (copy);
 }
 
-void	ft_find_start(int *start_x, int *start_y, char **map)
+char ft_find_start(int *start_x, int *start_y, char **map)
 {
 	int	j;
 	int	i;
@@ -50,12 +50,13 @@ void	ft_find_start(int *start_x, int *start_y, char **map)
 			{
 				*start_x = i;
 				*start_y = j;
-				return ;
+				return (map[i][j]);
 			}
 			j++;
 		}
 		i++;
 	}
+	return ('\0');
 }
 
 int	ft_check_flood(int x, int y, char **map, int height)

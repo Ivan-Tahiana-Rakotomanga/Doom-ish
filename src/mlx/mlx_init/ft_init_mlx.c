@@ -21,17 +21,16 @@ double	ft_pixel_player(int value, t_mlx *mlx)
 	return (ft_coordinate_to_pixel((double)value, mlx->side) + half);
 }
 
-void	ft_init_player(t_mlx **mlx)
+int ft_init_player(t_mlx **mlx)
 {
 	t_player	*player;
 
 	player = malloc(sizeof(t_player));
 	if (!player)
-		return ;
+		return (0);
 	ft_memset(player, 0, sizeof(t_player));
 	player->x = ft_pixel_player((*mlx)->x_player, *mlx);
 	player->y = ft_pixel_player((*mlx)->y_player, *mlx);
-	player->angle = 0;
 	player->angle_direction = 0;
 	player->move_direction = 0;
 	player->fov = 60;
@@ -39,6 +38,7 @@ void	ft_init_player(t_mlx **mlx)
 	player->speed = 10;
 	player->angle_speed = 2;
 	(*mlx)->player = player;
+	return (1);
 }
 
 void	ft_init_textures(t_mlx *mlx, t_utils utils)
@@ -53,6 +53,7 @@ void	ft_init_textures(t_mlx *mlx, t_utils utils)
 
 t_mlx	*ft_init_mlx(t_mlx *mlx, char **map, t_utils utils)
 {
+	char c;
 	mlx = malloc(sizeof(t_mlx));
 	if (!mlx)
 		return (ft_free_mlx(mlx));
@@ -72,7 +73,11 @@ t_mlx	*ft_init_mlx(t_mlx *mlx, char **map, t_utils utils)
 	ft_init_textures(mlx, utils);
 	mlx->x_player = -1;
 	mlx->y_player = -1;
-	ft_find_start(&mlx->x_player, &mlx->y_player, map);
-	ft_init_player(&mlx);
+	c = ft_find_start(&mlx->x_player, &mlx->y_player, map);
+	if(!ft_init_player(&mlx))
+	{
+		return (ft_free_mlx(mlx));
+	}
+	mlx->player->angle = ft_angle_orientation(c);
 	return (mlx);
 }
