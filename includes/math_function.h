@@ -36,4 +36,5 @@ double	ft_rules_of_three(double value, double ref_in, double ref_out);
 t_img	ft_get_img(char *filename, void *mlx_ptr);
 double ft_orientation(int h_v, double angle );
 double ft_get_x_text(t_point end, double side, int orient);
+void ft_scale_side(char **map,t_mlx *mlx);
 #endif

@@ -17,7 +17,7 @@ double	ft_pixel_player(int value, t_mlx *mlx)
 {
 	double	half;
 
-	half = (mlx->side / 2);
+	half = ((double)mlx->side / 2);
 	return (ft_coordinate_to_pixel((double)value, mlx->side) + half);
 }
 
@@ -28,6 +28,7 @@ void	ft_init_player(t_mlx **mlx)
 	player = malloc(sizeof(t_player));
 	if (!player)
 		return ;
+	ft_memset(player, 0, sizeof(t_player));
 	player->x = ft_pixel_player((*mlx)->x_player, *mlx);
 	player->y = ft_pixel_player((*mlx)->y_player, *mlx);
 	player->angle = 0;
@@ -49,16 +50,16 @@ void	ft_init_textures(t_mlx *mlx, t_utils utils)
 	mlx->wo = ft_get_img(utils.we, mlx->mlx);
 }
 
+
 t_mlx	*ft_init_mlx(t_mlx *mlx, char **map, t_utils utils)
 {
 	mlx = malloc(sizeof(t_mlx));
 	if (!mlx)
 		return (ft_free_mlx(mlx));
 	ft_memset(mlx, 0, sizeof(t_mlx));
-
-	mlx->side = 32;
+	ft_scale_side(map, mlx);
 	mlx->map = map;
-	mlx->width_one_wall = 1;
+	mlx->width_one_wall = 4;
 
 	if(!mlx->map || !mlx->map[0])
 		return (ft_free_mlx(mlx));
