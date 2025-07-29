@@ -60,7 +60,7 @@ t_mlx	*ft_init_mlx(t_mlx *mlx, char **map, t_utils utils)
 	ft_memset(mlx, 0, sizeof(t_mlx));
 	ft_scale_side(map, mlx);
 	mlx->map = map;
-	mlx->width_one_wall = 4;
+	mlx->width_one_wall = 1;
 	if (!mlx->map || !mlx->map[0])
 		return (ft_free_mlx(mlx));
 	ft_init_size_window(mlx);
