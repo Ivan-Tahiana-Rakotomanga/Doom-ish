@@ -62,9 +62,9 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/mlx/draw/ft_draw_all_rays.c \
 		src/mlx/draw/ft_draw_line.c \
 		src/mlx/mlx_init/ft_free_mlx.c \
+		src/mlx/mlx_init/ft_init_player.c \
 		src/mlx/mlx_init/ft_init_mlx.c \
 		src/mlx/mlx_init/ft_check_mlx.c \
-		src/mlx/mlx_init/ft_init_key.c \
 		src/mlx/mlx_init/ft_init_window.c \
 		src/mlx/texture/ft_set_img.c \
 		src/mlx/texture/ft_get_new_y.c \

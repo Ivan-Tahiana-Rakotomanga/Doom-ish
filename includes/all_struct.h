@@ -41,8 +41,6 @@ typedef struct s_player
 	double			x;
 	double			y;
 	double			angle;
-	int				angle_direction;
-	int				move_direction;
 	double			fov;
 	int				nb_rays;
 	double			speed;

@@ -45,32 +45,8 @@ void	ft_draw_floor(t_mlx *mlx, char *color)
 
 void	ft_color_display(t_mlx *mlx)
 {
-	/*t_point	a;*/
-	/*char	**map;*/
-	/*int		x;*/
-	/*int		y;*/
-	/**/
-	/*y = 0;*/
-	/*x = 0;*/
-	/*map = mlx->map;*/
-	/*while (map[y])*/
-	/*{*/
-	/*	x = 0;*/
-	/*	while (map[y][x])*/
-	/*	{*/
-	/*		a.x = ft_coordinate_to_pixel((double)x, mlx->side);*/
-	/*		a.y = ft_coordinate_to_pixel((double)y, mlx->side);*/
-	/*		if (map[y][x] == '1')*/
-	/*			ft_draw_square(a, mlx->side - 1, ft_strdup("0,255,0"), mlx);*/
-	/*		else*/
-	/*			ft_draw_square(a, mlx->side, ft_strdup("255,255,255"), mlx);*/
-	/*		x++;*/
-	/*	}*/
-	/*	y++;*/
-	/*}*/
 	ft_draw_ceiling(mlx, mlx->utils.c);
 	ft_draw_floor(mlx, mlx->utils.f);
-	/**/
 	ft_display_player(mlx);
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
 }
