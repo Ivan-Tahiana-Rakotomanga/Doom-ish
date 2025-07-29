@@ -25,5 +25,4 @@ void	ft_scale_side(char **map, t_mlx *mlx)
 		mlx->side = (int)ceil(600 / max);
 	else
 		mlx->side = (int)ceil(max / 600);
-	mlx->side = 32;
 }

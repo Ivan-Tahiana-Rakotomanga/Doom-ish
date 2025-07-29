@@ -33,7 +33,7 @@ int	ft_init_player(t_mlx **mlx, double angle)
 	player->fov = 60;
 	player->nb_rays = (*mlx)->width / (*mlx)->width_one_wall;
 	player->speed = 10;
-	player->angle_speed = 2;
+	player->angle_speed = 10;
 	player->angle = angle;
 	(*mlx)->player = player;
 	return (1);
