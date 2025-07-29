@@ -25,9 +25,6 @@ void	ft_draw_wall(int i, double distance, t_mlx mlx, double *dst_text_orient)
 	start.y = ((double)mlx.height / 2) - (height_wall / 2);
 	end.x = start.x + width_one_wall;
 	end.y = start.y + height_wall;
-	if (start.y <= 0)
-		start.y = 0;
-	if (mlx.height <= end.y)
-		end.y = mlx.height;
-	ft_draw_rect_textures(start, end, &mlx, dst_text_orient);
+	
+	ft_draw_rect_textures(start, end, mlx, dst_text_orient);
 }

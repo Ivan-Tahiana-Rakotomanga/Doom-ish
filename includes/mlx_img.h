@@ -40,7 +40,7 @@ void	ft_draw_rect(t_point a, t_point b, char *color, t_mlx *mlx);
 void	ft_draw_wall(int i, double distance, t_mlx mlx,
 			double *dst_text_orient);
 void	ft_move_of_player(int code, t_player *player, t_mlx mlx);
-void	ft_draw_rect_textures(t_point a, t_point b, t_mlx *mlx, double *dst_o);
+void	ft_draw_rect_textures(t_point a, t_point b, t_mlx mlx, double *dst_orient);
 int		ft_get_new_y(double value, double height_wall, double height_img);
 
 #endif
