@@ -21,7 +21,7 @@ double	ft_pixel_player(int value, t_mlx *mlx)
 	return (ft_coordinate_to_pixel((double)value, mlx->side) + half);
 }
 
-int ft_init_player(t_mlx **mlx)
+int	ft_init_player(t_mlx **mlx)
 {
 	t_player	*player;
 
@@ -50,10 +50,10 @@ void	ft_init_textures(t_mlx *mlx, t_utils utils)
 	mlx->wo = ft_get_img(utils.we, mlx->mlx);
 }
 
-
 t_mlx	*ft_init_mlx(t_mlx *mlx, char **map, t_utils utils)
 {
-	char c;
+	char	c;
+
 	mlx = malloc(sizeof(t_mlx));
 	if (!mlx)
 		return (ft_free_mlx(mlx));
@@ -61,8 +61,7 @@ t_mlx	*ft_init_mlx(t_mlx *mlx, char **map, t_utils utils)
 	ft_scale_side(map, mlx);
 	mlx->map = map;
 	mlx->width_one_wall = 4;
-
-	if(!mlx->map || !mlx->map[0])
+	if (!mlx->map || !mlx->map[0])
 		return (ft_free_mlx(mlx));
 	ft_init_size_window(mlx);
 	if (mlx->width <= 0 || mlx->height <= 0)
@@ -74,7 +73,7 @@ t_mlx	*ft_init_mlx(t_mlx *mlx, char **map, t_utils utils)
 	mlx->x_player = -1;
 	mlx->y_player = -1;
 	c = ft_find_start(&mlx->x_player, &mlx->y_player, map);
-	if(!ft_init_player(&mlx))
+	if (!ft_init_player(&mlx))
 	{
 		return (ft_free_mlx(mlx));
 	}

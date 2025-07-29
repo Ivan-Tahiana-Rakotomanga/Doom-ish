@@ -32,7 +32,7 @@ int		ft_check_file(char *file, char ***map_str, t_utils *utils);
 int		ft_map_is_closed(char **map);
 void	ft_get_info(char *file, t_utils *utils);
 int		ft_check_xpm(char *filename);
-int	ft_get_height_map(t_map *map);
-int	ft_get_width_map(t_map *map);
+int		ft_get_height_map(t_map *map);
+int		ft_get_width_map(t_map *map);
 
 #endif

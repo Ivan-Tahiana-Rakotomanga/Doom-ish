@@ -27,32 +27,30 @@ int	ft_add_in_map(char *line, t_map **map)
 	return (1);
 }
 
-void ft_free_next(char **line, int fd)
+void	ft_free_next(char **line, int fd)
 {
 	free(*line);
 	*line = ft_get_next_line(fd);
 }
 
-
-int ft_middle_map(char **line, int fd, t_map **map)
+int	ft_middle_map(char **line, int fd, t_map **map)
 {
 	ft_free_next(line, fd);
-	while(*line)
+	while (*line)
 	{
-		if(!ft_is_empty_str(*line))
-		{		
-			ft_putstr_fd("Error\nThere is a line in the middle of the map\n", 2);
+		if (!ft_is_empty_str(*line))
+		{
+			ft_putstr_fd("Error\nThere is a line in the middle of the map\n",
+				2);
 			free(*line);
 			ft_free_map(map);
 			return (0);
 		}
-	   ft_free_next(line, fd);
+		ft_free_next(line, fd);
 	}
 	free(*line);
 	return (1);
 }
-
-
 
 int	ft_fill_map(t_map **map, int fd)
 {

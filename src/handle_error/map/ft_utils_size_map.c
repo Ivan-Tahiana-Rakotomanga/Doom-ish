@@ -44,4 +44,3 @@ int	ft_get_width_map(t_map *map)
 	}
 	return (max);
 }
-

@@ -68,7 +68,7 @@ void	ft_set_utils(char *line, t_utils *utils)
 	else if (value == 2)
 		utils->so = ft_strdup(lines[1]);
 	else if (value == 3)
-		utils->ea= ft_strdup(lines[1]);
+		utils->ea = ft_strdup(lines[1]);
 	else if (value == 4)
 		utils->we = ft_strdup(lines[1]);
 	else if (value == 5)

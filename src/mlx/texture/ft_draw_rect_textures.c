@@ -12,7 +12,8 @@ t_img	ft_get_texture(t_mlx mlx, int index)
 		return (mlx.so);
 }
 
-unsigned int *ft_get_address_textures(int y, int h, t_mlx *mlx, double *dst_orient)
+unsigned int	*ft_get_address_textures(int y, int h, t_mlx *mlx,
+		double *dst_orient)
 {
 	char	*address;
 	int		x;
@@ -25,12 +26,10 @@ unsigned int *ft_get_address_textures(int y, int h, t_mlx *mlx, double *dst_orie
 	return ((unsigned int *)address);
 }
 
-
-
 void	ft_draw_rect_textures(t_point a, t_point b, t_mlx *mlx, double *dst_o)
 {
 	char	*tmp_color;
-	double  h;
+	double	h;
 	double	tmp_x;
 	double	s;
 
@@ -44,7 +43,8 @@ void	ft_draw_rect_textures(t_point a, t_point b, t_mlx *mlx, double *dst_o)
 		while (a.x < b.x)
 		{
 			tmp_color = ft_get_address(a.x, a.y, mlx);
-			*(unsigned int *)tmp_color = *ft_get_address_textures(s, h, mlx, dst_o);
+			*(unsigned int *)tmp_color = *ft_get_address_textures(s, h, mlx,
+					dst_o);
 			a.x++;
 		}
 		s++;

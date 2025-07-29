@@ -12,8 +12,7 @@
 
 #include "../../../includes/header.h"
 
-
-void ft_free_utils(t_utils *utils)
+void	ft_free_utils(t_utils *utils)
 {
 	free(utils->ea);
 	free(utils->no);
@@ -21,8 +20,7 @@ void ft_free_utils(t_utils *utils)
 	free(utils->we);
 }
 
-
-void ft_free_all_mlx(t_mlx *mlx)
+void	ft_free_all_mlx(t_mlx *mlx)
 {
 	free(mlx->player);
 	ft_free_str(mlx->map);
@@ -30,7 +28,7 @@ void ft_free_all_mlx(t_mlx *mlx)
 	free(mlx);
 }
 
-void ft_destroy_img(t_mlx *mlx)
+void	ft_destroy_img(t_mlx *mlx)
 {
 	mlx_destroy_image(mlx->mlx, mlx->img);
 	mlx_destroy_image(mlx->mlx, mlx->no.img);

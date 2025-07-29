@@ -30,7 +30,7 @@ char	**ft_copy_map(char **map, int height)
 	return (copy);
 }
 
-char ft_find_start(int *start_x, int *start_y, char **map)
+char	ft_find_start(int *start_x, int *start_y, char **map)
 {
 	int	j;
 	int	i;
