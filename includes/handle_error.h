@@ -6,7 +6,7 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 09:43:54 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/07/24 17:54:17 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/07/29 10:13:20 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,7 @@ int		ft_check_file(char *file, char ***map_str, t_utils *utils);
 int		ft_map_is_closed(char **map);
 void	ft_get_info(char *file, t_utils *utils);
 int		ft_check_xpm(char *filename);
+int	ft_get_height_map(t_map *map);
+int	ft_get_width_map(t_map *map);
+
 #endif

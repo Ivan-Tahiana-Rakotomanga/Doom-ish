@@ -6,7 +6,7 @@
 #    By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/04 12:56:49 by irakotom          #+#    #+#              #
-#    Updated: 2025/07/24 17:29:39 by irakotom         ###   ########.fr        #
+#    Updated: 2025/07/29 10:13:38 by irakotom         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/handle_error/color/ft_check_colors.c \
 		src/handle_error/id/ft_index_id.c \
 		src/handle_error/map/ft_format_map_is_valid.c \
+		src/handle_error/map/ft_utils_size_map.c \
 		src/handle_error/map/ft_check_map.c \
 		src/handle_error/map/ft_flood_fill.c \
 		src/handle_error/map/ft_characters_valid_map.c \
