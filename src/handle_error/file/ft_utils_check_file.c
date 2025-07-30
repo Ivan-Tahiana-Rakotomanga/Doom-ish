@@ -19,7 +19,7 @@ char	*ft_first_line(int fd)
 	line = ft_get_next_line(fd);
 	if (!line)
 	{
-		ft_putstr_fd("Error\n This file is empty\n", 2);
+		ft_putstr_fd("Error\nThis file is empty\n", 2);
 		return (NULL);
 	}
 	return (line);
@@ -44,7 +44,7 @@ int	ft_is_valid_argument_textures(char **strs, char *line)
 {
 	if (ft_strs_len(strs) != 2)
 	{
-		ft_putstr_fd("Error\nThe has too much ", 2);
+		ft_putstr_fd("Error\nThere are too much ", 2);
 		ft_putstr_fd("argument for the texture part in: '", 2);
 		ft_putstr_fd(line, 2);
 		ft_putstr_fd("' \n", 2);

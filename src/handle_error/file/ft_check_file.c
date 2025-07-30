@@ -56,7 +56,7 @@ int	ft_check_all_line(int fd)
 		return (free(one), free(two), 0);
 	if (value != 21)
 	{
-		ft_putstr_fd("Error\nDuplicate ID in file or it is missing ID\n", 2);
+		ft_putstr_fd("Error\nDuplicate ID in the file\n", 2);
 		return (free(one), free(two), 0);
 	}
 	if (ft_is_duplicate_color(one, two))

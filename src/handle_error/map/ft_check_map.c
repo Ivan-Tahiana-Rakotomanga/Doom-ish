@@ -35,9 +35,7 @@ int	ft_check_per_line_map(char *line, int *orientation)
 		i++;
 	while (line[i])
 	{
-		if (ft_is_space(line[i]))
-			return (ft_have_space_btw_map(line, i));
-		else if (ft_is_orientation(line[i]))
+		if (ft_is_orientation(line[i]))
 			(*orientation)++;
 		i++;
 	}
@@ -57,12 +55,12 @@ int	ft_check_under_map(t_map *map)
 	}
 	if (orientation == 0)
 	{
-		ft_putstr_fd("Error\nThere is no player in the map\n", 2);
+		ft_putstr_fd("Error\nThere is no player or no map\n", 2);
 		return (0);
 	}
 	else if (orientation > 1)
 	{
-		ft_putstr_fd("Error\nThere is more than one player on the map\n", 2);
+		ft_putstr_fd("Error\nThere are more than one player in the map\n", 2);
 		return (0);
 	}
 	return (1);
