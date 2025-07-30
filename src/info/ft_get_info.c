@@ -91,13 +91,15 @@ void	ft_get_info(char *file, t_utils *utils)
 	fd = open(file, O_RDONLY);
 	line = ft_get_next_line(fd);
 	i = 0;
-	while (line && i < 7)
+	while (line && i < 6)
 	{
 		if (!ft_is_empty_str(line))
+		{
 			ft_set_utils(line, utils);
+		    i++;
+		}
 		free(line);
 		line = ft_get_next_line(fd);
-		i++;
 	}
 	free(line);
 	close(fd);
