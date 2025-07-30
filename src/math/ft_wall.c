@@ -12,6 +12,15 @@
 
 #include "../../includes/header.h"
 
+int ft_format_value(int value, int max)
+{
+	if(value < 0)
+		return (0);
+	else if(max <= value)
+		return (max - 1);
+	return (value);
+}
+
 int	ft_is_wall(double x_pixel, double y_pixel, t_mlx mlx)
 {
 	double	side;
@@ -25,6 +34,11 @@ int	ft_is_wall(double x_pixel, double y_pixel, t_mlx mlx)
 		return (1);
 	x = ft_pixel_to_coordinate(x_pixel, side);
 	y = ft_pixel_to_coordinate(y_pixel, side);
+
+	x = ft_format_value(x, ft_strlen(map[0]));
+	y = ft_format_value(y, ft_strs_len(map));
+
+
 	if (map[y][x] == '1')
 		return (1);
 	return (0);

@@ -14,9 +14,8 @@
 
 t_point	ft_coordinate(double angle, t_point b, double speed, int add_substract)
 {
-	if (add_substract == 1)
-	{
-		b.x = b.x + cos(ft_degree_to_radian(fmod(angle, 360))) * speed;
+	if (add_substract == 1) { 
+		b.x = b.x + cos(ft_degree_to_radian(fmod(angle, 360))) * speed; 
 		b.y = b.y + sin(ft_degree_to_radian(fmod(angle, 360))) * speed;
 	}
 	else if (add_substract == 2)
@@ -39,11 +38,11 @@ t_point	ft_get_coordinate(int code, t_player player)
 	a.y = player.y;
 	if (code == 119)
 		a = ft_coordinate(angle, a, speed, 1);
-	else if (code == 115)
+	if (code == 115)
 		a = ft_coordinate(angle, a, speed, 2);
-	else if (code == 100)
+	if (code == 100)
 		a = ft_coordinate(angle - 90, a, speed, 2);
-	else if (code == 97)
+	if (code == 97)
 		a = ft_coordinate(angle + 90, a, speed, 2);
 	return (a);
 }

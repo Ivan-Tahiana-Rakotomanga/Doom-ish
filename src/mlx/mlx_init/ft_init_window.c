@@ -16,9 +16,12 @@ void	ft_init_size_window(t_mlx *mlx)
 {
 	double	width;
 	double	height;
+	double res;
 
-	width = ft_strlen(mlx->map[0]);
-	height = ft_strs_len(mlx->map);
-	mlx->width = width * mlx->side;
-	mlx->height = height * mlx->side;
+
+	width = ft_strlen(mlx->map[0]) * mlx->side;
+	height = ft_strs_len(mlx->map) * mlx->side;
+	res = fmax(width, height);
+	mlx->width = res;
+	mlx->height = res;
 }

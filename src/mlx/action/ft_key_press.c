@@ -14,7 +14,6 @@
 
 void	ft_render(t_mlx *mlx)
 {
-	ft_bzero(mlx->adr, sizeof(void *));
 	mlx_clear_window(mlx->mlx, mlx->win);
 	ft_color_display(mlx);
 }
@@ -35,7 +34,7 @@ void	ft_move_angle(int code, t_player *player)
 	angle_speed = player->angle_speed;
 	if (code == 65361)
 		player->angle = ft_limit_angle(fmod(player->angle - angle_speed, 360));
-	else if (code == 65363)
+	if (code == 65363)
 		player->angle = ft_limit_angle(fmod(player->angle + angle_speed, 360));
 }
 
