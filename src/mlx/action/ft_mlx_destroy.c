@@ -39,8 +39,6 @@ void	ft_destroy_img(t_mlx *mlx)
 	free(mlx->utils.ea);
 	free(mlx->utils.so);
 	free(mlx->utils.we);
-	free(mlx->utils.f);
-	free(mlx->utils.c);
 }
 
 void	ft_mlx_destroy(t_mlx *mlx)

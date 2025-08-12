@@ -73,11 +73,10 @@ void	ft_set_utils(char *line, t_utils *utils)
 		utils->we = ft_strdup(lines[1]);
 	else if (value == 5)
 	{
-		utils->c = NULL;
-		utils->c = ft_remove_space_cf(temp_lines);
+		utils->c = ft_convert_color(ft_remove_space_cf(temp_lines));
 	}
 	else if (value == 6)
-		utils->f = ft_remove_space_cf(temp_lines);
+		utils->f = ft_convert_color(ft_remove_space_cf(temp_lines));
 	ft_free_str(lines);
 	free(temp_lines);
 }

@@ -29,5 +29,6 @@ int	ft_convert_color(char *color)
 	third_c = ft_atoi(colors[2]);
 	res = (first_c << 16) | (second_c << 8) | (third_c);
 	ft_free_str(colors);
+	free(color);
 	return (res);
 }

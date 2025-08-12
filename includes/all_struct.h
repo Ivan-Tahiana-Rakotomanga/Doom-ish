@@ -28,8 +28,8 @@ typedef struct s_map
 
 typedef struct s_utils
 {
-	char			*c;
-	char			*f;
+	int c;
+	int f;
 	char			*no;
 	char			*so;
 	char			*we;

@@ -11,34 +11,25 @@
 /* ************************************************************************** */
 #include "../../../includes/header.h"
 
-void    ft_draw_ceiling_floor(t_mlx mlx)
+void ft_draw_ceiling_floor(t_mlx mlx, t_point a, t_point b)
 {
-	double	x;
-	double	y;
-	char	*tmp_color;
-	double	tmp_x;
-	int color[2];
+	t_point start;
+	t_point end;
 
-	x = 0;
-	y = 0;
-	tmp_x = x;
-	tmp_color = NULL;
-    color[0] = ft_convert_color(mlx.utils.c);
-    color[1] = ft_convert_color(mlx.utils.f);
+	start.x = a.x;
+	start.y = 0;
+	end.x = b.x;
+	end.y = a.y;
 
-	while (y < mlx.height)
-	{
-		x = tmp_x;
-		while (x < mlx.width)
-		{
-			tmp_color = ft_get_address(x, y, &mlx);
-			if(y < (double)mlx.height / 2)
-				*(unsigned int *)tmp_color = color[0];
-			else
-				*(unsigned int *)tmp_color = color[1];
-			x++;
-		}
-		y++;
-	}
+	ft_draw_rect(start, end, mlx.utils.c,&mlx);
+
+	start.x = a.x;
+	start.y = b.y; 
+
+	end.x = b.x;
+	end.y = mlx.height;
+	ft_draw_rect(start, end, mlx.utils.f,&mlx);
+
 }
+
 

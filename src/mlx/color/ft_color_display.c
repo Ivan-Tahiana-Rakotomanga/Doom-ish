@@ -21,7 +21,6 @@ void	ft_display_player(t_mlx *mlx)
 
 void	ft_color_display(t_mlx *mlx)
 {	
-	ft_draw_ceiling_floor(*mlx);
 	ft_display_player(mlx);
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
 }

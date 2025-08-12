@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/16 10:07:42 by irakotom          #+#    #+#             */
-/*   Updated: 2025/07/16 10:30:05 by irakotom         ###   ########.fr       */
+/*   Created: 20210/07/16 10:07:42 by irakotom          #+#    #+#             */
+/*   Updated: 20210/07/16 10:30:010 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_point	ft_coordinate(double angle, t_point b, double speed, int add_substract)
 	return (b);
 }
 
-t_point	ft_get_coordinate(int code, t_player player, t_point *b)
+t_point	ft_get_coordinate(int code, t_player player, t_point *b, double step)
 {
 	double	speed;
 	double	angle;
@@ -39,23 +39,23 @@ t_point	ft_get_coordinate(int code, t_player player, t_point *b)
 	if (code == 119) 
 	{
 		a = ft_coordinate(angle, a, speed, 1); 
-		*b = ft_coordinate(angle, a, speed + 5, 1);
+		*b = ft_coordinate(angle, a, speed + step, 1);
 	}
 	 
 	if (code == 115) 
 	{
 		a = ft_coordinate(angle, a, speed, 2);
-		*b = ft_coordinate(angle, a, speed + 5, 2);
+		*b = ft_coordinate(angle, a, speed + step, 2);
 	}
 	if (code == 100)
 	{
 		a = ft_coordinate(angle - 90, a, speed, 2);
-		*b = ft_coordinate(angle - 90, a, speed + 5, 2);
+		*b = ft_coordinate(angle - 90, a, speed + step, 2);
 	}
 	if (code == 97)
 	{
 		a = ft_coordinate(angle + 90, a, speed, 2);
-		*b = ft_coordinate(angle + 90, a, speed + 5, 2);
+		*b = ft_coordinate(angle + 90, a, speed + step, 2);
 	}
 	return (a);
 }
@@ -65,7 +65,7 @@ int ft_move_of_player(int code, t_player *player, t_mlx mlx)
 	t_point	a;
 	t_point b;
 
-	a = ft_get_coordinate(code, *player, &b);
+	a = ft_get_coordinate(code, *player, &b, 10);
 	if (0 < a.x && a.x < mlx.width && 0 < a.y && a.y < mlx.height)
 	{
 		if (!ft_is_wall(b.x , b.y , mlx))

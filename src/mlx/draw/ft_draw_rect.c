@@ -12,7 +12,7 @@
 
 #include "../../../includes/header.h"
 
-void	ft_draw_rect(t_point a, t_point b, char *color, t_mlx *mlx)
+void	ft_draw_rect(t_point a, t_point b, int color, t_mlx *mlx)
 {
 	double	x;
 	double	y;
@@ -29,9 +29,11 @@ void	ft_draw_rect(t_point a, t_point b, char *color, t_mlx *mlx)
 		while (x < b.x)
 		{
 			tmp_color = ft_get_address(x, y, mlx);
-			*(unsigned int *)tmp_color = ft_convert_color(color);
+			*(unsigned int *)tmp_color = color;
 			x++;
 		}
 		y++;
 	}
 }
+
+

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../../../includes/header.h"
-#include <stdlib.h>
 
 double	ft_init_utils(t_mlx *mlx, t_utils utils, char **map)
 {
@@ -44,7 +43,6 @@ t_mlx	*ft_init_mlx(t_mlx *mlx, char **map, t_utils utils)
 	mlx->map = map;
 	mlx->width_one_wall = 1;
 	ft_init_size_window(mlx);
-	/*printf("ito ny width %d ny height %d\n", mlx->width, mlx->height);*/
 
 	if (!ft_check_mlx(mlx, "cub3D"))
 		return (ft_free_mlx(mlx));
