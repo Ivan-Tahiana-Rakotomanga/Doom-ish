@@ -6,7 +6,7 @@
 /*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 13:05:46 by irakotom          #+#    #+#             */
-/*   Updated: 2025/06/11 14:42:02 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/08/12 18:10:45 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,26 @@ int	ft_res_loop(char **colors)
 	}
 	return (1);
 }
+int ft_nbr_c(char *color)
+{
+	int count;
+	int i;
+
+	i = 0;
+	count = 0;
+
+	while(color[i])
+	{
+		if(color[i] == ',')
+			count++;
+		i++;
+	}
+	if(count != 2)
+		return (0);
+	else 
+		return (1);
+
+}
 
 int	ft_check_colors(char *color)
 {
@@ -48,7 +68,7 @@ int	ft_check_colors(char *color)
 	res = 0;
 	temp = ft_strtrim(color, " \n");
 	colors = ft_split(temp, ',');
-	if (colors == NULL || ft_strs_len(colors) != 3)
+	if (colors == NULL || !ft_nbr_c(color) || ft_strs_len(colors) != 3)
 	{
 		ft_putstr_fd("Error\nInvalid color format ", 2);
 		ft_putstr_fd("it must be three digits separated by a comma not ", 2);
