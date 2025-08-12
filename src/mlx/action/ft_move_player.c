@@ -6,7 +6,7 @@
 /*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 17:17:50 by irakotom          #+#    #+#             */
-/*   Updated: 2025/08/12 17:17:50 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/08/12 17:27:06 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ t_point	ft_coordinate(double angle, t_point b, double speed, int add_substract)
 	}
 	return (b);
 }
-
 
 t_point	ft_get_coordinate(int code, t_player player, t_point *b, double step)
 {
