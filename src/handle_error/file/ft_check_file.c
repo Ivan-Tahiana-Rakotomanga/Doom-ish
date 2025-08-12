@@ -27,7 +27,10 @@ int	ft_loop_check_line(char **line, int fd, char **one, char **two)
 		{
 			temp_value = ft_handle_index_id(*line, one, two);
 			if (temp_value == 0)
+			{
+				free(*line);
 				return (0);
+			}
 			value = value + temp_value;
 			id++;
 		}
