@@ -36,9 +36,9 @@ t_point	ft_get_coordinate(int code, t_player player)
 	angle = player.angle;
 	a.x = player.x;
 	a.y = player.y;
-	if (code == 119)
-		a = ft_coordinate(angle, a, speed, 1);
-	if (code == 115)
+	if (code == 119) 
+		a = ft_coordinate(angle, a, speed, 1); 
+	if (code == 115) 
 		a = ft_coordinate(angle, a, speed, 2);
 	if (code == 100)
 		a = ft_coordinate(angle - 90, a, speed, 2);
@@ -47,17 +47,19 @@ t_point	ft_get_coordinate(int code, t_player player)
 	return (a);
 }
 
-void	ft_move_of_player(int code, t_player *player, t_mlx mlx)
+int ft_move_of_player(int code, t_player *player, t_mlx mlx)
 {
 	t_point	a;
 
 	a = ft_get_coordinate(code, *player);
-	if (0 <= a.x && a.x <= mlx.width && 0 <= a.y && a.y <= mlx.height)
+	if (0 < a.x && a.x < mlx.width && 0 < a.y && a.y < mlx.height)
 	{
 		if (!ft_is_wall(a.x, a.y, mlx))
 		{
 			player->x = a.x;
 			player->y = a.y;
+			return(1);
 		}
 	}
+	return (0);
 }

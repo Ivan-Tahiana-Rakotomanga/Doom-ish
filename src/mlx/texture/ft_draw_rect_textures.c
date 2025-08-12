@@ -38,13 +38,7 @@ unsigned int	*ft_get_address_textures(int y, int h, t_mlx mlx,
 	return ((unsigned int *)address);
 }
 
-void	ft_init_height(t_point *a, t_point *b, double height)
-{
-	if (a->y <= 0)
-		a->y = 0;
-	if (height <= b->y)
-		b->y = height;
-}
+
 
 void	ft_draw_rect_textures(t_point a, t_point b, t_mlx mlx,
 		double *dst_orient)
@@ -58,18 +52,17 @@ void	ft_draw_rect_textures(t_point a, t_point b, t_mlx mlx,
 	h = b.y - a.y;
 	tmp_x = a.x;
 	tmp_color = NULL;
-
-	ft_init_height(&a, &b, mlx.height);
-	
-	
-
-
 	while (a.y < b.y)
 	{
 		a.x = tmp_x;
 		while (a.x < b.x)
 		{
-			tmp_color = ft_get_address(a.x, a.y, &mlx);
+			if(a.y <= 0)
+				tmp_color = ft_get_address(a.x, 0, &mlx);
+			else if (mlx.height <= a.y)
+				tmp_color = ft_get_address(a.x, mlx.height, &mlx);
+			else
+				tmp_color = ft_get_address(a.x, a.y, &mlx);
 			*(unsigned int *)tmp_color = *ft_get_address_textures(s, h, mlx,
 					dst_orient);
 			a.x++;
