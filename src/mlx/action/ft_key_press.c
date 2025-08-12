@@ -45,8 +45,8 @@ int	ft_key_press(int code, t_mlx *mlx)
 	player = mlx->player;
 	if (code == 65307)
 		ft_mlx_destroy(mlx);
-	ft_move_of_player(code, player, *mlx);
 	ft_move_angle(code, player);
+	ft_move_of_player(code, player, *mlx);
 	ft_render(mlx);
 	return (0);
 }
