@@ -27,15 +27,24 @@ double	ft_limit_angle(double angle)
 	return (angle);
 }
 
-void	ft_move_angle(int code, t_player *player)
+int ft_move_angle(int code, t_player *player)
 {
 	double	angle_speed;
+	int res;
 
+	res = 0;
 	angle_speed = player->angle_speed;
 	if (code == 65361)
+	{
 		player->angle = ft_limit_angle(fmod(player->angle - angle_speed, 360));
+		res = 1;
+	}
 	if (code == 65363)
+	{
 		player->angle = ft_limit_angle(fmod(player->angle + angle_speed, 360));
+		res = 1;
+	}
+	return (res);
 }
 
 int	ft_key_press(int code, t_mlx *mlx)
@@ -45,8 +54,8 @@ int	ft_key_press(int code, t_mlx *mlx)
 	player = mlx->player;
 	if (code == 65307)
 		ft_mlx_destroy(mlx);
-	ft_move_angle(code, player);
-	if(ft_move_of_player(code, player, *mlx))
-		ft_render(mlx);
+	if(!ft_move_angle(code, player) && !ft_move_of_player(code, player, *mlx))
+		return (0);
+	ft_render(mlx);
 	return (0);
 }
