@@ -95,7 +95,7 @@ void	ft_get_info(char *file, t_utils *utils)
 		if (!ft_is_empty_str(line))
 		{
 			ft_set_utils(line, utils);
-		    i++;
+			i++;
 		}
 		free(line);
 		line = ft_get_next_line(fd);

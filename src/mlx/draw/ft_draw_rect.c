@@ -35,5 +35,3 @@ void	ft_draw_rect(t_point a, t_point b, int color, t_mlx *mlx)
 		y++;
 	}
 }
-
-

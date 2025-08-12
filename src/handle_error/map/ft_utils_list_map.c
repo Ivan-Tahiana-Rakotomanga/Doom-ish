@@ -40,8 +40,9 @@ int	ft_middle_map(char **line, int fd, t_map **map)
 	{
 		if (!ft_is_empty_str(*line))
 		{
-			ft_putstr_fd("Error\nThere is a line in the middle of the map or too much configurations\n",
-				2);
+			ft_putstr_fd("Error\nThere is a line ", 2);
+			ft_putstr_fd("in the middle of the map or ", 2);
+			ft_putstr_fd("too much configurations\n", 2);
 			free(*line);
 			ft_free_map(map);
 			return (0);

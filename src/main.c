@@ -33,7 +33,7 @@ int	main(int argc, char **argv)
 		ft_free_str(map);
 		ft_free_mlx(mlx);
 	}
-  else 
-      ft_putstr_fd("Error\nThere is more or less than one argument\n", 2);
+	else
+		ft_putstr_fd("Error\nThere is more or less than one argument\n", 2);
 	return (0);
 }

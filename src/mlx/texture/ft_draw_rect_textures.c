@@ -38,17 +38,15 @@ unsigned int	*ft_get_address_textures(int y, int h, t_mlx mlx,
 	return ((unsigned int *)address);
 }
 
-char *ft_get_tmp_color(t_point a, t_mlx mlx)
+char	*ft_get_tmp_color(t_point a, t_mlx mlx)
 {
-	if(a.y <= 0)
+	if (a.y <= 0)
 		return (ft_get_address(a.x, 0, &mlx));
 	else if (mlx.height <= a.y)
 		return (ft_get_address(a.x, mlx.height, &mlx));
 	else
 		return (ft_get_address(a.x, a.y, &mlx));
 }
-
-
 
 void	ft_draw_rect_textures(t_point a, t_point b, t_mlx mlx,
 		double *dst_orient)
@@ -62,8 +60,7 @@ void	ft_draw_rect_textures(t_point a, t_point b, t_mlx mlx,
 	h = b.y - a.y;
 	tmp_x = a.x;
 	tmp_color = NULL;
-
-	ft_draw_ceiling_floor(mlx,a,b);
+	ft_draw_ceiling_floor(mlx, a, b);
 	while (a.y < b.y)
 	{
 		a.x = tmp_x;
@@ -78,4 +75,3 @@ void	ft_draw_rect_textures(t_point a, t_point b, t_mlx mlx,
 		a.y++;
 	}
 }
-

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 20210/07/16 10:07:42 by irakotom          #+#    #+#             */
-/*   Updated: 20210/07/16 10:30:010 by irakotom         ###   ########.fr       */
+/*   Created: 2025/08/12 17:17:50 by irakotom          #+#    #+#             */
+/*   Updated: 2025/08/12 17:17:50 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 t_point	ft_coordinate(double angle, t_point b, double speed, int add_substract)
 {
-	if (add_substract == 1) { 
-		b.x = b.x + cos(ft_degree_to_radian(fmod(angle, 360))) * speed; 
+	if (add_substract == 1)
+	{
+		b.x = b.x + cos(ft_degree_to_radian(fmod(angle, 360))) * speed;
 		b.y = b.y + sin(ft_degree_to_radian(fmod(angle, 360))) * speed;
 	}
 	else if (add_substract == 2)
@@ -25,6 +26,7 @@ t_point	ft_coordinate(double angle, t_point b, double speed, int add_substract)
 	}
 	return (b);
 }
+
 
 t_point	ft_get_coordinate(int code, t_player player, t_point *b, double step)
 {
@@ -36,13 +38,12 @@ t_point	ft_get_coordinate(int code, t_player player, t_point *b, double step)
 	angle = player.angle;
 	a.x = player.x;
 	a.y = player.y;
-	if (code == 119) 
+	if (code == 119)
 	{
-		a = ft_coordinate(angle, a, speed, 1); 
+		a = ft_coordinate(angle, a, speed, 1);
 		*b = ft_coordinate(angle, a, speed + step, 1);
 	}
-	 
-	if (code == 115) 
+	if (code == 115)
 	{
 		a = ft_coordinate(angle, a, speed, 2);
 		*b = ft_coordinate(angle, a, speed + step, 2);
@@ -60,19 +61,19 @@ t_point	ft_get_coordinate(int code, t_player player, t_point *b, double step)
 	return (a);
 }
 
-int ft_move_of_player(int code, t_player *player, t_mlx mlx)
+int	ft_move_of_player(int code, t_player *player, t_mlx mlx)
 {
 	t_point	a;
-	t_point b;
+	t_point	b;
 
 	a = ft_get_coordinate(code, *player, &b, 10);
 	if (0 < a.x && a.x < mlx.width && 0 < a.y && a.y < mlx.height)
 	{
-		if (!ft_is_wall(b.x , b.y , mlx))
+		if (!ft_is_wall(b.x, b.y, mlx))
 		{
 			player->x = a.x;
 			player->y = a.y;
-			return(1);
+			return (1);
 		}
 	}
 	return (0);

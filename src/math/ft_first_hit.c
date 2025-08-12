@@ -20,7 +20,7 @@ double	ft_first_hit_hy(double y_pixel, double side, double angle)
 	if (angle <= 180)
 		res = (ft_pixel_to_coordinate(y_pixel, side) * side) + side;
 	else
-		res = (ft_pixel_to_coordinate(y_pixel, side) * side) - 0.001;
+		res = (ft_pixel_to_coordinate(y_pixel, side) * side) - 0.00001;
 	return (res);
 }
 
@@ -38,7 +38,7 @@ double	ft_first_hit_vx(double x_pixel, double side, double angle)
 
 	res = 0.0;
 	if (90 < angle && angle < 270)
-		res = (ft_pixel_to_coordinate(x_pixel, side) * side) - 0.001;
+		res = (ft_pixel_to_coordinate(x_pixel, side) * side) - 0.00001;
 	else
 		res = (ft_pixel_to_coordinate(x_pixel, side) * side) + side;
 	return (res);

@@ -43,8 +43,6 @@ t_point	ft_end_hit_h(double angle, t_mlx mlx, double y_pixel)
 		return (end);
 	ya = ft_get_yxa(angle, mlx.side, 1);
 	xa = ya / tan(ft_degree_to_radian(angle));
-
-
 	while (!ft_is_wall(end.x, end.y, mlx))
 	{
 		end.x = end.x + xa;

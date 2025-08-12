@@ -11,25 +11,19 @@
 /* ************************************************************************** */
 #include "../../../includes/header.h"
 
-void ft_draw_ceiling_floor(t_mlx mlx, t_point a, t_point b)
+void	ft_draw_ceiling_floor(t_mlx mlx, t_point a, t_point b)
 {
-	t_point start;
-	t_point end;
+	t_point	start;
+	t_point	end;
 
 	start.x = a.x;
 	start.y = 0;
 	end.x = b.x;
 	end.y = a.y;
-
-	ft_draw_rect(start, end, mlx.utils.c,&mlx);
-
+	ft_draw_rect(start, end, mlx.utils.c, &mlx);
 	start.x = a.x;
-	start.y = b.y; 
-
+	start.y = b.y;
 	end.x = b.x;
 	end.y = mlx.height;
-	ft_draw_rect(start, end, mlx.utils.f,&mlx);
-
+	ft_draw_rect(start, end, mlx.utils.f, &mlx);
 }
-
-

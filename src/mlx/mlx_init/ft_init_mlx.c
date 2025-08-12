@@ -43,7 +43,6 @@ t_mlx	*ft_init_mlx(t_mlx *mlx, char **map, t_utils utils)
 	mlx->map = map;
 	mlx->width_one_wall = 1;
 	ft_init_size_window(mlx);
-
 	if (!ft_check_mlx(mlx, "cub3D"))
 		return (ft_free_mlx(mlx));
 	angle = ft_init_utils(mlx, utils, map);
