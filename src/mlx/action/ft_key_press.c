@@ -14,7 +14,7 @@
 
 void	ft_render(t_mlx *mlx)
 {
-	mlx_clear_window(mlx->mlx, mlx->win);
+	ft_bzero(mlx->adr, sizeof(void *));
 	ft_color_display(mlx);
 }
 

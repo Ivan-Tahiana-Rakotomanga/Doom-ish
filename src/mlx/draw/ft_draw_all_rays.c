@@ -28,7 +28,7 @@ double	ft_draw_ray(double angle, t_player player, t_mlx mlx,
 	dst_text_orient[0] = ft_orientation(h_v, angle);
 	dst_text_orient[1] = ft_get_x_text(end, mlx.side, dst_text_orient[0]);
 	res = ft_get_distance(end, player);
-	/**/
+
 	/*t_point a;*/
 	/*a.x = player.x;*/
 	/*a.y = player.y;*/
@@ -59,7 +59,6 @@ void	ft_loop_wall(double start_angle, double nbr_rays, t_mlx mlx,
 		distance = ft_draw_ray(start_angle, *(mlx).player, mlx,
 				dst_text_orient);
 		ft_draw_wall(i, distance, mlx, dst_text_orient);
-		(void)distance;
 		start_angle = ft_limit_angle(fmod((start_angle + angle_step), 360));
 		i++;
 	}

@@ -58,7 +58,12 @@ void	ft_draw_rect_textures(t_point a, t_point b, t_mlx mlx,
 	h = b.y - a.y;
 	tmp_x = a.x;
 	tmp_color = NULL;
+
 	ft_init_height(&a, &b, mlx.height);
+	
+	
+
+
 	while (a.y < b.y)
 	{
 		a.x = tmp_x;

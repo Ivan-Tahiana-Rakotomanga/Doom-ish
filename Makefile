@@ -6,7 +6,7 @@
 #    By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/04 12:56:49 by irakotom          #+#    #+#              #
-#    Updated: 2025/07/29 10:13:38 by irakotom         ###   ########.fr        #
+#    Updated: 2025/08/12 09:03:37 by irakotom         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/mlx/color/ft_add_color_pixels.c \
 		src/mlx/color/ft_get_address.c \
 		src/mlx/draw/ft_draw_rect.c \
+		src/mlx/draw/ft_draw_ceiling_floor.c \
 		src/mlx/draw/ft_draw_wall.c \
 		src/mlx/draw/ft_draw_square.c \
 		src/mlx/draw/ft_draw_all_rays.c \
