@@ -6,7 +6,7 @@
 /*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 17:17:50 by irakotom          #+#    #+#             */
-/*   Updated: 2025/08/12 17:27:06 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/08/12 18:56:04 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ int	ft_move_of_player(int code, t_player *player, t_mlx mlx)
 	t_point	a;
 	t_point	b;
 
+	b.x = 0;
+	b.y = 0;
 	a = ft_get_coordinate(code, *player, &b, 10);
 	if (0 < a.x && a.x < mlx.width && 0 < a.y && a.y < mlx.height)
 	{

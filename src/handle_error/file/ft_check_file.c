@@ -32,8 +32,8 @@ int	ft_loop_check_line(char **line, int fd, char **one, char **two)
 			id++;
 		}
 		free(*line);
-		if(!(id < 6 && *line))
-			break;
+		if (!(id < 6 && *line))
+			break ;
 		*line = ft_get_next_line(fd);
 	}
 	return (value);

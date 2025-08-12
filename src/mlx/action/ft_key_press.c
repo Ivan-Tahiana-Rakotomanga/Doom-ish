@@ -6,7 +6,7 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 14:57:31 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/06/17 15:01:20 by fxu-lin          ###   ########.fr       */
+/*   Updated: 2025/08/12 18:24:56 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,15 @@ double	ft_limit_angle(double angle)
 	return (angle);
 }
 
-int	ft_move_angle(int code, t_player *player)
+void ft_move_angle(int code, t_player *player)
 {
 	double	angle_speed;
-	int		res;
 
-	res = 0;
 	angle_speed = player->angle_speed;
 	if (code == 65361)
-	{
 		player->angle = ft_limit_angle(fmod(player->angle - angle_speed, 360));
-		res = 1;
-	}
 	if (code == 65363)
-	{
 		player->angle = ft_limit_angle(fmod(player->angle + angle_speed, 360));
-		res = 1;
-	}
-	return (res);
 }
 
 int	ft_key_press(int code, t_mlx *mlx)
@@ -54,8 +45,8 @@ int	ft_key_press(int code, t_mlx *mlx)
 	player = mlx->player;
 	if (code == 65307)
 		ft_mlx_destroy(mlx);
-	if (!ft_move_angle(code, player) && !ft_move_of_player(code, player, *mlx))
-		return (0);
+	ft_move_angle(code, player);
+	ft_move_of_player(code, player, *mlx);
 	ft_render(mlx);
 	return (0);
 }

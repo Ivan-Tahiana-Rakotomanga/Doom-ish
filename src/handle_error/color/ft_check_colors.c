@@ -38,25 +38,23 @@ int	ft_res_loop(char **colors)
 	}
 	return (1);
 }
-int ft_nbr_c(char *color)
+int	ft_nbr_c(char *color)
 {
-	int count;
-	int i;
+	int	count;
+	int	i;
 
 	i = 0;
 	count = 0;
-
-	while(color[i])
+	while (color[i])
 	{
-		if(color[i] == ',')
+		if (color[i] == ',')
 			count++;
 		i++;
 	}
-	if(count != 2)
+	if (count != 2)
 		return (0);
-	else 
+	else
 		return (1);
-
 }
 
 int	ft_check_colors(char *color)
