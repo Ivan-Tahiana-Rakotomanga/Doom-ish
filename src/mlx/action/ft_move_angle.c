@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../../includes/header.h"
+
 double	ft_limit_angle(double angle)
 {
 	if (angle < 0.0)
@@ -20,14 +21,13 @@ double	ft_limit_angle(double angle)
 	return (angle);
 }
 
-void ft_move_angle(t_player *player)
+void	ft_move_angle(t_player *player)
 {
 	double	angle_speed;
 
 	angle_speed = player->angle_speed;
 	if (player->left)
 	{
-
 		player->angle = ft_limit_angle(fmod(player->angle - angle_speed, 360));
 	}
 	if (player->right)

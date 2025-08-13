@@ -41,7 +41,6 @@ int	ft_init_player(t_mlx **mlx, double angle)
 	player->d = 0;
 	player->left = 0;
 	player->right = 0;
-
 	(*mlx)->player = player;
 	return (1);
 }

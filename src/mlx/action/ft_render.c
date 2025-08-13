@@ -11,15 +11,27 @@
 /* ************************************************************************** */
 #include "../../../includes/header.h"
 
-
-int ft_render(t_mlx *mlx)
+int	ft_valid_key(t_player *player)
 {
+	int	res;
 
-	ft_move_angle(mlx->player);
-	ft_move_of_player(mlx->player, *mlx);
+	res = player->w + player->s + player->a + player->d;
+	res = res + player->right + player->left;
+	if (res == 0)
+		return (0);
+	else
+		return (1);
+}
 
-	mlx_clear_window(mlx->mlx, mlx->win);
-	ft_bzero(mlx->adr, sizeof(void *));
-	ft_color_display(mlx);
+int	ft_render(t_mlx *mlx)
+{
+	if (ft_valid_key(mlx->player))
+	{
+		ft_move_angle(mlx->player);
+		ft_move_of_player(mlx->player, *mlx);
+		mlx_clear_window(mlx->mlx, mlx->win);
+		ft_bzero(mlx->adr, sizeof(void *));
+		ft_color_display(mlx);
+	}
 	return (0);
 }

@@ -44,13 +44,13 @@ typedef struct s_player
 	double			fov;
 	int				nb_rays;
 	double			speed;
-	double			angle_speed;	
-	int             w;
-	int             s;
-	int             a;
-	int             d;
-	int             left;
-	int             right;
+	double			angle_speed;
+	int				w;
+	int				s;
+	int				a;
+	int				d;
+	int				left;
+	int				right;
 
 }					t_player;
 
@@ -63,7 +63,6 @@ typedef struct s_img
 	int				bpp;
 	int				s_line;
 	int				endian;
-
 
 }					t_img;
 

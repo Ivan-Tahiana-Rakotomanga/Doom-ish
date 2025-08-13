@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../../includes/header.h"
+#include <strings.h>
 
 t_point	ft_coordinate(double angle, t_point b, double speed, int add_substract)
 {
@@ -27,72 +28,54 @@ t_point	ft_coordinate(double angle, t_point b, double speed, int add_substract)
 	return (b);
 }
 
-t_point	ft_get_coordinate(t_player *player, t_point *b, double step)
+t_point	ft_set_coordinate(t_player *player, t_point *b, double angle, int index)
 {
 	double	speed;
-	double	angle;
 	t_point	a;
 
 	speed = player->speed;
-	angle = player->angle;
 	a.x = player->x;
 	a.y = player->y;
-
-	if(player->w && player->d)
-	{
-        a = ft_coordinate(angle + 225, a, speed, 2);
-		*b = ft_coordinate(angle + 225, a, speed + step, 2);
-	}
-	else if (player->a && player->w)
-	{
-
-		a = ft_coordinate(angle - 225, a, speed, 2);
-		*b = ft_coordinate(angle - 225, a, speed + step, 2);
-	}
-	else if (player->a && player->s)
-	{
-        a = ft_coordinate(angle + 45, a, speed, 2);
-		*b = ft_coordinate(angle + 45, a, speed + step, 2);
-	}
-	else if (player->s && player->d)
-	{
-        a = ft_coordinate(angle - 45, a, speed, 2);
-		*b = ft_coordinate(angle - 45, a, speed + step, 2);
-	}
-	else
-	{
-	if (player->w)
-	{
-		a = ft_coordinate(angle, a, speed, 1);
-		*b = ft_coordinate(angle, a, speed + step, 1);
-	}
-	if (player->s)
-	{
-		a = ft_coordinate(angle, a, speed, 2);
-		*b = ft_coordinate(angle, a, speed + step, 2);
-	}
-	if (player->d)
-	{
-		a = ft_coordinate(angle - 90, a, speed, 2);
-		*b = ft_coordinate(angle - 90, a, speed + step, 2);
-	}
-	if (player->a)
-	{
-		a = ft_coordinate(angle + 90, a, speed, 2);
-		*b = ft_coordinate(angle + 90, a, speed + step, 2);
-	}
-	}
+	a = ft_coordinate(angle, a, speed, index);
+	*b = ft_coordinate(angle, a, speed + 10, index);
 	return (a);
 }
 
-void ft_move_of_player(t_player *player, t_mlx mlx)
+t_point	ft_get_coordinate(t_player *player, t_point *b)
+{
+	double	angle;
+	int		index;
+
+	angle = player->angle;
+	index = 2;
+	if (player->w && player->d)
+		angle = angle + 225;
+	else if (player->a && player->w)
+		angle = angle - 225;
+	else if (player->a && player->s)
+		angle = angle + 45;
+	else if (player->s && player->d)
+		angle = angle - 45;
+	else
+	{
+		if (player->w)
+			index = 1;
+		if (player->d)
+			angle = angle - 90;
+		if (player->a)
+			angle = angle + 90;
+	}
+	return (ft_set_coordinate(player, b, angle, index));
+}
+
+void	ft_move_of_player(t_player *player, t_mlx mlx)
 {
 	t_point	a;
 	t_point	b;
 
 	b.x = 0;
 	b.y = 0;
-	a = ft_get_coordinate(player, &b, 10);
+	a = ft_get_coordinate(player, &b);
 	if (0 < a.x && a.x < mlx.width && 0 < a.y && a.y < mlx.height)
 	{
 		if (!ft_is_wall(b.x, b.y, mlx))

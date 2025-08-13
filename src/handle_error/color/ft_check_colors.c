@@ -38,6 +38,7 @@ int	ft_res_loop(char **colors)
 	}
 	return (1);
 }
+
 int	ft_nbr_c(char *color)
 {
 	int	count;

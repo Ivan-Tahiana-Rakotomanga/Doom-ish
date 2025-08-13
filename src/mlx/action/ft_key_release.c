@@ -12,20 +12,19 @@
 
 #include "../../../includes/header.h"
 
-int ft_key_release(int code, t_player *player)
-{	
-	if (code  == 119)
+int	ft_key_release(int code, t_player *player)
+{
+	if (code == 119)
 		player->w = 0;
 	if (code == 115)
 		player->s = 0;
 	if (code == 97)
 		player->a = 0;
 	if (code == 100)
-		player->d = 0;	
+		player->d = 0;
 	if (code == 65361)
 		player->left = 0;
 	if (code == 65363)
 		player->right = 0;
 	return (0);
 }
-

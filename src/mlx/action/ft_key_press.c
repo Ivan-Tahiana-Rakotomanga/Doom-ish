@@ -12,10 +12,9 @@
 
 #include "../../../includes/header.h"
 
-
-void ft_key_moov(int code, t_player *player)
+void	ft_key_moov(int code, t_player *player)
 {
-	if (code  == 119)
+	if (code == 119)
 		player->w = 1;
 	if (code == 115)
 		player->s = 1;
@@ -25,7 +24,7 @@ void ft_key_moov(int code, t_player *player)
 		player->d = 1;
 }
 
-void ft_key_angle(int code, t_player *player)
+void	ft_key_angle(int code, t_player *player)
 {
 	if (code == 65361)
 		player->left = 1;
@@ -33,10 +32,14 @@ void ft_key_angle(int code, t_player *player)
 		player->right = 1;
 }
 
-int ft_key_press(int code, t_player *player)
+int	ft_key_press(int code, t_mlx *mlx)
 {
-
-	ft_key_moov(code, player);
-	ft_key_angle(code, player);
+	if (code == 65307)
+	{
+		ft_mlx_destroy(mlx);
+		return (0);
+	}
+	ft_key_moov(code, mlx->player);
+	ft_key_angle(code, mlx->player);
 	return (0);
 }
