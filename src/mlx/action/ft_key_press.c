@@ -6,47 +6,37 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 14:57:31 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/08/12 18:24:56 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/08/13 13:20:15 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/header.h"
 
-void	ft_render(t_mlx *mlx)
+
+void ft_key_moov(int code, t_player *player)
 {
-	ft_bzero(mlx->adr, sizeof(void *));
-	ft_color_display(mlx);
+	if (code  == 119)
+		player->w = 1;
+	if (code == 115)
+		player->s = 1;
+	if (code == 97)
+		player->a = 1;
+	if (code == 100)
+		player->d = 1;
 }
 
-double	ft_limit_angle(double angle)
+void ft_key_angle(int code, t_player *player)
 {
-	if (angle < 0.0)
-	{
-		angle = 360 + angle;
-	}
-	return (angle);
-}
-
-void ft_move_angle(int code, t_player *player)
-{
-	double	angle_speed;
-
-	angle_speed = player->angle_speed;
 	if (code == 65361)
-		player->angle = ft_limit_angle(fmod(player->angle - angle_speed, 360));
+		player->left = 1;
 	if (code == 65363)
-		player->angle = ft_limit_angle(fmod(player->angle + angle_speed, 360));
+		player->right = 1;
 }
 
-int	ft_key_press(int code, t_mlx *mlx)
+int ft_key_press(int code, t_player *player)
 {
-	t_player	*player;
 
-	player = mlx->player;
-	if (code == 65307)
-		ft_mlx_destroy(mlx);
-	ft_move_angle(code, player);
-	ft_move_of_player(code, player, *mlx);
-	ft_render(mlx);
+	ft_key_moov(code, player);
+	ft_key_angle(code, player);
 	return (0);
 }

@@ -15,5 +15,6 @@
 void	ft_hook(t_mlx *mlx)
 {
 	mlx_hook(mlx->win, 17, 0, ft_close_window, mlx);
-	mlx_hook(mlx->win, 2, 1L << 0, ft_key_press, mlx);
+	mlx_hook(mlx->win, 2, 1L << 0, ft_key_press, mlx->player);
+	mlx_loop_hook(mlx->mlx, ft_render, mlx);
 }

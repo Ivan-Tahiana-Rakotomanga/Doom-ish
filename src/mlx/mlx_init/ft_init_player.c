@@ -35,6 +35,13 @@ int	ft_init_player(t_mlx **mlx, double angle)
 	player->speed = 2;
 	player->angle_speed = 2;
 	player->angle = angle;
+	player->w = 0;
+	player->s = 0;
+	player->a = 0;
+	player->d = 0;
+	player->left = 0;
+	player->right = 0;
+
 	(*mlx)->player = player;
 	return (1);
 }

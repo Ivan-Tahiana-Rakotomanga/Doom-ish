@@ -6,7 +6,7 @@
 #    By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/04 12:56:49 by irakotom          #+#    #+#              #
-#    Updated: 2025/08/12 09:03:37 by irakotom         ###   ########.fr        #
+#    Updated: 2025/08/13 13:17:24 by irakotom         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/math/ft_utils.c \
 		src/math/ft_angle_orientation.c \
 		src/mlx/action/ft_close_window.c \
+		src/mlx/action/ft_render.c \
 		src/mlx/action/ft_move_player.c \
 		src/mlx/action/ft_hook.c \
 		src/mlx/action/ft_key_press.c \

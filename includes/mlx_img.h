@@ -18,7 +18,7 @@ t_mlx	*ft_free_mlx(t_mlx *mlx);
 void	ft_mlx_destroy(t_mlx *mlx);
 int		ft_close_window(t_mlx *mlx);
 void	ft_hook(t_mlx *mlx);
-int		ft_key_press(int code, t_mlx *mlx);
+int		ft_key_press(int code, t_player *player);
 void	ft_color_display(t_mlx *mlx);
 int		ft_map_width(char **map);
 int		ft_map_height(char **map);
@@ -39,10 +39,11 @@ void	ft_draw_all_rays(t_player *player, t_mlx *mlx);
 void	ft_draw_rect(t_point a, t_point b, int color, t_mlx *mlx);
 void	ft_draw_wall(int i, double distance, t_mlx mlx,
 			double *dst_text_orient);
-int		ft_move_of_player(int code, t_player *player, t_mlx mlx);
+void ft_move_of_player(t_player *player, t_mlx mlx);
 void	ft_draw_rect_textures(t_point a, t_point b, t_mlx mlx,
 			double *dst_orient);
 int		ft_get_new_y(double value, double height_wall, double height_img);
 int		ft_init_player(t_mlx **mlx, double angle);
 void	ft_draw_ceiling_floor(t_mlx mlx, t_point a, t_point b);
+int ft_render(t_mlx *mlx);
 #endif
