@@ -6,7 +6,7 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 10:28:45 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/08/12 09:02:37 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/08/13 16:50:20 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,6 @@ int		ft_get_new_y(double value, double height_wall, double height_img);
 int		ft_init_player(t_mlx **mlx, double angle);
 void	ft_draw_ceiling_floor(t_mlx mlx, t_point a, t_point b);
 int ft_render(t_mlx *mlx);
+void ft_move_angle(t_player *player);
+int ft_key_release(int code, t_player *player);
 #endif

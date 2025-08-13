@@ -6,7 +6,7 @@
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:37:47 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/07/29 15:37:47 by fxu-lin          ###   ########.fr       */
+/*   Updated: 2025/08/13 16:51:51 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int	ft_init_player(t_mlx **mlx, double angle)
 	player->y = ft_pixel_player((*mlx)->y_player, *mlx);
 	player->fov = 60;
 	player->nb_rays = (*mlx)->width / (*mlx)->width_one_wall;
-	player->speed = 2;
-	player->angle_speed = 2;
+	player->speed = 0.5;
+	player->angle_speed = 1;
 	player->angle = angle;
 	player->w = 0;
 	player->s = 0;

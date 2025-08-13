@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_render.c                                        :+:      :+:    :+:   */
+/*   ft_key_release.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 13:18:20 by irakotom          #+#    #+#             */
-/*   Updated: 2025/08/13 16:48:39 by irakotom         ###   ########.fr       */
+/*   Created: 2025/08/13 16:47:20 by irakotom          #+#    #+#             */
+/*   Updated: 2025/08/13 16:48:25 by irakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../../../includes/header.h"
 
-
-int ft_render(t_mlx *mlx)
-{
-
-	ft_move_angle(mlx->player);
-	ft_move_of_player(mlx->player, *mlx);
-
-	mlx_clear_window(mlx->mlx, mlx->win);
-	ft_bzero(mlx->adr, sizeof(void *));
-	ft_color_display(mlx);
+int ft_key_release(int code, t_player *player)
+{	
+	if (code  == 119)
+		player->w = 0;
+	if (code == 115)
+		player->s = 0;
+	if (code == 97)
+		player->a = 0;
+	if (code == 100)
+		player->d = 0;	
+	if (code == 65361)
+		player->left = 0;
+	if (code == 65363)
+		player->right = 0;
 	return (0);
 }
+
