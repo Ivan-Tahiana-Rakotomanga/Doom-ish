@@ -27,11 +27,7 @@ void	ft_move_angle(t_player *player)
 
 	angle_speed = player->angle_speed;
 	if (player->left)
-	{
 		player->angle = ft_limit_angle(fmod(player->angle - angle_speed, 360));
-	}
 	if (player->right)
-	{
 		player->angle = ft_limit_angle(fmod(player->angle + angle_speed, 360));
-	}
 }
