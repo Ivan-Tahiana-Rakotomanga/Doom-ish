@@ -20,8 +20,6 @@ int		ft_close_window(t_mlx *mlx);
 void	ft_hook(t_mlx *mlx);
 int		ft_key_press(int code, t_mlx *mlx);
 void	ft_color_display(t_mlx *mlx);
-int		ft_map_width(char **map);
-int		ft_map_height(char **map);
 void	ft_init_key(t_mlx *mlx);
 void	ft_init_size_window(t_mlx *mlx);
 int		ft_check_mlx(t_mlx *mlx, char *name);
@@ -33,8 +31,6 @@ void	ft_put_pixels(t_mlx *mlx, int i, int j);
 t_mlx	*ft_init_mlx(t_mlx *mlx, char **map, t_utils utils);
 int		ft_convert_color(char *color);
 char	*ft_get_address(int x, int y, t_mlx *mlx);
-void	ft_draw_square(t_point pixel, int size, char *color, t_mlx *mlx);
-void	ft_draw_line(t_point start, t_point end, char *color, t_mlx *mlx);
 void	ft_draw_all_rays(t_player *player, t_mlx *mlx);
 void	ft_draw_rect(t_point a, t_point b, int color, t_mlx *mlx);
 void	ft_draw_wall(int i, double distance, t_mlx mlx,

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../../../includes/header.h"
-#include <strings.h>
 
 t_point	ft_coordinate(double angle, t_point b, double speed, int add_substract)
 {

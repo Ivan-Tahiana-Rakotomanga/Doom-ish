@@ -56,15 +56,12 @@ SRC =  src/handle_error/file/ft_valid_extension.c \
 		src/mlx/action/ft_move_angle.c \
 		src/mlx/color/ft_color_display.c \
 		src/mlx/color/ft_convert_color.c \
-		src/mlx/color/ft_utils.c \
 		src/mlx/color/ft_add_color_pixels.c \
 		src/mlx/color/ft_get_address.c \
 		src/mlx/draw/ft_draw_rect.c \
 		src/mlx/draw/ft_draw_ceiling_floor.c \
 		src/mlx/draw/ft_draw_wall.c \
-		src/mlx/draw/ft_draw_square.c \
 		src/mlx/draw/ft_draw_all_rays.c \
-		src/mlx/draw/ft_draw_line.c \
 		src/mlx/mlx_init/ft_free_mlx.c \
 		src/mlx/mlx_init/ft_init_player.c \
 		src/mlx/mlx_init/ft_init_mlx.c \
