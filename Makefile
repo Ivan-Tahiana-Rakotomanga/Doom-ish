@@ -105,21 +105,17 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
-# Libft rule
 $(LIBFT):
 	make -C $(LIBFT_PATH)
 
-# MLX rule
 $(MLX):
 	make -C $(MLX_PATH)
 
-# Clean object files
 clean:
 	rm -rf $(OBJ_DIR)
 	make -C $(LIBFT_PATH) clean
 	make -C $(MLX_PATH) clean
 
-# Clean everything
 fclean: clean
 	rm -f $(NAME)
 	make -C $(LIBFT_PATH) fclean
