@@ -10,103 +10,120 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = cub3D 
-SRC =  src/handle_error/file/ft_valid_extension.c \
-		src/handle_error/file/ft_utils_check_file.c \
-		src/handle_error/file/ft_many_args_line.c \
-		src/handle_error/file/ft_check_file.c \
-		src/handle_error/file/ft_valid_file.c \
-		src/handle_error/file/ft_is_valid_path.c \
-		src/handle_error/file/ft_check_xpm.c \
-		src/handle_error/color/ft_valid_color.c \
-		src/handle_error/color/ft_is_duplicate_color.c \
-		src/handle_error/color/ft_check_colors.c \
-		src/handle_error/id/ft_index_id.c \
-		src/handle_error/map/ft_format_map_is_valid.c \
-		src/handle_error/map/ft_utils_size_map.c \
-		src/handle_error/map/ft_check_map.c \
-		src/handle_error/map/ft_flood_fill.c \
-		src/handle_error/map/ft_characters_valid_map.c \
-		src/handle_error/map/ft_list_map.c \
-		src/handle_error/map/ft_utils_list_map.c \
-		src/handle_error/map/ft_map_to_strs.c \
-		src/info/ft_get_info.c \
-		src/math/ft_dda.c \
-		src/math/ft_orientation.c \
-		src/math/ft_get_x_text.c \
-		src/math/ft_throw_distance.c \
-		src/math/ft_on_screen.c \
-		src/math/ft_get_distance.c \
-		src/math/ft_wall.c \
-		src/math/ft_first_hit.c \
-		src/math/ft_end_hits.c \
-		src/math/ft_degree_to_radian.c \
-		src/math/scale/ft_scale.c \
-		src/math/scale/ft_scale_side.c \
-		src/math/scale/ft_rules_of_three.c \
-		src/math/ft_utils.c \
-		src/math/ft_angle_orientation.c \
-		src/mlx/action/ft_close_window.c \
-		src/mlx/action/ft_render.c \
-		src/mlx/action/ft_move_player.c \
-		src/mlx/action/ft_hook.c \
-		src/mlx/action/ft_key_press.c \
-		src/mlx/action/ft_mlx_destroy.c \
-		src/mlx/action/ft_key_release.c \
-		src/mlx/action/ft_move_angle.c \
-		src/mlx/color/ft_color_display.c \
-		src/mlx/color/ft_convert_color.c \
-		src/mlx/color/ft_add_color_pixels.c \
-		src/mlx/color/ft_get_address.c \
-		src/mlx/draw/ft_draw_rect.c \
-		src/mlx/draw/ft_draw_ceiling_floor.c \
-		src/mlx/draw/ft_draw_wall.c \
-		src/mlx/draw/ft_draw_all_rays.c \
-		src/mlx/mlx_init/ft_free_mlx.c \
-		src/mlx/mlx_init/ft_init_player.c \
-		src/mlx/mlx_init/ft_init_mlx.c \
-		src/mlx/mlx_init/ft_check_mlx.c \
-		src/mlx/mlx_init/ft_init_window.c \
-		src/mlx/texture/ft_set_img.c \
-		src/mlx/texture/ft_get_new_y.c \
-		src/mlx/texture/ft_draw_rect_textures.c \
-		src/utils/ft_strcmp.c \
-		src/utils/ft_free.c \
-		src/utils/ft_get_next_line.c \
-		src/utils/ft_space.c \
-		src/utils/ft_is_empty_str.c \
-		src/utils/ft_is_valid_number.c \
-		src/utils/ft_strs_len.c \
-        src/main.c 
+NAME	= cub3D
 
-OBJ = $(SRC:.c=.o)
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I./includes -g 
-MLX = minilibx-linux/libmlx.a
-INC = -I minilibx-linux
-MLX_FLAG = -Lminilibx-linux -lmlx -lm -lX11 -lXext
-LIBFT_DIR = ./libft
-LIBFT = $(LIBFT_DIR)/libft.a 
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror 
+
+SRC_DIR	= src
+OBJ_DIR	= obj
+
+SRC		= 	src/handle_error/file/ft_valid_extension.c \
+			src/handle_error/file/ft_utils_check_file.c \
+			src/handle_error/file/ft_many_args_line.c \
+			src/handle_error/file/ft_check_file.c \
+			src/handle_error/file/ft_valid_file.c \
+			src/handle_error/file/ft_is_valid_path.c \
+			src/handle_error/file/ft_check_xpm.c \
+			src/handle_error/color/ft_valid_color.c \
+			src/handle_error/color/ft_is_duplicate_color.c \
+			src/handle_error/color/ft_check_colors.c \
+			src/handle_error/id/ft_index_id.c \
+			src/handle_error/map/ft_format_map_is_valid.c \
+			src/handle_error/map/ft_utils_size_map.c \
+			src/handle_error/map/ft_check_map.c \
+			src/handle_error/map/ft_flood_fill.c \
+			src/handle_error/map/ft_characters_valid_map.c \
+			src/handle_error/map/ft_list_map.c \
+			src/handle_error/map/ft_utils_list_map.c \
+			src/handle_error/map/ft_map_to_strs.c \
+			src/info/ft_get_info.c \
+			src/math/ft_dda.c \
+			src/math/ft_orientation.c \
+			src/math/ft_get_x_text.c \
+			src/math/ft_throw_distance.c \
+			src/math/ft_on_screen.c \
+			src/math/ft_get_distance.c \
+			src/math/ft_wall.c \
+			src/math/ft_first_hit.c \
+			src/math/ft_end_hits.c \
+			src/math/ft_degree_to_radian.c \
+			src/math/scale/ft_scale.c \
+			src/math/scale/ft_scale_side.c \
+			src/math/scale/ft_rules_of_three.c \
+			src/math/ft_utils.c \
+			src/math/ft_angle_orientation.c \
+			src/mlx/action/ft_close_window.c \
+			src/mlx/action/ft_render.c \
+			src/mlx/action/ft_move_player.c \
+			src/mlx/action/ft_hook.c \
+			src/mlx/action/ft_key_press.c \
+			src/mlx/action/ft_mlx_destroy.c \
+			src/mlx/action/ft_key_release.c \
+			src/mlx/action/ft_move_angle.c \
+			src/mlx/color/ft_color_display.c \
+			src/mlx/color/ft_convert_color.c \
+			src/mlx/color/ft_add_color_pixels.c \
+			src/mlx/color/ft_get_address.c \
+			src/mlx/draw/ft_draw_rect.c \
+			src/mlx/draw/ft_draw_ceiling_floor.c \
+			src/mlx/draw/ft_draw_wall.c \
+			src/mlx/draw/ft_draw_all_rays.c \
+			src/mlx/mlx_init/ft_free_mlx.c \
+			src/mlx/mlx_init/ft_init_player.c \
+			src/mlx/mlx_init/ft_init_mlx.c \
+			src/mlx/mlx_init/ft_check_mlx.c \
+			src/mlx/mlx_init/ft_init_window.c \
+			src/mlx/texture/ft_set_img.c \
+			src/mlx/texture/ft_get_new_y.c \
+			src/mlx/texture/ft_draw_rect_textures.c \
+			src/utils/ft_strcmp.c \
+			src/utils/ft_free.c \
+			src/utils/ft_get_next_line.c \
+			src/utils/ft_space.c \
+			src/utils/ft_is_empty_str.c \
+			src/utils/ft_is_valid_number.c \
+			src/utils/ft_strs_len.c \
+			src/main.c
+
+OBJ		= $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+
+INC		= -I includes -I libft -I minilibx-linux
+
+LIBFT_PATH	= libft
+LIBFT		= $(LIBFT_PATH)/libft.a
+
+MLX_PATH	= minilibx-linux
+MLX			= $(MLX_PATH)/libmlx.a
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(CFLAGS) $(INC) $^ $(MLX) $(MLX_FLAG) -o $@
+$(NAME): $(OBJ) $(LIBFT) $(MLX)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(INC) $(LIBFT) $(MLX) -lXext -lX11 -lm
 
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
+
+# Libft rule
 $(LIBFT):
-	make -C $(LIBFT_DIR)
+	make -C $(LIBFT_PATH)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+# MLX rule
+$(MLX):
+	make -C $(MLX_PATH)
 
+# Clean object files
 clean:
-	rm -f $(OBJ)
-	make clean -C $(LIBFT_DIR)
+	rm -rf $(OBJ_DIR)
+	make -C $(LIBFT_PATH) clean
+	make -C $(MLX_PATH) clean
 
+# Clean everything
 fclean: clean
 	rm -f $(NAME)
-	make fclean -C $(LIBFT_DIR)
+	make -C $(LIBFT_PATH) fclean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+PHONY: all clean fclean re
