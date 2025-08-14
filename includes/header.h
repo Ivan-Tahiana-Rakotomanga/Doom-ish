@@ -23,7 +23,5 @@
 # include "utils.h"
 # include <fcntl.h>
 # include <math.h>
-# include <stdio.h>
-# include <unistd.h>
 
 #endif
