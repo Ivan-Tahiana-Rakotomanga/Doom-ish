@@ -22,6 +22,7 @@ int	ft_valid_key(t_player *player)
 	else
 		return (1);
 }
+
 int	ft_valid_mov(t_player *player)
 {
 	int	res;
@@ -33,13 +34,12 @@ int	ft_valid_mov(t_player *player)
 		return (1);
 }
 
-
 int	ft_render(t_mlx *mlx)
 {
 	if (ft_valid_key(mlx->player))
 	{
 		ft_move_angle(mlx->player);
-		if(ft_valid_mov(mlx->player))
+		if (ft_valid_mov(mlx->player))
 			ft_move_of_player(mlx->player, *mlx);
 		mlx_clear_window(mlx->mlx, mlx->win);
 		ft_bzero(mlx->adr, sizeof(void *));
