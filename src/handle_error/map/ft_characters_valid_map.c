@@ -17,23 +17,66 @@ int	ft_character_valid(char c)
 	return (ft_is_space(c) || ft_is_orientation(c) || c == '0' || c == '1');
 }
 
+int ft_character_not_valid(char c)
+{
+
+	ft_putstr_fd("Error\nThis character is not valid for the map: ", 2);
+	write(2, &c, 1);
+	ft_putstr_fd("\n", 2);
+	return (0);
+}
+
+int ft_space_btw()
+{
+	ft_putstr_fd("Error\n There is a space between two zero in the map", 2);
+	
+	return (0);
+}
+
+
+
+int ft_valid_btw(char *line, int len, int i)
+{
+	char c;
+
+	c = 0;
+	if(ft_is_space(line[i]))
+	{
+		if(0 < i - 1 && line[i - 1] == '0')
+		{
+			while(i + 1 < len)
+			{
+				c = line[i + 1];
+				if(ft_is_space(c))
+					i++;
+				else if (c == '0')
+					return (ft_space_btw());
+				else 
+					return (1);
+			}
+		}
+	}
+	return (1);
+}
+
 int	ft_characters_valid_map(char *line)
 {
 	int		i;
 	char	c;
+	int len;
+	
 
+	len = ft_strlen(line);
 	i = 0;
 	c = 0;
 	while (line[i])
 	{
 		c = line[i];
-		if (!ft_character_valid(c))
-		{
-			ft_putstr_fd("Error\nThis character is not valid for the map: ", 2);
-			write(2, &c, 1);
-			ft_putstr_fd("\n", 2);
+
+		if(!ft_valid_btw(line, len, i))
 			return (0);
-		}
+		if (!ft_character_valid(c))
+			return (ft_character_not_valid(c));
 		i++;
 	}
 	return (1);
