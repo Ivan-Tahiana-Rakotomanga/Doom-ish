@@ -33,23 +33,15 @@ void	ft_free_next(char **line, int fd)
 	*line = ft_get_next_line(fd);
 }
 
-int	ft_middle_map(char **line, int fd, t_map **map)
+int ft_is_new_line(char *line)
 {
-	ft_free_next(line, fd);
-	while (*line)
+	if(ft_strncmp(line, "\n", 1) == 0)
 	{
-		if (!ft_is_empty_str(*line))
-		{
-			ft_putstr_fd("Error\nThere is a line ", 2);
-			ft_putstr_fd("in the middle of the map or ", 2);
-			ft_putstr_fd("too much configurations\n", 2);
-			free(*line);
-			ft_free_map(map);
-			return (0);
-		}
-		ft_free_next(line, fd);
+		ft_putstr_fd("Error\n", 2);
+		ft_putstr_fd("There is a new line ", 2); 
+	    ft_putstr_fd("in or after the map\n", 2);
+		return (0);
 	}
-	free(*line);
 	return (1);
 }
 
@@ -60,11 +52,11 @@ int	ft_fill_map(t_map **map, int fd)
 	line = ft_get_next_line(fd);
 	while (line && ft_is_empty_str(line))
 		ft_free_next(&line, fd);
-	while (line && !ft_is_empty_str(line))
+	while (line)
 	{
-		if (!ft_add_in_map(line, map))
+		if (!ft_is_new_line(line) || !ft_add_in_map(line, map))
 			return (0);
 		ft_free_next(&line, fd);
 	}
-	return (ft_middle_map(&line, fd, map));
+	return (1);
 }
