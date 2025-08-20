@@ -33,13 +33,13 @@ void	ft_free_next(char **line, int fd)
 	*line = ft_get_next_line(fd);
 }
 
-int ft_is_new_line(char *line)
+int	ft_is_new_line(char *line)
 {
-	if(ft_strncmp(line, "\n", 1) == 0)
+	if (ft_strncmp(line, "\n", 1) == 0)
 	{
 		ft_putstr_fd("Error\n", 2);
-		ft_putstr_fd("There is a new line ", 2); 
-	    ft_putstr_fd("in or after the map\n", 2);
+		ft_putstr_fd("There is a new line ", 2);
+		ft_putstr_fd("in or after the map\n", 2);
 		return (0);
 	}
 	return (1);

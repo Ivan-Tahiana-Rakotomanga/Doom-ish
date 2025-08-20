@@ -55,8 +55,8 @@ int	ft_is_valid_argument_textures(char **strs, char *line)
 
 int	ft_valid_textures(char **lines, char *temp_lines)
 {
-  if (!ft_exposed_file(lines[1]))
-    return (0);
+	if (!ft_exposed_file(lines[1]))
+		return (0);
 	if (!ft_valid_file(lines[1]))
 		return (0);
 	else if (!ft_is_valid_argument_textures(lines, temp_lines))

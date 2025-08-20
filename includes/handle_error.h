@@ -12,8 +12,8 @@
 
 #ifndef HANDLE_ERROR_H
 # define HANDLE_ERROR_H
-
 # include "all_struct.h"
+
 int		ft_is_valid_path(char *path, char *extension);
 int		ft_valid_arg_count(int argc);
 int		ft_valid_file(char *file);
@@ -34,6 +34,6 @@ void	ft_get_info(char *file, t_utils *utils);
 int		ft_check_xpm(char *filename);
 int		ft_get_height_map(t_map *map);
 int		ft_get_width_map(t_map *map);
-int ft_exposed_file(char *file);
+int		ft_exposed_file(char *file);
 
 #endif

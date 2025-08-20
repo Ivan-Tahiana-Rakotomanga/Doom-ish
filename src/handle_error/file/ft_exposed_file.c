@@ -12,26 +12,26 @@
 
 #include "../../../includes/header.h"
 
-int ft_exposed_file(char *file)
+int	ft_exposed_file(char *file)
 {
-  int len_file;
-  int i;
+	int	len_file;
+	int	i;
 
-  i = 5;
-  len_file = ft_strlen(file);
-  while (i > 0)
-  {
-    len_file--;
-    i--;
-  }
-  while(file[len_file] && file[len_file] != '/')
-  {
-    if (file[len_file] == '.')
-    {
-      ft_putstr_fd("Error\nThere is a hidden file", 2);
-      return (0);
-    }
-    len_file--;
-  }
-  return (1);
+	i = 5;
+	len_file = ft_strlen(file);
+	while (i > 0)
+	{
+		len_file--;
+		i--;
+	}
+	while (file[len_file] && file[len_file] != '/')
+	{
+		if (file[len_file] == '.')
+		{
+			ft_putstr_fd("Error\nThere is a hidden file", 2);
+			return (0);
+		}
+		len_file--;
+	}
+	return (1);
 }

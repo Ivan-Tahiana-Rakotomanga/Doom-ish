@@ -21,6 +21,8 @@ int	ft_loop_check_line(char **line, int fd, char **one, char **two)
 	id = 0;
 	value = 0;
 	temp_value = 0;
+	if (ft_is_empty_str(*line))
+		ft_putstr_fd("Error\nThe file is empty\n", 2);
 	while (id < 6 && *line)
 	{
 		if (!ft_is_empty_str(*line))

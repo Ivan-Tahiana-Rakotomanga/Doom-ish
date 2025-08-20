@@ -12,8 +12,8 @@
 
 #ifndef MLX_IMG_H
 # define MLX_IMG_H
-
 # include "all_struct.h"
+
 t_mlx	*ft_free_mlx(t_mlx *mlx);
 void	ft_mlx_destroy(t_mlx *mlx);
 int		ft_close_window(t_mlx *mlx);
