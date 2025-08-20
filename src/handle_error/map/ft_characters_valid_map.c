@@ -27,7 +27,7 @@ int	ft_character_not_valid(char c)
 
 int	ft_space_btw(void)
 {
-	ft_putstr_fd("Error\nThe map is not closed", 2);
+	ft_putstr_fd("Error\nThe map is not closed\n", 2);
 	return (0);
 }
 
