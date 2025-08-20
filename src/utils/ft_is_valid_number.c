@@ -21,13 +21,11 @@ int	ft_is_valid_number(char *nbr)
 		i++;
 	if (nbr[i] == '-' || nbr[i] == '+')
 		i++;
-	while (nbr[i])
-	{
-		if (!ft_isdigit(nbr[i]) && !ft_is_space(nbr[i]))
-		{
-			return (0);
-		}
-		i++;
-	}
+	while (ft_isdigit(nbr[i]))
+        i++;
+	while	(ft_is_space(nbr[i]))
+		    i++;
+  if (nbr[i] != '\0')
+    return (0);
 	return (1);
 }

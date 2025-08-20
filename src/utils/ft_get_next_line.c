@@ -68,6 +68,7 @@ char	*ft_get_next_line(int fd)
 	}
 	if (r <= 0 && (!line || line[0] == '\0'))
 	{
+    ft_putstr_fd("Error\nThe file is empty\n", 2);
 		free(line);
 		return (NULL);
 	}
