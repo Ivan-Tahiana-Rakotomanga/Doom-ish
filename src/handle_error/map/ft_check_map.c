@@ -12,20 +12,6 @@
 
 #include "../../../includes/header.h"
 
-int	ft_have_space_btw_map(char *line, int i)
-{
-	while (line[i] && ft_is_space(line[i]))
-		i++;
-	if (line[i])
-	{
-		ft_putstr_fd("Error\nThere is one or more spaces ", 2);
-		ft_putstr_fd("in the middle of the map\n", 2);
-		return (0);
-	}
-	else
-		return (1);
-}
-
 int	ft_check_per_line_map(char *line, int *orientation)
 {
 	int	i;
