@@ -32,6 +32,7 @@ char	ft_find_start(int *start_x, int *start_y, char **map)
 	return ('\0');
 }
 
+#include <stdio.h>
 
 int ft_loop_close(int y, int x,char **map,int *w_h)
 {
