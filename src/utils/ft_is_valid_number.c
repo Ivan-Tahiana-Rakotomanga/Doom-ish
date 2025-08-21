@@ -19,12 +19,11 @@ int	ft_is_valid_number(char *nbr)
 	i = 0;
 	while (nbr[i] && ft_is_space(nbr[i]))
 		i++;
-
 	if (nbr[i] == '-')
 		return (0);
 	if (nbr[i] == '+')
 		i++;
-	if(!ft_isdigit(nbr[i]))
+	if (!ft_isdigit(nbr[i]))
 		return (0);
 	while (ft_isdigit(nbr[i]))
 		i++;

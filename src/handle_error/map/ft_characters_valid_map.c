@@ -14,7 +14,8 @@
 
 int	ft_character_valid(char c)
 {
-	return (c == '\n' || c == ' ' || ft_is_orientation(c) || c == '0' || c == '1');
+	return (c == '\n' || c == ' ' || ft_is_orientation(c) || c == '0'
+		|| c == '1');
 }
 
 int	ft_character_not_valid(char c)

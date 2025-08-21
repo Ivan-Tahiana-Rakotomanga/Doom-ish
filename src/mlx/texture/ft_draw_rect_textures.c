@@ -32,8 +32,7 @@ unsigned int	*ft_get_address_textures(int y, int h, t_mlx mlx,
 	t_img	img;
 
 	img = ft_get_texture(mlx, (int)dst_orient[0]);
-
-	if((int)dst_orient[0] == 2 || (int)dst_orient[0] == 3)
+	if ((int)dst_orient[0] == 2 || (int)dst_orient[0] == 3)
 		x = ft_rules_of_three(dst_orient[1], mlx.side, img.width);
 	else
 		x = ft_rules_of_three(mlx.width - dst_orient[1], mlx.side, img.width);

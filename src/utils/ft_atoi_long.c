@@ -1,9 +1,8 @@
-
-long ft_atoi_long(const char *str)
+long	ft_atoi_long(const char *str)
 {
-	long result;
-	long sign;
-	long i;
+	long	result;
+	long	sign;
+	long	i;
 
 	result = 0;
 	sign = 1;
@@ -24,13 +23,12 @@ long ft_atoi_long(const char *str)
 	return (result * sign);
 }
 
-int ft_over_int_max(const char *str)
+int	ft_over_int_max(const char *str)
 {
-	long res;
+	long	res;
 
 	res = ft_atoi_long(str);
-
-	if( 2147483647 <  res)
+	if (2147483647 < res)
 		return (1);
 	return (0);
 }

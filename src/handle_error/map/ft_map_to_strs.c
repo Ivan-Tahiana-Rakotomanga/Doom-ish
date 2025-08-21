@@ -22,8 +22,6 @@ int	ft_fill_space(int i, int width, char *res)
 	return (i);
 }
 
-#include <stdio.h>
-
 char	*ft_fill_zero_line(char *line, int width)
 {
 	char	*res;
@@ -35,7 +33,7 @@ char	*ft_fill_zero_line(char *line, int width)
 		return (NULL);
 	while (line[i] && i < width)
 	{
-			res[i] = line[i];
+		res[i] = line[i];
 		i++;
 	}
 	i = ft_fill_space(i, width, res);
