@@ -32,8 +32,9 @@ SRC		= 	src/handle_error/file/ft_valid_extension.c \
 			src/handle_error/id/ft_index_id.c \
 			src/handle_error/map/ft_format_map_is_valid.c \
 			src/handle_error/map/ft_utils_size_map.c \
+			src/handle_error/map/ft_valid_around.c \
 			src/handle_error/map/ft_check_map.c \
-			src/handle_error/map/ft_flood_fill.c \
+			src/handle_error/map/ft_map_is_closed.c \
 			src/handle_error/map/ft_characters_valid_map.c \
 			src/handle_error/map/ft_list_map.c \
 			src/handle_error/map/ft_utils_list_map.c \

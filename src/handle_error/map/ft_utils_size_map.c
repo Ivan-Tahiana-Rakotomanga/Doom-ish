@@ -24,6 +24,7 @@ int	ft_get_height_map(t_map *map)
 	return (height);
 }
 
+
 int	ft_get_width_map(t_map *map)
 {
 	int		max;

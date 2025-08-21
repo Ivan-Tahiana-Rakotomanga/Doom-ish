@@ -36,14 +36,14 @@ int	ft_valid_btw(char *line, int len, int i)
 	char	c;
 
 	c = 0;
-	if (ft_is_space(line[i]))
+	if (line[i] == ' ')
 	{
 		if (0 < i - 1 && line[i - 1] == '0')
 		{
 			while (i + 1 < len)
 			{
 				c = line[i + 1];
-				if (ft_is_space(c))
+				if (c == ' ')
 					i++;
 				else if (c == '0')
 					return (ft_space_btw());

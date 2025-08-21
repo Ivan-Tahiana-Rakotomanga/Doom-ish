@@ -23,7 +23,6 @@ int		ft_characters_valid_map(char *line);
 int		ft_character_valid(char c);
 int		ft_fill_map(t_map **map, int fd);
 char	**ft_map_to_strs(t_map *map);
-int		ft_flood_fill(int x, int y, char **map, int height);
 char	ft_find_start(int *start_x, int *start_y, char **map);
 
 #endif

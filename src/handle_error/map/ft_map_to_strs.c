@@ -12,15 +12,17 @@
 
 #include "../../../includes/header.h"
 
-int	ft_fill_zero(int i, int width, char *res)
+int	ft_fill_space(int i, int width, char *res)
 {
 	while (i < width)
 	{
-		res[i] = '0';
+		res[i] = ' ';
 		i++;
 	}
 	return (i);
 }
+
+#include <stdio.h>
 
 char	*ft_fill_zero_line(char *line, int width)
 {
@@ -33,13 +35,10 @@ char	*ft_fill_zero_line(char *line, int width)
 		return (NULL);
 	while (line[i] && i < width)
 	{
-		if (ft_is_space(line[i]))
-			res[i] = '0';
-		else
 			res[i] = line[i];
 		i++;
 	}
-	i = ft_fill_zero(i, width, res);
+	i = ft_fill_space(i, width, res);
 	res[i] = '\0';
 	return (res);
 }
