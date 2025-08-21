@@ -50,7 +50,6 @@ SRC		= 	src/handle_error/file/ft_valid_extension.c \
 			src/math/ft_end_hits.c \
 			src/math/ft_degree_to_radian.c \
 			src/math/scale/ft_scale.c \
-			src/math/scale/ft_scale_side.c \
 			src/math/scale/ft_rules_of_three.c \
 			src/math/ft_utils.c \
 			src/math/ft_angle_orientation.c \
@@ -74,7 +73,6 @@ SRC		= 	src/handle_error/file/ft_valid_extension.c \
 			src/mlx/mlx_init/ft_init_player.c \
 			src/mlx/mlx_init/ft_init_mlx.c \
 			src/mlx/mlx_init/ft_check_mlx.c \
-			src/mlx/mlx_init/ft_init_window.c \
 			src/mlx/texture/ft_set_img.c \
 			src/mlx/texture/ft_get_new_y.c \
 			src/mlx/texture/ft_draw_rect_textures.c \
