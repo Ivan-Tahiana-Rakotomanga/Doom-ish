@@ -31,7 +31,7 @@ int	ft_res_loop(char **colors)
 		else
 		{
 			temp_color = ft_atoi(colors[i]);
-			if (!ft_valid_color(temp_color))
+			if (!ft_valid_color(temp_color,colors[i]))
 				return (0);
 		}
 		i++;

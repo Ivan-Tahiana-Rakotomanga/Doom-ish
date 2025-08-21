@@ -12,9 +12,9 @@
 
 #include "../../../includes/header.h"
 
-int	ft_valid_color(int color)
+int	ft_valid_color(int color, char *color_str)
 {
-	if (color < 0 || color > 255)
+	if (ft_over_int_max(color_str) || color < 0 || color > 255)
 	{
 		ft_putstr_fd("Error\nColor must be between 0 and 255\n", 2);
 		return (0);
