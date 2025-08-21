@@ -1,12 +1,11 @@
 
-NO ./textures/1.xpm  
-SO ./textures/2.xpm 
-WE ./textures/3.xpm
-EA ./textures/4.xpm 
+NO ./textures/garden/garden_1.xpm  
+SO ./textures/garden/garden_2.xpm 
+WE ./textures/garden/garden_3.xpm
+EA ./textures/garden/garden_4.xpm 
 
 C 16, 208,                                          241 
-F  61,  214,       31
-
+F 30, 60, 30 
 1111111111111111111111111111
 1000000000000000000000001
 1000111111111111111111101111
