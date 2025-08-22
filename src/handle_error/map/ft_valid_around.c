@@ -29,7 +29,7 @@ int	ft_valid_around(char **map, int x, int y, int *w_h)
 	int	res;
 
 	res = 0;
-	if (x <= 0 || y <= 0 || w_h[1] <= x || w_h[0] <= y)
+	if (x <= 0 || y <= 0 || w_h[0] <= x || w_h[1] <= y)
 		return (0);
 	res = ft_is_one(map[y][x - 1]) + ft_is_one(map[y][x + 1]);
 	res = res + ft_is_one(map[y - 1][x]) + ft_is_one(map[y + 1][x]);

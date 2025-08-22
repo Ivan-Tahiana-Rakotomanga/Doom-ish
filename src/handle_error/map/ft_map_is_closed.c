@@ -41,8 +41,10 @@ char	ft_find_start(int *start_x, int *start_y, char **map)
 	return ('\0');
 }
 
+#include <stdio.h>
 int	ft_loop_close(int y, int x, char **map, int *w_h)
 {
+
 	if (map[y][x] == '1' || map[y][x] == ' ')
 		return (1);
 	else if (map[y][x] == '0' || ft_is_orientation(map[y][x]))
@@ -64,8 +66,8 @@ int	ft_map_is_closed(char **map)
 
 	x = 0;
 	y = 0;
-	w_h[0] = ft_strlen(map[0]);
-	w_h[1] = ft_strs_len(map);
+	w_h[0] = ft_strlen(map[0]) - 1;
+	w_h[1] = ft_strs_len(map) - 1;
 	while (map[y])
 	{
 		x = 0;
