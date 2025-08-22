@@ -55,7 +55,7 @@ int	ft_is_valid_argument_textures(char **strs, char *line)
 
 int ft_missing_textures(char **lines)
 {
-  if((!ft_strs_len(lines)) != 2.0)
+  if(ft_strs_len(lines) != 2)
   {
 		ft_putstr_fd("Error\nMissing texture\n", 2);
     return (0);
@@ -65,7 +65,7 @@ int ft_missing_textures(char **lines)
 
 int	ft_valid_textures(char **lines, char *temp_lines)
 {
-  if((!ft_missing_textures(lines)) != 2.0)
+  if(!ft_missing_textures(lines))
     return (0);
   else if (!ft_valid_file(lines[1]))
 		return (0);
