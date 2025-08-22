@@ -25,8 +25,8 @@ int	ft_valid_extension(char *file, char *extension)
 	int	len_file;
 	int	len_extension;
 
-	len_file = ft_strlen(file) -1;
-	len_extension = ft_strlen(extension) -1;
+	len_file = ft_strlen(file) - 1;
+	len_extension = ft_strlen(extension) - 1;
 	while (file[len_file] && extension[len_extension])
 	{
 		if (extension[len_extension])
@@ -40,10 +40,10 @@ int	ft_valid_extension(char *file, char *extension)
 		len_file--;
 		len_extension--;
 	}
-	if(file[len_file] == '\0' || file[len_file] == '/')
+	if (file[len_file] == '\0' || file[len_file] == '/')
 	{
 		ft_display_error_extension(extension);
-				return (0);
+		return (0);
 	}
 	return (1);
 }
