@@ -30,8 +30,6 @@ int	ft_is_wall(double x_pixel, double y_pixel, t_mlx mlx)
 
 	map = mlx.map;
 	side = mlx.side;
-	if (!ft_on_screen(x_pixel, y_pixel, mlx))
-		return (1);
 	x = ft_pixel_to_coordinate(x_pixel, side);
 	y = ft_pixel_to_coordinate(y_pixel, side);
 	x = ft_format_value(x, ft_strlen(map[0]));
