@@ -36,7 +36,7 @@ int	ft_loop_check_line(char **line, int fd, char **one, char **two)
 			break ;
 		*line = ft_get_next_line(fd);
 	}
-	return (value);
+  return (value);
 }
 
 int	ft_check_all_line(int fd)
@@ -54,7 +54,10 @@ int	ft_check_all_line(int fd)
 		return (0);
 	value = ft_loop_check_line(&line, fd, &one, &two);
 	if (value == 0)
+  {
+    ft_putstr_fd("Error\nThe file is empty\n", 2);
 		return (free(one), free(two), 0);
+  }
 	if (value != 21)
 	{
 		ft_putstr_fd("Error\nDuplicate ID in the file\n", 2);

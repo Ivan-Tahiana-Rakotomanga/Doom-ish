@@ -61,7 +61,9 @@ char	*ft_get_next_line(int fd)
 	{
 		line = ft_strjoin_char(line, c);
 		if (!line)
+    {
 			return (NULL);
+    }
 		if (c == '\n')
 			break ;
 		r = read(fd, &c, 1);
