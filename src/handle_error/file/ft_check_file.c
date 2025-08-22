@@ -12,6 +12,17 @@
 
 #include "../../../includes/header.h"
 
+int	ft_check_empty(char *line, int id, int value)
+{
+	if (line == NULL && id == 0)
+	{
+		ft_putstr_fd("Error\nThe file is empty\n", 2);
+		return (0);
+	}
+	else
+		return (value);
+}
+
 int	ft_loop_check_line(char **line, int fd, char **one, char **two)
 {
 	int	value;
@@ -36,7 +47,7 @@ int	ft_loop_check_line(char **line, int fd, char **one, char **two)
 			break ;
 		*line = ft_get_next_line(fd);
 	}
-	return (value);
+	return (ft_check_empty(*line, id, value));
 }
 
 int	ft_check_all_line(int fd)

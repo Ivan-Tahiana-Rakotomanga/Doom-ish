@@ -1,4 +1,3 @@
-
 NO ./textures/garden/garden_1.xpm  
 SO ./textures/garden/garden_2.xpm 
 WE ./textures/garden/garden_3.xpm
@@ -8,5 +7,5 @@ C 16, 208,                                          241
 F 30, 60, 30 
 
 11111
-10N00
+10N01
 11111

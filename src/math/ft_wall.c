@@ -34,7 +34,7 @@ int	ft_is_wall(double x_pixel, double y_pixel, t_mlx mlx)
 	y = ft_pixel_to_coordinate(y_pixel, side);
 	x = ft_format_value(x, ft_strlen(map[0]));
 	y = ft_format_value(y, ft_strs_len(map));
-	if (map[y][x] == '1')
+	if (map[y][x] == '1' || map[y][x] == ' ')
 		return (1);
 	return (0);
 }

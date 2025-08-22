@@ -13,7 +13,7 @@
 NAME	= cub3D
 
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror 
+CFLAGS	= -Wall -Wextra -Werror -g
 
 SRC_DIR	= src
 OBJ_DIR	= obj
