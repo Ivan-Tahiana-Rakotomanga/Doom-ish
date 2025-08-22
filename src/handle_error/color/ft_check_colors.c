@@ -88,7 +88,7 @@ int	ft_check_colors(char *color)
 	}
 	colors = ft_split(temp, ',');
 	if (colors == NULL || !ft_nbr_c(color) || ft_strs_len(colors) != 3)
-		ft_error_format(temp, colors);
+		return(ft_error_format(temp, colors));
 	res = ft_res_loop(colors);
 	free(temp);
 	ft_free_str(colors);
