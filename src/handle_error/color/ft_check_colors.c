@@ -23,7 +23,7 @@ int	ft_res_loop(char **colors)
 	{
 		if (!ft_is_valid_number(colors[i]) || ft_is_empty_str(colors[i]))
 		{
-			ft_putstr_fd("Error\nColor values must be numbers not:", 2);
+			ft_putstr_fd("Error\nColor values must be positive numbers not:", 2);
 			ft_putstr_fd(colors[i], 2);
 			ft_putstr_fd("\n", 2);
 			return (0);

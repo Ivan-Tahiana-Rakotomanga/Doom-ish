@@ -12,18 +12,6 @@
 
 #include "../../../includes/header.h"
 
-char	*ft_first_line(int fd)
-{
-	char	*line;
-
-	line = ft_get_next_line(fd);
-	if (!line)
-	{
-		ft_putstr_fd("Error\nThis file is empty\n", 2);
-		return (NULL);
-	}
-	return (line);
-}
 
 int	ft_check_color_part(char **one, char **two, char *line)
 {

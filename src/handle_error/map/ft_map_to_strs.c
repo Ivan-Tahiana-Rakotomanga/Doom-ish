@@ -22,7 +22,7 @@ int	ft_fill_space(int i, int width, char *res)
 	return (i);
 }
 
-char	*ft_fill_zero_line(char *line, int width)
+char	*ft_fill_space_line(char *line, int width)
 {
 	char	*res;
 	int		i;
@@ -56,7 +56,7 @@ char	**ft_map_to_strs(t_map *map)
 		return (NULL);
 	while (map)
 	{
-		strs[i] = ft_fill_zero_line(map->line, width);
+		strs[i] = ft_fill_space_line(map->line, width);
 		if (strs[i] == NULL)
 		{
 			ft_free_str(strs);
