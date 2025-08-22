@@ -34,7 +34,7 @@ void	ft_get_info(char *file, t_utils *utils);
 int		ft_check_xpm(char *filename);
 int		ft_get_height_map(t_map *map);
 int		ft_get_width_map(t_map *map);
-int ft_over_int_max(const char *str);
-int ft_valid_around(char **map, int x, int y, int *w_h);
+int		ft_over_int_max(const char *str);
+int		ft_valid_around(char **map, int x, int y, int *w_h);
 
 #endif
