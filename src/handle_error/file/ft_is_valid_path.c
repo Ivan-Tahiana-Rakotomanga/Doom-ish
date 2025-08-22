@@ -13,8 +13,6 @@
 
 int	ft_is_valid_path(char *path, char *extension)
 {
-	if (!ft_exposed_file(path))
-		return (0);
 	if (!ft_valid_file(path))
 		return (0);
 	else if (!ft_valid_extension(path, extension))

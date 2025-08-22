@@ -25,7 +25,6 @@ SRC		= 	src/handle_error/file/ft_valid_extension.c \
 			src/handle_error/file/ft_valid_file.c \
 			src/handle_error/file/ft_is_valid_path.c \
 			src/handle_error/file/ft_check_xpm.c \
-			src/handle_error/file/ft_exposed_file.c \
 			src/handle_error/color/ft_valid_color.c \
 			src/handle_error/color/ft_is_duplicate_color.c \
 			src/handle_error/color/ft_check_colors.c \
