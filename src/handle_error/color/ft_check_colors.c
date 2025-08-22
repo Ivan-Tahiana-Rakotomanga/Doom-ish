@@ -58,6 +58,19 @@ int	ft_nbr_c(char *color)
 		return (1);
 }
 
+int ft_error_format(char *temp, char **colors)
+{
+	ft_putstr_fd("Error\nInvalid color format ", 2);
+	ft_putstr_fd("it must be three digits separated by a comma not ", 2);
+	ft_putstr_fd(temp, 2);
+	ft_putstr_fd(" \n", 2);
+	free(temp);
+	ft_free_str(colors);
+	return (0);
+}
+
+#include <stdio.h>
+
 int	ft_check_colors(char *color)
 {
 	char	**colors;
@@ -66,17 +79,16 @@ int	ft_check_colors(char *color)
 
 	res = 0;
 	temp = ft_strtrim(color, " \n");
-	colors = ft_split(temp, ',');
-	if (colors == NULL || !ft_nbr_c(color) || ft_strs_len(colors) != 3)
+	colors = NULL;
+	if(ft_is_empty_str(temp))
 	{
-		ft_putstr_fd("Error\nInvalid color format ", 2);
-		ft_putstr_fd("it must be three digits separated by a comma not ", 2);
-		ft_putstr_fd(temp, 2);
-		ft_putstr_fd(" \n", 2);
+		ft_putstr_fd("Error\nMissing color \n", 2);
 		free(temp);
-		ft_free_str(colors);
 		return (0);
 	}
+	colors = ft_split(temp, ',');
+	if (colors == NULL || !ft_nbr_c(color) || ft_strs_len(colors) != 3)
+		ft_error_format(temp, colors);
 	res = ft_res_loop(colors);
 	free(temp);
 	ft_free_str(colors);

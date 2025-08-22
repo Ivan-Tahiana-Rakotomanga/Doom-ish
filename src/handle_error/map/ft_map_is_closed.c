@@ -4,9 +4,7 @@
 /*   ft_map_is_closed.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/22 14:51:31 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/08/22 14:51:31 by fxu-lin          ###   ########.fr       */
+/*                                                +#+#+#+#+#+   +#+           */ /*   Created: 2025/08/22 14:51:31 by fxu-lin           #+#    #+#             */ /*   Updated: 2025/08/22 14:51:31 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +39,6 @@ char	ft_find_start(int *start_x, int *start_y, char **map)
 	return ('\0');
 }
 
-#include <stdio.h>
 int	ft_loop_close(int y, int x, char **map, int *w_h)
 {
 
