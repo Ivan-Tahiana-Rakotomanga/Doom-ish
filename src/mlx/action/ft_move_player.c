@@ -75,12 +75,9 @@ void	ft_move_of_player(t_player *player, t_mlx mlx)
 	b.x = 0;
 	b.y = 0;
 	a = ft_get_coordinate(player, &b);
-	if (0 < a.x && a.x < mlx.width && 0 < a.y && a.y < mlx.height)
+	if (!ft_is_wall(b.x, b.y, mlx))
 	{
-		if (!ft_is_wall(b.x, b.y, mlx))
-		{
-			player->x = a.x;
-			player->y = a.y;
-		}
+		player->x = a.x;
+		player->y = a.y;
 	}
 }
