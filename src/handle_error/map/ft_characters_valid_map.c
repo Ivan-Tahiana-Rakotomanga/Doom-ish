@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_characters_valid_map.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: fxu-lin <fxu-lin@student.42antananarivo    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 11:06:16 by irakotom          #+#    #+#             */
-/*   Updated: 2025/06/17 12:42:40 by irakotom         ###   ########.fr       */
+/*   Updated: 2025/08/25 14:50:49 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	ft_character_valid(char c)
 int	ft_character_not_valid(char c)
 {
 	ft_putstr_fd("Error\nThis character is not valid for the map: ", 2);
-	write(2, &c, 1);
+	if (write(2, &c, 1) == -1)
+		return (0);
 	ft_putstr_fd("\n", 2);
 	return (0);
 }

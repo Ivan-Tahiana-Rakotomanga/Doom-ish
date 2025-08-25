@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: irakotom <irakotom@student.42antananarivo  +#+  +:+       +#+         #
+#    By: fxu-lin <fxu-lin@student.42antananarivo    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/04 12:56:49 by irakotom          #+#    #+#              #
-#    Updated: 2025/08/13 16:49:54 by irakotom         ###   ########.fr        #
+#    Updated: 2025/08/25 14:54:03 by fxu-lin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

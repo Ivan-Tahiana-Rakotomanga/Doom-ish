@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_draw_rect_textures.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fxu-lin <fxu-lin@student.42antananarivo.m  +#+  +:+       +#+        */
+/*   By: fxu-lin <fxu-lin@student.42antananarivo    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:38:18 by fxu-lin           #+#    #+#             */
-/*   Updated: 2025/07/29 15:38:18 by fxu-lin          ###   ########.fr       */
+/*   Updated: 2025/08/25 16:26:32 by fxu-lin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ unsigned int	*ft_get_address_textures(int y, int h, t_mlx mlx,
 	if ((int)dst_orient[0] == 2 || (int)dst_orient[0] == 3)
 		x = ft_rules_of_three(dst_orient[1], mlx.side, img.width);
 	else
-		x = ft_rules_of_three(mlx.width - dst_orient[1], mlx.side, img.width);
+		x = (img.width) - ft_rules_of_three(dst_orient[1], mlx.side, img.width);
 	if (y > 0)
 		y = ft_get_new_y(y, h, img.height);
 	else
