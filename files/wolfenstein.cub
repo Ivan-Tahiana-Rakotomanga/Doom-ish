@@ -1,0 +1,18 @@
+
+NO ./textures/wolfenstein/blue_stone.xpm  
+SO ./textures/wolfenstein/color_stone.xpm  
+WE ./textures/wolfenstein/grey_stone.xpm  
+EA ./textures/wolfenstein/purple_stone.xpm  
+
+C 245, 245,                                          245 
+F 10, 10, 10 
+
+1111111
+1000001
+1000001
+100N001
+1000001
+1000001
+1000001
+1000001
+1111111

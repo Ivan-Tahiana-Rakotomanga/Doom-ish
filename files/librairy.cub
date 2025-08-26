@@ -1,0 +1,16 @@
+
+NO ./textures/random/lib1.xpm  
+SO ./textures/random/lib2.xpm  
+WE ./textures/random/lib3.xpm  
+EA ./textures/random/lib4.xpm  
+
+C 245, 245,                                          245 
+F 10, 10, 10 
+
+1111111
+1000001
+1001001
+1000001
+100S001
+1000001
+1111111

@@ -1,0 +1,14 @@
+
+NO ./textures/garden/garden_1.xpm  
+SO ./textures/garden/garden_2.xpm 
+WE ./textures/garden/garden_3.xpm
+EA ./textures/garden/garden_4.xpm 
+
+C 16, 208,                                          241 
+F 30, 60, 30 
+
+1111111
+1000001
+1001001
+100W001
+1111111

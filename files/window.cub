@@ -1,0 +1,18 @@
+
+NO ./textures/window/win1.xpm  
+SO ./textures/window/win2.xpm 
+WE ./textures/window/win3.xpm
+EA ./textures/window/win4.xpm 
+
+C 16, 208,                                          241 
+F 30, 60, 30 
+
+1111111
+1000001
+1000001
+1000001
+1000001
+1000001
+1001001
+100N001
+1111111

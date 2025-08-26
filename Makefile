@@ -6,14 +6,14 @@
 #    By: fxu-lin <fxu-lin@student.42antananarivo    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/04 12:56:49 by irakotom          #+#    #+#              #
-#    Updated: 2025/08/25 14:54:03 by fxu-lin          ###   ########.fr        #
+#    Updated: 2025/08/26 10:55:29 by irakotom         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= cub3D
 
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -g
+CFLAGS	= -Wall -Wextra -Werror 
 
 SRC_DIR	= src
 OBJ_DIR	= obj
