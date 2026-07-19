@@ -156,7 +156,6 @@ F 10,10,10
 1111111
 ```
 
-
 ## Troubleshooting
 
 If the build fails on MiniLibX callbacks, make sure the functions passed to `mlx_hook` and `mlx_loop_hook` use a `void *` parameter.
