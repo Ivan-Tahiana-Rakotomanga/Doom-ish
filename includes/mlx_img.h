@@ -16,9 +16,9 @@
 
 t_mlx	*ft_free_mlx(t_mlx *mlx);
 void	ft_mlx_destroy(t_mlx *mlx);
-int		ft_close_window(t_mlx *mlx);
+int		ft_close_window(void *param);
 void	ft_hook(t_mlx *mlx);
-int		ft_key_press(int code, t_mlx *mlx);
+int		ft_key_press(int code, void *param);
 void	ft_color_display(t_mlx *mlx);
 void	ft_init_key(t_mlx *mlx);
 int		ft_check_mlx(t_mlx *mlx, char *name);
@@ -40,7 +40,7 @@ void	ft_draw_rect_textures(t_point a, t_point b, t_mlx mlx,
 int		ft_get_new_y(double value, double height_wall, double height_img);
 int		ft_init_player(t_mlx **mlx, double angle);
 void	ft_draw_ceiling_floor(t_mlx mlx, t_point a, t_point b);
-int		ft_render(t_mlx *mlx);
+int		ft_render(void *param);
 void	ft_move_angle(t_player *player);
-int		ft_key_release(int code, t_player *player);
+int		ft_key_release(int code, void *param);
 #endif

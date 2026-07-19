@@ -12,8 +12,11 @@
 
 #include "../../../includes/header.h"
 
-int	ft_close_window(t_mlx *mlx)
+int	ft_close_window(void *param)
 {
+	t_mlx	*mlx;
+
+	mlx = (t_mlx *)param;
 	ft_mlx_destroy(mlx);
 	return (0);
 }

@@ -14,8 +14,11 @@
 
 void	ft_hook(t_mlx *mlx)
 {
-	mlx_hook(mlx->win, 17, 0, ft_close_window, mlx);
-	mlx_hook(mlx->win, 2, 1L << 0, ft_key_press, mlx);
-	mlx_hook(mlx->win, 3, 1L << 1, ft_key_release, mlx->player);
-	mlx_loop_hook(mlx->mlx, ft_render, mlx);
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wcast-function-type"
+	mlx_hook(mlx->win, 17, 0, (int (*)())ft_close_window, mlx);
+	mlx_hook(mlx->win, 2, 1L << 0, (int (*)())ft_key_press, mlx);
+	mlx_hook(mlx->win, 3, 1L << 1, (int (*)())ft_key_release, mlx);
+	mlx_loop_hook(mlx->mlx, (int (*)())ft_render, mlx);
+#pragma GCC diagnostic pop
 }

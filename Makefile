@@ -10,10 +10,11 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= cub3D
+NAME	= doomISH
 
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror 
+LDFLAGS	= -no-pie
 
 SRC_DIR	= src
 OBJ_DIR	= obj
@@ -99,7 +100,7 @@ MLX			= $(MLX_PATH)/libmlx.a
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT) $(MLX)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(INC) $(LIBFT) $(MLX) -lXext -lX11 -lm
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(INC) $(LIBFT) $(MLX) -lXext -lX11 -lm $(LDFLAGS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(dir $@)

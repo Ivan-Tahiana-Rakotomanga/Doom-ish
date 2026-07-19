@@ -44,7 +44,7 @@ t_mlx	*ft_init_mlx(t_mlx *mlx, char **map, t_utils utils)
 	mlx->width = 800;
 	mlx->height = 800;
 	mlx->width_one_wall = 1;
-	if (!ft_check_mlx(mlx, "cub3D"))
+	if (!ft_check_mlx(mlx, "doomISH"))
 		return (ft_free_mlx(mlx));
 	angle = ft_init_utils(mlx, utils, map);
 	if (!ft_init_player(&mlx, angle))

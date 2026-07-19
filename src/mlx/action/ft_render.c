@@ -34,8 +34,11 @@ int	ft_valid_mov(t_player *player)
 		return (1);
 }
 
-int	ft_render(t_mlx *mlx)
+int	ft_render(void *param)
 {
+	t_mlx	*mlx;
+
+	mlx = (t_mlx *)param;
 	if (ft_valid_key(mlx->player))
 	{
 		ft_move_angle(mlx->player);

@@ -12,8 +12,11 @@
 
 #include "../../../includes/header.h"
 
-int	ft_key_release(int code, t_player *player)
+int	ft_key_release(int code, void *param)
 {
+	t_player	*player;
+
+	player = ((t_mlx *)param)->player;
 	if (code == 119)
 		player->w = 0;
 	if (code == 115)

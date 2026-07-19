@@ -32,8 +32,11 @@ void	ft_key_angle(int code, t_player *player)
 		player->right = 1;
 }
 
-int	ft_key_press(int code, t_mlx *mlx)
+int	ft_key_press(int code, void *param)
 {
+	t_mlx	*mlx;
+
+	mlx = (t_mlx *)param;
 	if (code == 65307)
 	{
 		ft_mlx_destroy(mlx);
